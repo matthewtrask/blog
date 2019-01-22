@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Matthew Trask</title>
+    <link href="https://my-jigsaw-blog.com" />
+    <link type="application/atom+xml" rel="self" href="https://my-jigsaw-blog.com/blog/feed.atom" />
+    <updated>2019-01-22T01:11:07+00:00</updated>
+    <id>https://my-jigsaw-blog.com/blog/feed.atom</id>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+                <entry>
+    <id>https://my-jigsaw-blog.com/blog/new-year-new-me</id>
+    <link type="text/html" rel="alternate" href="https://my-jigsaw-blog.com/blog/new-year-new-me" />
+    <title>New Year, New Me</title>
+    <published>2019-01-01T00:00:00+00:00</published>
+    <updated>2019-01-01T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">What can you challenge yourself with to be the best you? Here are mine.
+
+In my &amp;quot;year in review&amp;quot; post I mentioned I got into photography. For 2019 one thing I want to do is take a picture a day. There are a few things I hope to achieve with......</summary>
+    <content type="html"><![CDATA[
+        <p>What can you challenge yourself with to be the best you? Here are mine.</p>
+<h3>A photograph a day.</h3>
+<p>In my &quot;year in review&quot; post I mentioned I got into photography. For 2019 one thing I want to do is take a picture a day. There are a few things I hope to achieve with this:</p>
+<ol>
+<li>I hope to get better at composition and framing. </li>
+<li>I hope it challenges me to explore more. </li>
+<li>Give me a portfolio of stuff to hopefully sell/create monetary options.</li>
+</ol>
+<p>To follow along, check out my <a href="https://www.flickr.com/photos/164111164@N05/">flickr</a>. I hope to move all the content to my own site soon. Just gotta buid it.</p>
+<h3>Read 52 Books</h3>
+<p>I used to be a huge reader. I would crush a series of books in no time as a kid. I have sadly fallen off in recent years, so I hope to pick that back up. The first three books of the new year are: </p>
+<ol>
+<li>Jurassic Park (holy shit so good)</li>
+<li>Into The Wild</li>
+<li>Simple Path to Wealth</li>
+</ol>
+<p>There is no real method to the madness here. I picked up Jurassic Park cause it caught my eye. As for Into The Wild, I loved Jon Krakauer's recount of the 1996 Everest Diaster in Into Thin Air, so I hope
+this will be a good read. Simple Path To Wealth is a book I've heard references on countless FI/RE podcasts and interviews. I love JL Collin's style of discussion. Even keeled, soft spoken but authoritative
+in the realm of wealth and investment, I think this will be a game changer. </p>
+<p>To follow along, check out my <a href="https://www.goodreads.com/user/show/4986797-matt-trask">goodreads</a></p>
+<h3>Two new blogs</h3>
+<p>As I referenced above, I want to move my photographs to my own content management system for a few reasons. Mainly I want to control how it is shown,
+and should something happen to flickr, I don't want to scramble to get my images. </p>
+<p>The other blog will be a personal finance blog aimed at developers. I've tweeted about it a few times and the response is always &quot;yes please&quot;. As I read a lot of 2018 review blog posts, one thing mentioned
+was getting the finances in order but very few people know where to start. I hope the aim of my blog will be a mix of good foundational starting points as well as more advanced
+topics like FI/RE, investing, real estate and more. </p>
+<p>Look for these, I will be tweeting and posting about them as they get close to be done.</p>
+<h3>Walk more</h3>
+<p>I live in a great area of Nashville. There is a coffee shop .5 miles away, a brewery .3 miles away and an excellent sandwich shop .5 miles away in the opposite direction. There is no reason
+for me to drive other than I want to waste resources. So a challenge of mine is to walk more, be more in the community I am apart of and enjoy it. A side effect is hopefully some weight loss. </p>
+<h3>Weight loss</h3>
+<p>I've struggled for years to lose weight, or rather be motivated to lose weight. I am not getting younger, but I have plenty of time to enjoy life and feel better. I am to do this through better eating,
+less garbage like soda, more walking, more cycling, and maybe running. Maybe.</p>
+<h3>Remove the last of my debts</h3>
+<p>I have two loans right now. A student loan at $6,000-ish dollars and a personal loan for $8,000-ish dollars. These suck! It's a weight just hanging over you. I want them gone, so they will be.
+I've spent the morning running numbers and preparing myself for a financially healthy 2019. These should pave the way for my net worth to grow, and free up money to pump into stocks like VTSAX. </p>
+<p>I aim to talk more in depth about all this on the financial blog I mentioned earlier. </p>
+<h3>Loose ends</h3>
+<p>I think this covers it. I am working on being happier, more confident and more at peace with life. 2018 was a struggle at times for various reasons. I gained weight, destroyed some relationships (dating and not dating),
+and basically was just down on myself the whole time. I am a good developer (sometimes), and I have things to offer but I can't offer them if I am not at my best. </p>
+<p>So 2019, come at me. It'll be fun.</p>
+<p>See ya!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>https://my-jigsaw-blog.com/blog/year-in-review</id>
+    <link type="text/html" rel="alternate" href="https://my-jigsaw-blog.com/blog/year-in-review" />
+    <title>Year in Review</title>
+    <published>2018-12-31T00:00:00+00:00</published>
+    <updated>2018-12-31T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">It&#039;s always good to do a year in review, and this year was a big year for me, so this will be a big post.
+
+The biggest change for me came in January when I was offered a position at OpenSky, now MoreCommerce to work under Wage. It was a big change, going......</summary>
+    <content type="html"><![CDATA[
+        <p>It's always good to do a year in review, and this year was a big year for me, so this will be a big post.</p>
+<h2>Work</h2>
+<p>The biggest change for me came in January when I was offered a position at OpenSky, now MoreCommerce to work under <a href="https://twitter.com/jwage">Wage</a>. It was a big change, going from a small team all cramped in a room to a distributed team across the world. I won't say its been easy either. It is a huge application across a lot of repositories. But, because the team practices good programming concepts, its not hard to figure out where you are in the app. It's because of those practices the app which I think is well over 7 years old is still in great shape. </p>
+<p>I've had the opportunity to really work on some cool stuff, but it has been a huge challenge. It's made me think about how I code and work altogether. While its been a lot of ups, there was also a good bit of time where my anxiety was at an all time high. Not just cause of work, but it had an effect on it. It showed me I work with people who care and want to see everyone in good health and spirits. Im happy I made the switch, even if there were times I was borderline thinking I wasnt at my best there. </p>
+<h2>Community</h2>
+<p>On the community side, it was a roller coaster of fun and frolics. I started the year as an organizer of Nashville PHP and am ending it as an organizer of NashAPIs. In the middle I stepped down from Nashville PHP to run Southeast PHP. There is a subsequent blog post about Southeast PHP around here somewhere, but suffice to say it was a success. Four years ago, I never imagined I would run a conference but drunk me does silly things like commit to running a conferece. Drunk me is an asshole.</p>
+<p>On top of organizing a conference, I had the pleasure to attend Sunshine PHP and had the honor to speak at the inaugural Cascadia PHP about the OpenAPI Spec. While I was there, I got to meet coworkers who work in our Portland office.</p>
+<p>Locally, I helped get NashAPIs off the ground. It's still a work in progress, but it's coming along.</p>
+<h2>Open Source</h2>
+<p>My biggest achievement here is not letting PHPVersions.info fall to the wayside. I've tried my best to stay up with the pull requests, but the biggest help has definitely come from <a href="https://twitter.com/colinodell">Colin O'Dell</a>. He is on top of the things I forget about. This also is a good way to segue into one of my goals:</p>
+<ul>
+<li>Getting PHPVersions off Jekyll/Github and on to well PHP. </li>
+</ul>
+<p>The project is all about highlighting PHP hosts offering the latest PHP Versions, so we should absolutely be up with that for our own code base. I can tell you right now, the project 75% done, with it mostly being small things I need to fix. I just need like a 4 day stretch of time where I can work on it and get it done. It would be awesome to finish it before Sunshine PHP so I can highlight it in my Vue.JS talk since Im using Vue.JS on the front end with Laravel on the backend. If you are familiar with the project and have ideas of what could be done to make it better, open an issue and tag me!</p>
+<p>The other cool thing that happened with this project was I was interviewed. I didn't start the project, but Im happy to see it grow and people are taking notice. You can read the interview <a href="https://www.hostingadvice.com/blog/php-versions-tracks-language-updates-and-hosting-support/?fbclid=IwAR1qR8hymae6ndsGnlYCaJ6FGc5uI6vWMcdaandt6rqwCh6LdlQVOUaR1l0">here</a>.</p>
+<p>Outside of this, I continue to look for opportunities to contribute more either through code or mentoring.</p>
+<h2>Cycling</h2>
+<p>My cycling goals dragged this year. According to my Strava profile, I rode 874 miles this year, down from last year. Not sure why exactly, just lost time with organizing things. Next year it's definitely something I want to pick up. I did do two major rides: </p>
+<ul>
+<li>Tour De Nash</li>
+<li>GA 400 Century</li>
+</ul>
+<p>I did the 25 mile version of both, because I under trained. However, both were so much fun. I love the Tour de Nash cause it has enough competition to push you, but it's so friendly and welcoming. Whether you want to hammer out the lead or just casually ride through the various neighborhoods of Nashville, this ride has it all. </p>
+<p>The GA 400 Century is a whole nother beast. This was the second year I did it, and what is special about it is that you get to ride on part of a freeway. Yes it's blocked off, and we only have 30 minutes to get on and off again. Its all of about a mile and a half on the freeway, and then it just kicks your ass with hills that seem to never end. Last year I did the 48 mile route and this year due to under training I dropped to the 25 mile route. Im sad I couldnt pull off the 48 again, but I still had so much fun. </p>
+<p>I also had the pleasure to start giving bike tours. This is something I just lucked into but man its so much fun. I get to ride around Nashville talking about history, two things I love. Not Nashville, riding a bike and history. Nashville is... ok.
+I get to make a bit of money on the side, and meet cool people so Im looking forward to the weather warmning up and getting back out there. </p>
+<p>I have plans so far for three big rides: </p>
+<ul>
+<li>Tour De Nash - 48 Miles</li>
+<li>GA 400 Century - 62 Miles</li>
+<li>Sunrise Century - 62 Miles</li>
+</ul>
+<p>Doable, if I commit. </p>
+<h2>Photography</h2>
+<p>Another hobby I picked up is photography. I was fortunate enough to get a nice starter camera from a coworker and now it comes everywhere with me. In fact as I write this, Im picking up two more lenses. It's a fun hobby that lets me look at the world differently, and lets me explore. I just need to get a small point and shoot camera for when Im out riding, cause you never know what you will see on the long rides.</p>
+<p>To see some of the photos I have taken, go <a href="https://www.flickr.com/photos/164111164@N05/">here</a>. If you see me around a conference, I will probably have my camera with me. </p>
+<h2>2019</h2>
+<p>Im planning on making 2019 my year. I was in a weird spot with 2018. I fought boughts of anxiety, depression and had a huge crisis of confidence for the latter part of the year. So bad my boss called me out on it all. And that helped. But now I need to make 2019 better. I want to take more risks, fail more, learn more, and be more. So my goals are:</p>
+<ul>
+<li>Lose weight</li>
+<li>Take a picture a day</li>
+<li>Read 52 books</li>
+<li>Contribute more code</li>
+<li>Explore</li>
+</ul>
+<p>The losing weight thing is already in effect (holiadys not withstanding). As I tweeted out a few days ago, I was able to get into a smaller pair of jeans. They are super tight, but its a nice victory none the less, and gives me the motivation to keep going. </p>
+<p>As for the picture a day, I want to push myself to explore, look for new ways to see things, and create. Im hoping to stand up a blog soon to create a stream for the photos. Nothing fancy, just something to show a picture a day and maybe a caption. I think if I can get to the halfway mark, I will treat myself to a new camera as a way to reward dedication and effort. </p>
+<p>I used to be a big reader. I would crush books as a kid. The whole Boxcar Children series in a month, Goosebumps in as much time. Harry Potter was a big one too. Being an adult has left me with less time to read so I want to change that. I went out and bought two books already to get me started. </p>
+<p>The last two are just self explainitory. But I look forward to making them happen too. </p>
+<p>Hopefully you had a great 2018 and you are ready to take on 2019!</p>
+<p>Cheers!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>https://my-jigsaw-blog.com/blog/conference-speaking</id>
+    <link type="text/html" rel="alternate" href="https://my-jigsaw-blog.com/blog/conference-speaking" />
+    <title>Conference Speaking</title>
+    <published>2018-12-20T00:00:00+00:00</published>
+    <updated>2018-12-20T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">It wasn&#039;t in my plans to be a keynoter this year, or ever, but here we are. Im happy to say I will be one of the keynote speakers of
+MidwestPHP, my talk being about mental health and how I&#039;ve learned to adapt and overcome challenges. Hopefully
+people......</summary>
+    <content type="html"><![CDATA[
+        <p>It wasn't in my plans to be a keynoter this year, or ever, but here we are. Im happy to say I will be one of the keynote speakers of
+<a href="https://midwestphp.org">MidwestPHP</a>, my talk being about mental health and how I've learned to adapt and overcome challenges. Hopefully
+people will leave this talk with some ideas they can adapt to their lives as well. Based on a thread from Phil Sturgeon, depression can strike
+anyone at anytime no matter who you are. Very timely. </p>
+<p>Also, Im happy to say I will be giving a session at Midwest PHP going over the OpenAPI and how you can build your APIs with it. Its a fun talk and I love
+giving it. Before that though, I will be in Miami to speak about Vue.js at <a href="https://sunshinephp.com">Sunshine</a>. Why I submitted on JS I dont know, but
+Im having fun with it. Im recycling the API I built for CascadiaPHP to build a front end with Vue, which gives me more material for Midwest as well.</p>
+<p>Im sure I will end up at other conferences but so far these are sure fire things. Other things I hope to accomplish soon: </p>
+<ul>
+<li>Launch the new PHPVersions. It will be built on PHP instead of Jekyll. Im hoping to take better advantage of automation and APIs to make this project
+more robust. I also plan on publishing an OpenAPI spec to go along with it so others can consume the data. </li>
+<li>Launch a personal finance blog. It's no secret I've been trying to learn everything I can about about personal finance and investing, both things
+I wasn't taught much about in school or my early life. I hope this project helps others, especially developers making an insane amount of money make
+smart choices. </li>
+<li>Launch a photography blog. My last little project will be a photography blog. I got a camera this year and it's been a lot of fun going downtown to take pictures.
+It would be great to see if I can turn it into a side business but right now its just fun. </li>
+</ul>
+<p>Hope to see you around at a conference next year!</p>    ]]></content>
+</entry>
+    </feed>
