@@ -11,10 +11,10 @@
 <h1>Contact</h1>
 
 <p class="mb-8">
-    Static sites are unable to handle form submissions. However, there are third-party services, like Tighten’s <a href="https://fieldgoal.io" title="FieldGoal">FieldGoal</a>, which can accept the form submission, email you the result, and redirect back to a thank you page.
+    If you have a comment or question about something I wrote, feel free to send me a message.
 </p>
 
-<form action="/contact" class="mb-12">
+<form action="http://formspree.io/mjftrask@gmail.com" method="POST" class="mb-12">
     <div class="flex flex-wrap mb-6 -mx-3">
         <div class="w-full md:w-1/2 mb-6 md:mb-0 px-3">
             <label class="block mb-2 text-grey-darkest text-sm font-semibold" for="contact-name">
