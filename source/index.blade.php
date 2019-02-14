@@ -29,12 +29,10 @@
         @endif
     @endforeach
 
-    @include('_components.newsletter-signup')
-
     @foreach ($posts->where('featured', false)->take(6)->chunk(2) as $row)
-        <div class="flex flex-col md:flex-row md:-mx-6">
+        <div class="flex flex-col md:-mx-6">
             @foreach ($row as $post)
-                <div class="w-full md:w-1/2 md:mx-6">
+                <div class="w-full md:mx-6">
                     @include('_components.post-preview-inline')
                 </div>
 
