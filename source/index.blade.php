@@ -3,9 +3,6 @@
 @section('body')
     @foreach ($posts->where('featured', true) as $featuredPost)
         <div class="w-full mb-6">
-            @if ($featuredPost->cover_image)
-                <img src="{{ $featuredPost->cover_image }}" alt="{{ $featuredPost->title }} cover image" class="mb-6">
-            @endif
 
             <p class="text-grey-darker font-medium my-2">
                 {{ $featuredPost->getDate()->format('F j, Y') }}
