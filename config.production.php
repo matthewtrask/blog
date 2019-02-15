@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'baseUrl' => 'https://matthewtrask.netlify.com',
+    'baseUrl' => 'https://matthewtrask.com',
     'production' => true,
 ];
