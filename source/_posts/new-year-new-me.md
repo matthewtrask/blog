@@ -6,7 +6,7 @@ date: 2019-01-01
 description: 2018 was a challenging year for me, and I figured documenting it would help me down the road.
 categories: [new year, new me]
 cover_image: /assets/img/mountains.jpg
-featured: true
+featured: false
 ---
 
 What can you challenge yourself with to be the best you? Here are mine.

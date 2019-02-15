@@ -6,21 +6,21 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="description" content="The intersection of code and photography">
 
-        <meta property="og:title" content="Conference Speaking | Matthew Trask"/>
+        <meta property="og:title" content="The Case Against HATEOAS | Matthew Trask"/>
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://matthewtrask.netlify.com/blog/conference-speaking"/>
+        <meta property="og:url" content="https://matthewtrask.netlify.com/blog/the-case-against-hateoas"/>
         <meta property="og:description" content="The intersection of code and photography" />
 
-        <title>Matthew Trask | Conference Speaking</title>
+        <title>Matthew Trask | The Case Against HATEOAS</title>
 
         <link rel="home" href="https://matthewtrask.netlify.com">
         <link rel="icon" href="/favicon.ico">
         <link href="/blog/feed.atom" type="application/atom+xml" rel="alternate" title="Matthew Trask Atom Feed">
 
-            <meta property="og:title" content="Conference Speaking" />
+            <meta property="og:title" content="The Case Against HATEOAS" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://matthewtrask.netlify.com/blog/conference-speaking"/>
-    <meta property="og:description" content="Looks like I will be at a few conferences in the new year, speaking about a variety of things." />
+    <meta property="og:url" content="https://matthewtrask.netlify.com/blog/the-case-against-hateoas"/>
+    <meta property="og:description" content="I want to make the case against HATEOAS. But not in the way you think I&#039;m going to try and do it." />
 
                     <!-- Insert analytics code here -->
         
@@ -108,57 +108,76 @@
 </nav>
 
         <main role="main" class="flex-auto w-full container max-w-xl mx-auto py-16 px-6">
-                        <img src="/assets/img/peaks.jpg" alt="Conference Speaking cover image" class="mb-2">
+                        <img src="/assets/img/camera.jpg" alt="The Case Against HATEOAS cover image" class="mb-2">
     
-    <h1 class="leading-none mb-2">Conference Speaking</h1>
+    <h1 class="leading-none mb-2">The Case Against HATEOAS</h1>
 
-    <p class="text-grey-darker text-xl md:mt-0">Matt Trask  •  December 20, 2018</p>
-    <p class="text-grey-darker text-sm">Read Time: 2 mins</p>
+    <p class="text-grey-darker text-xl md:mt-0">Matt Trask  •  February 14, 2019</p>
+    <p class="text-grey-darker text-sm">Read Time: 3 mins</p>
 
                         <a
-                href="/blog/categories/conferences"
-                title="View posts in conferences"
+                href="/blog/categories/rest"
+                title="View posts in rest"
                 class="inline-block bg-grey-light hover:bg-teal-lighter leading-loose tracking-wide text-grey-darkest uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
-            >conferences</a>
+            >rest</a>
                     <a
-                href="/blog/categories/speaking"
-                title="View posts in speaking"
+                href="/blog/categories/hypermedia"
+                title="View posts in hypermedia"
                 class="inline-block bg-grey-light hover:bg-teal-lighter leading-loose tracking-wide text-grey-darkest uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
-            >speaking</a>
+            >hypermedia</a>
                     <a
-                href="/blog/categories/community"
-                title="View posts in community"
+                href="/blog/categories/api design"
+                title="View posts in api design"
                 class="inline-block bg-grey-light hover:bg-teal-lighter leading-loose tracking-wide text-grey-darkest uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
-            >community</a>
+            >api design</a>
             
     <div class="border-b border-blue-lighter mb-10 pb-4" v-pre>
-        <p>It wasn't in my plans to be a keynoter this year, or ever, but here we are. Im happy to say I will be one of the keynote speakers of
-<a href="https://midwestphp.org">MidwestPHP</a>, my talk being about mental health and how I've learned to adapt and overcome challenges. Hopefully
-people will leave this talk with some ideas they can adapt to their lives as well. Based on a thread from Phil Sturgeon, depression can strike
-anyone at anytime no matter who you are. Very timely. </p>
-<p>Also, Im happy to say I will be giving a session at Midwest PHP going over the OpenAPI and how you can build your APIs with it. Its a fun talk and I love
-giving it. Before that though, I will be in Miami to speak about Vue.js at <a href="https://sunshinephp.com">Sunshine</a>. Why I submitted on JS I dont know, but
-Im having fun with it. Im recycling the API I built for CascadiaPHP to build a front end with Vue, which gives me more material for Midwest as well.</p>
-<p>Im sure I will end up at other conferences but so far these are sure fire things. Other things I hope to accomplish soon: </p>
-<ul>
-<li>Launch the new PHPVersions. It will be built on PHP instead of Jekyll. Im hoping to take better advantage of automation and APIs to make this project
-more robust. I also plan on publishing an OpenAPI spec to go along with it so others can consume the data. </li>
-<li>Launch a personal finance blog. It's no secret I've been trying to learn everything I can about about personal finance and investing, both things
-I wasn't taught much about in school or my early life. I hope this project helps others, especially developers making an insane amount of money make
-smart choices. </li>
-<li>Launch a photography blog. My last little project will be a photography blog. I got a camera this year and it's been a lot of fun going downtown to take pictures.
-It would be great to see if I can turn it into a side business but right now its just fun. </li>
-</ul>
-<p>Hope to see you around at a conference next year!</p>    </div>
+        <p>One thing I love about API Design is talking about HATEOAS. HATEOAS is magical, and generally considered the hardest part of API Design. I wonder why that could be though? Could it be that dynamically creating a link to a resource is that hard? No, I don't think so. Could it be that Hypermedia isn't taught? Perhaps. More importantly: HATEOAS is a daunting term. Breaking it down HATEOAS becomes &quot;Hypermedia As The Engine Of Application State&quot;. Let's let that sink in just a bit. </p>
+<p>I am going to suggest something here: let's stop using HATEOAS and instead just use <code>links</code> or <code>hypermedia</code>. Breaking this whole thing
+down to the simpliest term will help developers down the road.</p>
+<p>I remember a year ago I went to the Nashville Software School to talk about what it's like to be a developer in the wild.
+I did a free form AMA and one question was, and I paraphrase, &quot;how do you remember all the acronyms that are associated to development?&quot;. I paused for a bit
+and gave some answer along the lines of &quot;you just kind of remember them as you go&quot;. As I look back, that answer is garbage. It is in a similar vein
+of playing guitar where you eventually remember the different chord positions. What is different though is that you wont always use the
+acronyms in daily use. HATEOAS is absolutely one of them. The worst part is that HATEOAS is not at all part of everyone's job like DI, CI, HTTP and others.</p>
+<p>At it's core, what exactly is HATEOAS? Well, to understand HATEOAS, you need to understand REST. REST, or Representational State Transfer is the idea of stateless
+data transfer either between a machine and human or machine to machine. By design, your REST API should remain stateless, and not remember what the previous request was.
+This poses a problem though: if our API doesn't remember the last request made, how can we tell a user what other endpoints they may be interested in? This is where hypermedia, or links, come into play.
+A great example of this is the Foxy.io API, borrowed from <a href="https://api.foxycart.com/docs">here</a>:</p>
+<pre><code class="language-json">{
+    "_links": {
+        ...
+        "fx:customers": {
+            "href": "https://api.foxycart.com/stores/41000/customers",
+            "title": "Customers for This Store"
+        },
+        "fx:transactions": {
+            "href": "https://api.foxycart.com/stores/41000/transactions",
+            "title": "Transactions for This Store"
+        },
+        "fx:subscriptions": {
+            "href": "https://api.foxycart.com/stores/41000/subscriptions",
+            "title": "Subscriptions for This Store"
+        },
+        ...
+    },
+    ...
+}</code></pre>
+<p>What we get here is part of the response payload, where the Foxy.io developers point out that while you are looking at the current data, here are some links of interest that you may want to utilize. Looking at what is available, the main response is for some sort of store endpoint, and now we can see that we may be interested in the store's customers, transactions or subscriptions as well. This is HATEOAS. If we
+request the <code>/store</code> endpoint again, the same links will be present, but the service we requested data from will not remember what we did. This is ideal. </p>
+<h3>The Case Against HATEOAS</h3>
+<p>Now, after reading all of that, you are probably thinking &quot;ya that makes sense&quot;, which is great. However now Im going to make it a point to stop using HATEOAS. Why? Because people dont know it off hand like
+CI, DI, HTTP, and other things. Instead, lets just call it <code>links</code> or <code>hypermedia</code>, and remove a barrier to learning something that we consider crucial to API Design. </p>
+<p>If we can make it easier for one person, we make APIs better for a lot of people.</p>    </div>
 
     <nav class="flex justify-between text-sm md:text-base">
         <div>
+                            <a href="https://matthewtrask.netlify.com/blog/new-year-new-me" title="Older Post: New Year, New Me">
+                    &LeftArrow; New Year, New Me
+                </a>
                     </div>
 
         <div>
-                            <a href="https://matthewtrask.netlify.com/blog/year-in-review" title="Newer Post: Year in Review">
-                    Year in Review &RightArrow;
-                </a>
                     </div>
     </nav>
         </main>
