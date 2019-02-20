@@ -6,7 +6,7 @@ date: 2019-02-14
 description: I want to make the case against HATEOAS. But not in the way you think I'm going to try and do it.
 categories: [rest, hypermedia, api design]
 cover_image: /assets/img/camera.jpg
-featured: true
+featured: false
 ---
 
 One thing I love about API Design is talking about HATEOAS. HATEOAS is magical, and generally considered the hardest part of API Design. I wonder why that could be though? Could it be that dynamically creating a link to a resource is that hard? No, I don't think so. Could it be that Hypermedia isn't taught? Perhaps. More importantly: HATEOAS is a daunting term. Breaking it down HATEOAS becomes "Hypermedia As The Engine Of Application State". Let's let that sink in just a bit. 

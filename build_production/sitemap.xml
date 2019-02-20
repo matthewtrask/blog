@@ -1,58 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
  <url>
-  <loc>https://matthewtrask.netlify.com/blog/categories/configuration</loc>
-  <lastmod>2019-02-15T13:44:18+00:00</lastmod>
+  <loc>https://matthewtrask.com/blog/categories/configuration</loc>
+  <lastmod>2019-02-20T02:24:34+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
-  <loc>https://matthewtrask.netlify.com/blog/categories/feature</loc>
-  <lastmod>2019-02-15T13:44:18+00:00</lastmod>
+  <loc>https://matthewtrask.com/blog/categories/feature</loc>
+  <lastmod>2019-02-20T02:24:34+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
-  <loc>https://matthewtrask.netlify.com/blog/conference-speaking</loc>
-  <lastmod>2019-02-15T13:44:18+00:00</lastmod>
+  <loc>https://matthewtrask.com/blog/conference-speaking</loc>
+  <lastmod>2019-02-20T02:24:34+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
-  <loc>https://matthewtrask.netlify.com/blog/new-year-new-me</loc>
-  <lastmod>2019-02-15T13:44:18+00:00</lastmod>
+  <loc>https://matthewtrask.com/blog/new-year-new-me</loc>
+  <lastmod>2019-02-20T02:24:34+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
-  <loc>https://matthewtrask.netlify.com/blog/the-case-against-hateoas</loc>
-  <lastmod>2019-02-15T13:44:18+00:00</lastmod>
+  <loc>https://matthewtrask.com/blog/phpversions</loc>
+  <lastmod>2019-02-20T02:24:34+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
-  <loc>https://matthewtrask.netlify.com/blog/year-in-review</loc>
-  <lastmod>2019-02-15T13:44:18+00:00</lastmod>
+  <loc>https://matthewtrask.com/blog/the-case-against-hateoas</loc>
+  <lastmod>2019-02-20T02:24:34+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
-  <loc>https://matthewtrask.netlify.com/about</loc>
-  <lastmod>2019-02-15T13:44:18+00:00</lastmod>
+  <loc>https://matthewtrask.com/blog/year-in-review</loc>
+  <lastmod>2019-02-20T02:24:34+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
-  <loc>https://matthewtrask.netlify.com/blog</loc>
-  <lastmod>2019-02-15T13:44:18+00:00</lastmod>
+  <loc>https://matthewtrask.com/about</loc>
+  <lastmod>2019-02-20T02:24:34+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
-  <loc>https://matthewtrask.netlify.com/blog/feed.atom</loc>
-  <lastmod>2019-02-15T13:44:18+00:00</lastmod>
+  <loc>https://matthewtrask.com/blog</loc>
+  <lastmod>2019-02-20T02:24:34+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
-  <loc>https://matthewtrask.netlify.com/contact</loc>
-  <lastmod>2019-02-15T13:44:18+00:00</lastmod>
+  <loc>https://matthewtrask.com/blog/2</loc>
+  <lastmod>2019-02-20T02:24:34+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
-  <loc>https://matthewtrask.netlify.com</loc>
-  <lastmod>2019-02-15T13:44:18+00:00</lastmod>
+  <loc>https://matthewtrask.com/blog/feed.atom</loc>
+  <lastmod>2019-02-20T02:24:34+00:00</lastmod>
+  <changefreq>daily</changefreq>
+ </url>
+ <url>
+  <loc>https://matthewtrask.com/contact</loc>
+  <lastmod>2019-02-20T02:24:34+00:00</lastmod>
+  <changefreq>daily</changefreq>
+ </url>
+ <url>
+  <loc>https://matthewtrask.com</loc>
+  <lastmod>2019-02-20T02:24:34+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
 </urlset>

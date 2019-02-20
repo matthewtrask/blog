@@ -1,16 +1,39 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Matthew Trask</title>
-    <link href="https://matthewtrask.netlify.com" />
-    <link type="application/atom+xml" rel="self" href="https://matthewtrask.netlify.com/blog/feed.atom" />
-    <updated>2019-02-15T13:44:18+00:00</updated>
-    <id>https://matthewtrask.netlify.com/blog/feed.atom</id>
+    <link href="https://matthewtrask.com" />
+    <link type="application/atom+xml" rel="self" href="https://matthewtrask.com/blog/feed.atom" />
+    <updated>2019-02-20T02:24:34+00:00</updated>
+    <id>https://matthewtrask.com/blog/feed.atom</id>
     <author>
         <name>Matt Trask</name>
     </author>
                 <entry>
-    <id>https://matthewtrask.netlify.com/blog/the-case-against-hateoas</id>
-    <link type="text/html" rel="alternate" href="https://matthewtrask.netlify.com/blog/the-case-against-hateoas" />
+    <id>https://matthewtrask.com/blog/phpversions</id>
+    <link type="text/html" rel="alternate" href="https://matthewtrask.com/blog/phpversions" />
+    <title>The New PhpVersions</title>
+    <published>2019-02-19T00:00:00+00:00</published>
+    <updated>2019-02-19T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">About 2 ish years or so ago, I got access to the PhpVersions.info project started by my good friend
+Phil Sturgeon. There was always an open issue for a rewrite of the project. The reason being that the project was started in Jekyll to take advantage of......</summary>
+    <content type="html"><![CDATA[
+        <p>About 2 ish years or so ago, I got access to the <a href="http://phpversions.info">PhpVersions.info</a> project started by my good friend
+<a href="https://twitter.com/philsturgeon">Phil Sturgeon</a>. There was always an open issue for a rewrite of the project. The reason being that the project was started in Jekyll to take advantage of Github's free hosting. That worked <em>great</em> for a few years, but it became obvious we should use PHP since the whole project was about getting people on to the latest and greatest PHP version. </p>
+<p>I started to examine options out there, and there are some great options out there. Ultimately, I chose Laravel with Vue.Js, mainly because at the time that was the stack I was working full time in and knew I could get going with it fairly quickly. Say what you will about Laravel, and there is plenty to be said, one thing Laravel does great is &quot;Rapid Application Development&quot;, in which you can get up and running in no time. It's pretty fantastic. Now, if you can at least plan for a little bit in the future,you can also future proof your application from growing stale with a framework. With that, I set out to write the project. </p>
+<p>It wasn't til I was sitting at WordCamp Kent when I seriously put in the time to do it. I was speaking at the conference and the talks weren't really relevant to me so I just hung out working on it. I got the bulk down and then it was time to come back to reality. The project was worked on in between organizing a conference, speaking and other things. Finally, <a href="https://twitter.com/colinodell">Colin O'Dell</a> stepped up to helo manage the v1 instance pull requests so I could dedicate my time to the new stuff. </p>
+<h3>Tech Stack</h3>
+<p>As I mentioned above, the back end portion of the project is currently powered by Laravel. Will that remain the same as time passes I do not know. I'd like to think I wrote it in a way where we can start to remove the underlaying Laravel code after a while and move to packages. On the other hand, Laravel clearly is not going anywhere. I am not terribly concerned one way or another. The database is just MySQL. Woo. One of these days I need to get back to Postgres. </p>
+<p>The front end is powered by Vue.js, a reactive front end framework started back in 2014. Its comparable to React, but has some really nice differences. I did a talk about Vue.js at Sunshine which was fun. The CSS framework is Tailwind CSS, which I have absolutely enjoyed using, the font is Questrial and the icon font is Zondicons.</p>
+<p>It all runs on a Digital Ocean droplet with PHP 7.3 installed, and I absolutely plan on moving to 7.4 as soon as it is avaiable. </p>
+<p>If you have questions, ideas or want to contribute check out the <a href="https://github.com/phpversions/phpversions.info">repository</a>.</p>
+<p>Cheers!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>https://matthewtrask.com/blog/the-case-against-hateoas</id>
+    <link type="text/html" rel="alternate" href="https://matthewtrask.com/blog/the-case-against-hateoas" />
     <title>The Case Against HATEOAS</title>
     <published>2019-02-14T00:00:00+00:00</published>
     <updated>2019-02-14T00:00:00+00:00</updated>
@@ -58,8 +81,8 @@ CI, DI, HTTP, and other things. Instead, lets just call it <code>links</code> or
 <p>If we can make it easier for one person, we make APIs better for a lot of people.</p>    ]]></content>
 </entry>
             <entry>
-    <id>https://matthewtrask.netlify.com/blog/new-year-new-me</id>
-    <link type="text/html" rel="alternate" href="https://matthewtrask.netlify.com/blog/new-year-new-me" />
+    <id>https://matthewtrask.com/blog/new-year-new-me</id>
+    <link type="text/html" rel="alternate" href="https://matthewtrask.com/blog/new-year-new-me" />
     <title>New Year, New Me</title>
     <published>2019-01-01T00:00:00+00:00</published>
     <updated>2019-01-01T00:00:00+00:00</updated>
@@ -114,8 +137,8 @@ and basically was just down on myself the whole time. I am a good developer (som
 <p>See ya!</p>    ]]></content>
 </entry>
             <entry>
-    <id>https://matthewtrask.netlify.com/blog/year-in-review</id>
-    <link type="text/html" rel="alternate" href="https://matthewtrask.netlify.com/blog/year-in-review" />
+    <id>https://matthewtrask.com/blog/year-in-review</id>
+    <link type="text/html" rel="alternate" href="https://matthewtrask.com/blog/year-in-review" />
     <title>Year in Review</title>
     <published>2018-12-31T00:00:00+00:00</published>
     <updated>2018-12-31T00:00:00+00:00</updated>
@@ -179,8 +202,8 @@ I get to make a bit of money on the side, and meet cool people so Im looking for
 <p>Cheers!</p>    ]]></content>
 </entry>
             <entry>
-    <id>https://matthewtrask.netlify.com/blog/conference-speaking</id>
-    <link type="text/html" rel="alternate" href="https://matthewtrask.netlify.com/blog/conference-speaking" />
+    <id>https://matthewtrask.com/blog/conference-speaking</id>
+    <link type="text/html" rel="alternate" href="https://matthewtrask.com/blog/conference-speaking" />
     <title>Conference Speaking</title>
     <published>2018-12-20T00:00:00+00:00</published>
     <updated>2018-12-20T00:00:00+00:00</updated>
