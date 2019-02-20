@@ -6,21 +6,21 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="description" content="The intersection of code and photography">
 
-        <meta property="og:title" content="Feature | Matthew Trask"/>
+        <meta property="og:title" content="The New PhpVersions | Matthew Trask"/>
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://matthewtrask.com/blog/categories/feature"/>
+        <meta property="og:url" content="https://matthewtrask.com/blog/phpversions"/>
         <meta property="og:description" content="The intersection of code and photography" />
 
-        <title>Matthew Trask | Feature</title>
+        <title>Matthew Trask | The New PhpVersions</title>
 
         <link rel="home" href="https://matthewtrask.com">
         <link rel="icon" href="/favicon.ico">
         <link href="/blog/feed.atom" type="application/atom+xml" rel="alternate" title="Matthew Trask Atom Feed">
 
-            <meta property="og:title" content="Feature" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://matthewtrask.com/blog/categories/feature"/>
-    <meta property="og:description" content="All posts that are about new features." />
+            <meta property="og:title" content="The New PhpVersions" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://matthewtrask.com/blog/phpversions"/>
+    <meta property="og:description" content="After nursing the project for over a year, I stopped being lazy and rewrote the damn thing." />
 
                     <!-- Insert analytics code here -->
         
@@ -108,12 +108,47 @@
 </nav>
 
         <main role="main" class="flex-auto w-full container max-w-xl mx-auto py-16 px-6">
-                <h1>Feature</h1>
+                        <img src="/assets/img/selfie.jpg" alt="The New PhpVersions cover image" class="mb-2">
+    
+    <h1 class="leading-none mb-2">The New PhpVersions</h1>
 
-    <div class="text-2xl border-b border-blue-lighter mb-6 pb-10">
-        <p>These posts are about new features provided to you in the Jigsaw blog starter template.</p>    </div>
+    <p class="text-grey-darker text-xl md:mt-0">Matt Trask  •  February 19, 2019</p>
+    <p class="text-grey-darker text-sm">Read Time: 2 mins</p>
 
-            </main>
+                        <a
+                href="/blog/categories/new year"
+                title="View posts in new year"
+                class="inline-block bg-grey-light hover:bg-teal-lighter leading-loose tracking-wide text-grey-darkest uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+            >new year</a>
+                    <a
+                href="/blog/categories/new me"
+                title="View posts in new me"
+                class="inline-block bg-grey-light hover:bg-teal-lighter leading-loose tracking-wide text-grey-darkest uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+            >new me</a>
+            
+    <div class="border-b border-blue-lighter mb-10 pb-4" v-pre>
+        <p>About 2 ish years or so ago, I got access to the <a href="http://phpversions.info">PhpVersions.info</a> project started by my good friend
+<a href="https://twitter.com/philsturgeon">Phil Sturgeon</a>. There was always an open issue for a rewrite of the project. The reason being that the project was started in Jekyll to take advantage of Github's free hosting. That worked <em>great</em> for a few years, but it became obvious we should use PHP since the whole project was about getting people on to the latest and greatest PHP version. </p>
+<p>I started to examine options out there, and there are some great options out there. Ultimately, I chose Laravel with Vue.Js, mainly because at the time that was the stack I was working full time in and knew I could get going with it fairly quickly. Say what you will about Laravel, and there is plenty to be said, one thing Laravel does great is &quot;Rapid Application Development&quot;, in which you can get up and running in no time. It's pretty fantastic. Now, if you can at least plan for a little bit in the future,you can also future proof your application from growing stale with a framework. With that, I set out to write the project. </p>
+<p>It wasn't til I was sitting at WordCamp Kent when I seriously put in the time to do it. I was speaking at the conference and the talks weren't really relevant to me so I just hung out working on it. I got the bulk down and then it was time to come back to reality. The project was worked on in between organizing a conference, speaking and other things. Finally, <a href="https://twitter.com/colinodell">Colin O'Dell</a> stepped up to helo manage the v1 instance pull requests so I could dedicate my time to the new stuff. </p>
+<h3>Tech Stack</h3>
+<p>As I mentioned above, the back end portion of the project is currently powered by Laravel. Will that remain the same as time passes I do not know. I'd like to think I wrote it in a way where we can start to remove the underlaying Laravel code after a while and move to packages. On the other hand, Laravel clearly is not going anywhere. I am not terribly concerned one way or another. The database is just MySQL. Woo. One of these days I need to get back to Postgres. </p>
+<p>The front end is powered by Vue.js, a reactive front end framework started back in 2014. Its comparable to React, but has some really nice differences. I did a talk about Vue.js at Sunshine which was fun. The CSS framework is Tailwind CSS, which I have absolutely enjoyed using, the font is Questrial and the icon font is Zondicons.</p>
+<p>It all runs on a Digital Ocean droplet with PHP 7.3 installed, and I absolutely plan on moving to 7.4 as soon as it is avaiable. </p>
+<p>If you have questions, ideas or want to contribute check out the <a href="https://github.com/phpversions/phpversions.info">repository</a>.</p>
+<p>Cheers!</p>    </div>
+
+    <nav class="flex justify-between text-sm md:text-base">
+        <div>
+                            <a href="https://matthewtrask.com/blog/the-case-against-hateoas" title="Older Post: The Case Against HATEOAS">
+                    &LeftArrow; The Case Against HATEOAS
+                </a>
+                    </div>
+
+        <div>
+                    </div>
+    </nav>
+        </main>
 
         <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center list-reset">
