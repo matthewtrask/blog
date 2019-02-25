@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Matthew Trask</title>
-    <link href="https://matthewtrask.com" />
-    <link type="application/atom+xml" rel="self" href="https://matthewtrask.com/blog/feed.atom" />
-    <updated>2019-02-20T02:24:34+00:00</updated>
-    <id>https://matthewtrask.com/blog/feed.atom</id>
+    <link href="https://matthewtrask.net" />
+    <link type="application/atom+xml" rel="self" href="https://matthewtrask.net/blog/feed.atom" />
+    <updated>2019-02-25T14:06:16+00:00</updated>
+    <id>https://matthewtrask.net/blog/feed.atom</id>
     <author>
         <name>Matt Trask</name>
     </author>
                 <entry>
-    <id>https://matthewtrask.com/blog/phpversions</id>
-    <link type="text/html" rel="alternate" href="https://matthewtrask.com/blog/phpversions" />
+    <id>https://matthewtrask.net/blog/phpversions</id>
+    <link type="text/html" rel="alternate" href="https://matthewtrask.net/blog/phpversions" />
     <title>The New PhpVersions</title>
     <published>2019-02-19T00:00:00+00:00</published>
     <updated>2019-02-19T00:00:00+00:00</updated>
@@ -32,8 +32,8 @@ Phil Sturgeon. There was always an open issue for a rewrite of the project. The 
 <p>Cheers!</p>    ]]></content>
 </entry>
             <entry>
-    <id>https://matthewtrask.com/blog/the-case-against-hateoas</id>
-    <link type="text/html" rel="alternate" href="https://matthewtrask.com/blog/the-case-against-hateoas" />
+    <id>https://matthewtrask.net/blog/the-case-against-hateoas</id>
+    <link type="text/html" rel="alternate" href="https://matthewtrask.net/blog/the-case-against-hateoas" />
     <title>The Case Against HATEOAS</title>
     <published>2019-02-14T00:00:00+00:00</published>
     <updated>2019-02-14T00:00:00+00:00</updated>
@@ -81,8 +81,8 @@ CI, DI, HTTP, and other things. Instead, lets just call it <code>links</code> or
 <p>If we can make it easier for one person, we make APIs better for a lot of people.</p>    ]]></content>
 </entry>
             <entry>
-    <id>https://matthewtrask.com/blog/new-year-new-me</id>
-    <link type="text/html" rel="alternate" href="https://matthewtrask.com/blog/new-year-new-me" />
+    <id>https://matthewtrask.net/blog/new-year-new-me</id>
+    <link type="text/html" rel="alternate" href="https://matthewtrask.net/blog/new-year-new-me" />
     <title>New Year, New Me</title>
     <published>2019-01-01T00:00:00+00:00</published>
     <updated>2019-01-01T00:00:00+00:00</updated>
@@ -137,8 +137,8 @@ and basically was just down on myself the whole time. I am a good developer (som
 <p>See ya!</p>    ]]></content>
 </entry>
             <entry>
-    <id>https://matthewtrask.com/blog/year-in-review</id>
-    <link type="text/html" rel="alternate" href="https://matthewtrask.com/blog/year-in-review" />
+    <id>https://matthewtrask.net/blog/year-in-review</id>
+    <link type="text/html" rel="alternate" href="https://matthewtrask.net/blog/year-in-review" />
     <title>Year in Review</title>
     <published>2018-12-31T00:00:00+00:00</published>
     <updated>2018-12-31T00:00:00+00:00</updated>
@@ -202,8 +202,8 @@ I get to make a bit of money on the side, and meet cool people so Im looking for
 <p>Cheers!</p>    ]]></content>
 </entry>
             <entry>
-    <id>https://matthewtrask.com/blog/conference-speaking</id>
-    <link type="text/html" rel="alternate" href="https://matthewtrask.com/blog/conference-speaking" />
+    <id>https://matthewtrask.net/blog/conference-speaking</id>
+    <link type="text/html" rel="alternate" href="https://matthewtrask.net/blog/conference-speaking" />
     <title>Conference Speaking</title>
     <published>2018-12-20T00:00:00+00:00</published>
     <updated>2018-12-20T00:00:00+00:00</updated>
