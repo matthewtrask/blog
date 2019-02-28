@@ -13,7 +13,7 @@
 
     <img src="/assets/img/matthew-trask.png"
          alt="About image"
-         class="flex rounded-full h-64 w-64 bg-contain mx-auto md:float-right my-6 md:ml-10">
+         class="shadow-md flex rounded-full h-64 w-64 bg-contain mx-auto md:float-right my-6 md:ml-10">
 
     <h3 class="text-teal-dark mb-6">Where to find me online</h3>
     <ul>
@@ -48,9 +48,8 @@
         Outside of those projects, I am a conference speaker and soon to be conference keynote. You can find me at the following conferences in 2019:
     </p>
     <ul class="mb-6">
-        <li class="text-grey-darker hover:text-teal-dark"><a class="text-grey-darker hover:text-teal-dark" href="http://2019.sunshinephp.com/register">Sunshine PHP</a> - Miami, FL (MIA) - Intro to Vue JS (Session)</li>
-        <li class="text-grey-darker hover:text-teal-dark"><a class="text-grey-darker hover:text-teal-dark" href="https://2019.midwestphp.org/register">Midwest PHP</a> - Minneapolis MN (MSP) - Mental Health and You (Keynote) | Building to spec - the OpenAPI Spec and PHP (Session)</li>
-        <li class="text-grey-darker hover:text-teal-dark"><a class="text-grey-darker hover:text-teal-dark" href="https://longhornphp.com">Longhorn PHP</a> - Austin TX (AUS) - Mental Health and You (Session)</li>
+        <li class="text-grey-darker hover:text-teal-dark"><a class="text-grey-darker hover:text-teal-dark" href="https://2019.midwestphp.org/register">Midwest PHP - Minneapolis MN (MSP) - Mental Health and You (Keynote) | Building to spec - the OpenAPI Spec and PHP (Session)</a></li>
+        <li class="text-grey-darker hover:text-teal-dark"><a class="text-grey-darker hover:text-teal-dark" href="https://longhornphp.com">Longhorn PHP - Austin TX (AUS) - Mental Health and You (Session)</a></li>
     </ul>
 
     <p class="mb-6">
