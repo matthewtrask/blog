@@ -8,6 +8,11 @@
         class="ml-6 text-grey-darker hover:text-teal-dark {{ $page->isActive('/about') ? 'active text-teal-dark' : '' }}">
         About
     </a>
+    
+    <a title="{{ $page->siteName }} About" href="/photography"
+        class="ml-6 text-grey-darker hover:text-teal-dark {{ $page->isActive('/about') ? 'active text-teal-dark' : '' }}">
+        Photography
+    </a>
 
     <a title="{{ $page->siteName }} Contact" href="/contact"
         class="ml-6 text-grey-darker hover:text-teal-dark {{ $page->isActive('/contact') ? 'active text-teal-dark' : '' }}">
