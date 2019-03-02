@@ -6,7 +6,7 @@ date: 2019-02-19
 description: After nursing the project for over a year, I stopped being lazy and rewrote the damn thing.
 categories: [new year, new me]
 cover_image: /assets/img/selfie.jpg
-featured: true
+featured: false
 ---
 
 About 2 ish years or so ago, I got access to the [PhpVersions.info](http://phpversions.info) project started by my good friend
