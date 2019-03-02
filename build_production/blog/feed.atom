@@ -3,7 +3,7 @@
     <title>Matthew Trask</title>
     <link href="https://matthewtrask.net" />
     <link type="application/atom+xml" rel="self" href="https://matthewtrask.net/blog/feed.atom" />
-    <updated>2019-02-28T13:31:41+00:00</updated>
+    <updated>2019-03-02T23:43:16+00:00</updated>
     <id>https://matthewtrask.net/blog/feed.atom</id>
     <author>
         <name>Matt Trask</name>
@@ -199,6 +199,35 @@ I get to make a bit of money on the side, and meet cool people so Im looking for
 <p>I used to be a big reader. I would crush books as a kid. The whole Boxcar Children series in a month, Goosebumps in as much time. Harry Potter was a big one too. Being an adult has left me with less time to read so I want to change that. I went out and bought two books already to get me started. </p>
 <p>The last two are just self explainitory. But I look forward to making them happen too. </p>
 <p>Hopefully you had a great 2018 and you are ready to take on 2019!</p>
+<p>Cheers!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>https://matthewtrask.net/blog/cool-stuff-in-the-community</id>
+    <link type="text/html" rel="alternate" href="https://matthewtrask.net/blog/cool-stuff-in-the-community" />
+    <title>Who is doing cool stuff in the community?</title>
+    <published>2018-12-20T00:00:00+00:00</published>
+    <updated>2018-12-20T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">Our community is full of amazing people creating and doing amazing things. I want to start a series where we highlight these people. 
+
+If you haven&#039;t seen it yet, Beachcasts is a new streaming series from Adam Culp. If you don&#039;t know, Adam doesn&#039;t stop.......</summary>
+    <content type="html"><![CDATA[
+        <p>Our community is full of amazing people creating and doing amazing things. I want to start a series where we highlight these people. </p>
+<h3>Beachcasts</h3>
+<p>If you haven't seen it yet, <a href="https://www.youtube.com/channel/UCsOSGYawy8MG9Mh8NKgRHZQ">Beachcasts</a> is a new streaming series from <a href="https://twitter.com/adamculp">Adam Culp</a>. If you don't know, Adam doesn't stop. He runs SoFloPHP, the user group for people in South Florida, and also runs one of my favorite conferences: <a href="https://sunshinephp.com">Sunshine PHP</a>. With Beachcasts, Adam takes us through creating something I love, REST APIs, using a few tools that aren't generally at the forefront of the conversation. </p>
+<p>Using Zend Expressive and Doctrine ORM, he walks through the steps needed to create a REST API. The best part is he doesn't shy away from a topic that most developers don't skip: <a href="https://apievangelist.com/2014/01/07/what-is-a-hypermedia-api/">Hypermedia</a>. The videos tend to be around 20 minutes, perfect for a lunch break, or something to watch before bed  and with Adam's style, its a very approachable way to watch another developer do work. </p>
+<h3>Astrocasts</h3>
+<p>Another streaming series which has been around for a while now is <a href="https://astrocasts.com">Astrocasts</a>. Friend of the blog <a href="https://twitter.com/beausimensen">Beau Simensen</a> started this series a few months ago and its been absolutely fun watching him work through building chat bots and apps with Symfony. As someone who uses Laravel in my spare time, watching other developers work with different frameworks gives me both insight into their flow and also an appreciation for others hard work. </p>
+<p>Beau broadcasts a couple of times a week, and loves to engage with people watching via comments. It's an absolutely fun time, I enjoy putting it on while I finish up work, or watch the late night edition (the joys of being an hour behind him). Check it out, because its free knowledge for you to consume!</p>
+<h3>Nikita Popov</h3>
+<p>Most of us think <a href="https://twitter.com/nikita_ppv">Nikita</a> is probably a robot hidden away in the depths of a warehouse. He is an absolute machine who cranks out RFC's for our language and deserves a lot of recognition for his hard work. To help him, <a href="https://jetbrains.com">JetBrains</a> hired him for the purpose of allowing him to work on the core of PHP full time. Absolutely brilliant stuff on their part and makes me happy to be a paying subscriber to their products. </p>
+<p>Of all the things he has done, one of the best things was picking up the work of previous developers and getting <a href="https://wiki.php.net/rfc/typed_properties_v2">typed properties</a> into the core language. With a vote of 70-1, it is one of the things bringing excitement to the release of 7.4 later this year. </p>
+<h3>Matthieu Napoli</h3>
+<p><a href="https://twitter.com/matthieunapoli">Matthieu Napoli</a> is working on something that is quite intriguing. With the idea of serverless gaining momentum, PHP is not getting as much support as other languages. Matthieu saw this as an opportunity and creted <a href="https://bref.sh">Bref</a>. I haven't completely jumped on the hypetrain of serverless yet, but following Matthieu's work has been really fun. He clearly has found a way to fill a void in our ecosystem and is doing great work. When I do come around to serverless, this will be my first stop. Bref is a fantastic resource from the looks of it, and I can't wait to see what happens with it!</p>
+<h3>Closing</h3>
+<p>I hope to continue this type of post every so often. Our community is filled with an amazing amount of talented developers, each deserving of recognition. If you know someone you think deserves it, shoot me a message on twitter and when I write up my next post I will absolutely include them! </p>
 <p>Cheers!</p>    ]]></content>
 </entry>
             <entry>

@@ -2,77 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
  <url>
   <loc>https://matthewtrask.net/blog/categories/configuration</loc>
-  <lastmod>2019-02-28T13:31:41+00:00</lastmod>
+  <lastmod>2019-03-02T23:43:16+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/categories/feature</loc>
-  <lastmod>2019-02-28T13:31:41+00:00</lastmod>
+  <lastmod>2019-03-02T23:43:16+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/conference-speaking</loc>
-  <lastmod>2019-02-28T13:31:41+00:00</lastmod>
+  <lastmod>2019-03-02T23:43:16+00:00</lastmod>
+  <changefreq>daily</changefreq>
+ </url>
+ <url>
+  <loc>https://matthewtrask.net/blog/cool-stuff-in-the-community</loc>
+  <lastmod>2019-03-02T23:43:16+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/new-year-new-me</loc>
-  <lastmod>2019-02-28T13:31:41+00:00</lastmod>
+  <lastmod>2019-03-02T23:43:16+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/phpversions</loc>
-  <lastmod>2019-02-28T13:31:41+00:00</lastmod>
+  <lastmod>2019-03-02T23:43:16+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/the-case-against-hateoas</loc>
-  <lastmod>2019-02-28T13:31:41+00:00</lastmod>
+  <lastmod>2019-03-02T23:43:16+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/year-in-review</loc>
-  <lastmod>2019-02-28T13:31:41+00:00</lastmod>
+  <lastmod>2019-03-02T23:43:16+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/about</loc>
-  <lastmod>2019-02-28T13:31:41+00:00</lastmod>
+  <lastmod>2019-03-02T23:43:16+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog</loc>
-  <lastmod>2019-02-28T13:31:41+00:00</lastmod>
+  <lastmod>2019-03-02T23:43:16+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/2</loc>
-  <lastmod>2019-02-28T13:31:41+00:00</lastmod>
+  <lastmod>2019-03-02T23:43:16+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/feed.atom</loc>
-  <lastmod>2019-02-28T13:31:41+00:00</lastmod>
+  <lastmod>2019-03-02T23:43:16+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/contact</loc>
-  <lastmod>2019-02-28T13:31:41+00:00</lastmod>
-  <changefreq>daily</changefreq>
- </url>
- <url>
-  <loc>https://matthewtrask.net/cycling.php</loc>
-  <lastmod>2019-02-28T13:31:41+00:00</lastmod>
+  <lastmod>2019-03-02T23:43:16+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net</loc>
-  <lastmod>2019-02-28T13:31:41+00:00</lastmod>
+  <lastmod>2019-03-02T23:43:16+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/photography</loc>
-  <lastmod>2019-02-28T13:31:41+00:00</lastmod>
+  <lastmod>2019-03-02T23:43:16+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
 </urlset>
