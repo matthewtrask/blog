@@ -2,7 +2,7 @@
 extends: _layouts.post
 section: content
 title: Who is doing cool stuff in the community?
-date: 2018-12-20
+date: 2018-03-02
 description: A look at who is doing cool stuff in our community that you may have missed.
 categories: [community, open source]
 cover_image: /assets/img/mountain-dog.jpg
