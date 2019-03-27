@@ -1,10 +1,10 @@
 ---
 extends: _layouts.post
 section: content
-title: Playing With FIRE
+title: Playing With Fire
 date: 2019-03-23
-description: A quick review of the book "Paying with FIRE" by Scott Rieckens.
-categories: [personal finance, books, fire]
+description: Over a weekend trip I finished "Playing With Fire" by Scott Rieckens.
+categories: [fire, personal finance, books]
 cover_image: /assets/img/holi.jpg
 featured: true
 ---
