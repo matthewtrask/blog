@@ -6,7 +6,7 @@ date: 2019-03-23
 description: Over a weekend trip I finished "Playing With Fire" by Scott Rieckens.
 categories: [fire, personal finance, books]
 cover_image: /assets/img/holi.jpg
-featured: true
+featured: false
 ---
 
 The image I chose for this post serves as a reminder for what awaits when I hit my goals. It's an image from Holi, a celebration of light in India that takes place in March. The celebration recognizes the emergence of spring and the end of winter. One of my goals is to make it over there for the celebration. I'm not a religious person but this celebration just fascinates me. If you want to see more, there is a Netflix series called "Tales by Light" that follows photographers around. One episode follows a photographer as he wades through the crowds of Holi and it's amazing. 
