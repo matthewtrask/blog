@@ -6,7 +6,7 @@ date: 2019-04-12
 description: Close to turning 32, I've looked for ways to enrich my life outside of a computer and code.
 categories: [growth, learning]
 cover_image: /assets/img/canon.jpg
-featured: true
+featured: false
 ---
 
 For the past 6 years or so I've been doing everything I can to learn software development. It started when I realized it was a career option and it hasn't stopped. Along the way I sold my Xbox, stopped playing guitar, and put all of my efforts into what I am doing today. On the one hand, it seems to have worked out well as I am now a senior software engineer. On the other though, I turned 30 a few years ago and realized my hobbies were all programming related. As I turn 32 in a few weeks (let's not talk about it), I started making some changes to make sure my life was as rich as possible. I don't mean rich in the financial sense (although that is part of it) but I mean in the sense of having amazing experiences. 
