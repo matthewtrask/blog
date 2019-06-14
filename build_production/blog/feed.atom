@@ -3,12 +3,41 @@
     <title>Matthew Trask</title>
     <link href="https://matthewtrask.net" />
     <link type="application/atom+xml" rel="self" href="https://matthewtrask.net/blog/feed.atom" />
-    <updated>2019-04-12T13:25:07+00:00</updated>
+    <updated>2019-06-14T01:22:00+00:00</updated>
     <id>https://matthewtrask.net/blog/feed.atom</id>
     <author>
         <name>Matt Trask</name>
     </author>
                 <entry>
+    <id>https://matthewtrask.net/blog/reimaging-life</id>
+    <link type="text/html" rel="alternate" href="https://matthewtrask.net/blog/reimaging-life" />
+    <title>Reinventing Life</title>
+    <published>2019-06-14T00:00:00+00:00</published>
+    <updated>2019-06-14T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">A few weeks, I took to twitter to put my phone number and email up and blocked the site from my browsers. I don&#039;t know how long it will last, but I know one thing: I&#039;m happier. Who knew at 32 I would be trying to transform all aspects of my life. 
+
+The......</summary>
+    <content type="html"><![CDATA[
+        <p>A few weeks, I took to twitter to put my phone number and email up and blocked the site from my browsers. I don't know how long it will last, but I know one thing: I'm happier. Who knew at 32 I would be trying to transform all aspects of my life. </p>
+<h3>Speaking</h3>
+<p>The coolest thing first: I'm speaking at Cascadia PHP this September up in Portland and I am so excited. I went there last year and had an absolute blast. The team up there did an amazing job organizing a conference. My talk is going to cover the community and moreso why its such an amazing resource so many of us have at our disposal. I will tease parts of it as I write it. If you are going to be up there, let me know. My current plan is to spend a few days up there longer than the conference working from our office there and exploring the city. </p>
+<p>I will also be speaking at a rad little JS conference here in Nashville called UndergroundJS. If you are in Nashville, I highly suggest getting a ticket. My talk here is a keynote and a topic I am passionate about: Mental Health. Any chance to help out the local communities is a huge win in my book. </p>
+<h3>Photography</h3>
+<p>I'm diving deeper into this hobby, and actively pursuring opportunities to both grow and make a little money with it. Turns out camera lenses are expensive. The one I am jonesing for is that beautiful Canon 70-200mm f/2.8 I had in Miami at Sunshine and Austin at Longhorn. It's such a great lens and I had fun with it. I can't thank Josh Holmes enough for trusting me to let me use it for days on end. It really inspired me to do some awesome things. </p>
+<p>Today I picked up a new lens, the Sigma 17-50mm that I saw in a YouTube video from a guy who does a lot of Disney Photography and I can tell I am going to love this lens. What I love most is how photography gets me out of my usual view of the world and makes me think about new angles and new perspectives. It's a way to create while yet not being on a computer. That bit has become a recurring theme. </p>
+<h3>Cycling</h3>
+<p>Most people know my love for the bike. Road bikes, city bikes, e-bikes, or any other bike is cool with me. Im closing in on 1000 miles ridden on the year. A goal that seemed elusive in the past is now something I will crush by the end of the month. Part of it is due to rearranging priorities, but it also comes down to being inspired by Cody and our boss. They are both running more and more each day. While I think running is the worst, cycling is my go to, but I can transform their running plans to cycling plans and go with it. </p>
+<p>What is even cooler is the ride I do at the end of June in Atlanta will have a special guest: my father. My father has never been overly athletic, nor interested in doing it. He will come support me but thats it. This year, he has made some incredible changes as well, and I look forward to doing the first 9 miles with him and watching him cross the line while I continue on.</p>
+<h3>Away from the computer</h3>
+<p>When I woke up on January 1st, 2019 I had a few goals written out. I've never been one for New Year's Resolutions or anything. Mostly because I never complete them. This year started out the same but then my boss sparked my passion for reading with a few great audiobook recs. It was a gateway drug that hasn't stopped. Combined with dead tree versions, I've ran through some books ranging from personal finance to overcoming anxiety and fear to digital minimalism. The last one has really got me working on not being at a computer at all hours of the day, and instead being outside and being actively involved in life. I can safely say my life has changed for the better. This week I have gotten up around 5:40 in the morning and ride with the sunrise. I used to toss and turn, fighting with my phone and the desire to sleep more. Now I just grab my bike. Its spurred some weight loss too, and Im about to be on the good side of 250. I can't remember the last time I was under 250. </p>
+<p>Pulling away from Twitter helped me strengthen friendships too. To the ones who have reached out, Im incredibly grateful for you. You are what makes my life so awesome. Kat Zien, bless her heart, loves to text me at 4am pictures of Bingo, the Monzo office dog. I dont know if she knows, but it always makes me wake up with a smile. Nic Rosental, a friend from Atlanta, and I have found a mutual interest in photography and we nerd out on lenses, pictures, and things like that. There are others, from Ben Edmunds, one of the coolest people out there, Mike Bifulco who loves bikes, and people not in the tech community. </p>
+<p>I can't urge people enough to get off twitter/facebook/whatever and get out to experience life in a different way. Im way more mellow than I was before. My anxiety has dropped and instead of wondering what will go wrong, I wonder what can make the current situation <em>better</em>. I'll still be around. I have projects to work on (PHPVersions, Fractal), talks to right and things to blog about. But Im probably gonna mix more non-tech topics in with this. It will be better once I figure out the tag system here. When I get enough content to move the photography or bikes to its own blog I will, but for now, you get all of me. </p>
+<p>Cheers!</p>    ]]></content>
+</entry>
+            <entry>
     <id>https://matthewtrask.net/blog/invest-in-yourself</id>
     <link type="text/html" rel="alternate" href="https://matthewtrask.net/blog/invest-in-yourself" />
     <title>Invest in yourself.</title>
@@ -249,6 +278,30 @@ I get to make a bit of money on the side, and meet cool people so Im looking for
 <p>The last two are just self explainitory. But I look forward to making them happen too. </p>
 <p>Hopefully you had a great 2018 and you are ready to take on 2019!</p>
 <p>Cheers!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>https://matthewtrask.net/blog/conference-tips-and-tricks</id>
+    <link type="text/html" rel="alternate" href="https://matthewtrask.net/blog/conference-tips-and-tricks" />
+    <title>Conference Tips and Tricks</title>
+    <published>2018-12-20T00:00:00+00:00</published>
+    <updated>2018-12-20T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">So you get to go to a conference? That&#039;s awesome! Conferences have had a huge impact on my career. From attending to speaking (and keynoting) to organizing, I&#039;ve done it all. Along the way, I&#039;ve changed how I attend conferences and hope to give you some......</summary>
+    <content type="html"><![CDATA[
+        <p>So you get to go to a conference? That's awesome! Conferences have had a huge impact on my career. From attending to speaking (and keynoting) to organizing, I've done it all. Along the way, I've changed how I attend conferences and hope to give you some tips to take with you. </p>
+<h3>Bring a water bottle.</h3>
+<p>This was a game changer at <a href="https://twitter.com/midwestphp">Midwest PHP</a>. I don't know what prompted me to bring it, but I can say that I won't forget it in the future. Conferences have <em>alot</em> going on. And it's easy to forget the simple things like drinking water and staying hydrated. If you don't have something to reminder you, a bottle per se; it's not hard to go a great while without some water. More importantly, conferences tend to offer sodas/coffee/teas/booze so if you want to go the distance, having a near constant source of water helps. I love my liter Nalgene bottle, but get one that works for you.</p>
+<h3>Don't be afraid to talk to speakers.</h3>
+<p>I did a podcast a few weeks ago and the host admitted to me that he saw me at <a href="https://twitter.com/sunshinephp">Sunshine PHP</a> but was too nervous to talk to me. First off, Im like 5'4 and not gonna hurt anyone so don't be too nervous. Second, Im quite cuddly. Im a big softie, until a car tries to run me off the road. One thing speakers tend to do is bunch up with other speakers. It's a natural thing. Most of us are friends and this is a way for us to hang out, catch up, and chill. Don't think for a second it's some sort of secret club. We are just people too! Just say hey, if Im busy working on something I will tell you, but generally nothing is too pressing for me to do that. </p>
+<p>A pro tip for me: bring whiskey or a bike and we are instant besties.</p>
+<h3>Take a day and explore the city you are in.</h3>
+<p>One of the reasons I love speaking is it's a fun way to travel. I've gotten to see some awesome cities: Minneapolis, Portland, DC, Miami, and soon Austin. There is so much to see and do in these cities that I try my hardest now to either plan a day trip or take an extra day to see things. My current thing is renting a bike and riding around the city. I get to get some new Strava PRs hopefully, see the city from a fun way, and interact with the residents! If you can't stay an extra day, dip out on one of the after parties and go exploring! The conference will be there when you get back, and you get to have a cool experience. </p>
+<p>If you are in DC for a conference, try to take 2 days and just explore some of the 19 Smithsonian Museums. They are all free, and cover a wide range of topics from American History to Aviation History to African American History and so much more. I could easily spend 3 days in the Air and Space Museum alone.</p>
+<h3>Come to the conference with an uncon talk.</h3>
+<p>A lot of conferences have an uncon, a space where anyone can speak. People use it as a way to demo a talk and see what the reaction is, or use it to practice their speaking skills. It's a great way to get into speaking without the pressure of really speaking. A lot of conferences will add it to the ratings site, which gets you two things: a track record for other conferences to see and also some feedback (hopefully).</p>
+<h3></h3>    ]]></content>
 </entry>
             <entry>
     <id>https://matthewtrask.net/blog/conference-speaking</id>
