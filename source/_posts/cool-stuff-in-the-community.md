@@ -6,7 +6,7 @@ date: 2018-03-02
 description: A look at who is doing cool stuff in our community that you may have missed.
 categories: [community, open source]
 cover_image: /assets/img/mountain-dog.jpg
-featured: true
+featured: false
 ---
 
 Our community is full of amazing people creating and doing amazing things. I want to start a series where we highlight these people. 
