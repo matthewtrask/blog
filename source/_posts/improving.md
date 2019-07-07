@@ -6,7 +6,7 @@ date: 2019-06-30
 description: If you want to improve, you have to find groups willing to let you fail
 categories: [self, improving]
 cover_image: /assets/img/cycling.jpg
-featured: true
+featured: false
 ---
 
 A funny thing happened today. I was riding in an organized cycling ride called the Georgia 400 Century, named from a popular highway that takes people from the suburbs of Atlanta to downtown. The catch for this ride is that 
