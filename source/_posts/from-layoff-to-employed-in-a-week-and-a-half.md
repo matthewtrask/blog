@@ -22,7 +22,9 @@ Right after the announcement, but prior to leaving the office for the last time,
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Well, all good things come to an end. <br><br>Im now looking for my next challenge. Got something fun? Send it my way. Nashville or remote. Could relocate for the right challenge! <br><br>RT Please? :)</p>&mdash; matt trask (@matthewtrask) <a href="https://twitter.com/matthewtrask/status/1156221503576444928?ref_src=twsrc%5Etfw">July 30, 2019</a></blockquote>
 
 
-The tweet above went gangbusters! I never expected it. However, I can tell you this: ever since I got involved with programming, and the PHP community, I have put my heart into this community to try and help it get better and more awesome for people coming up behind me. From organizing user groups to conferences, speaking, mentoring, podcasting and OSS, I spend *hours* a week working on this thing. I try my hardest to support everyone in our community when they need help. I don't have the biggest network, but every retweet helps someone get to where they need to be. And I think part of my success is that while I can be an asshole, I can be grumpy, I can be overly sarcastic, I also have empathy, I have understanding and I will use my voice to help others. Because of that, I have cultivated a community that is willing to help me when I need it. First tip: **grow your community, and keep tending to it. It will die without work. And don't be a raging dickbag to others.**
+The tweet above went gangbusters! I never expected it. However, I can tell you this: ever since I got involved with programming, and the PHP community, I have put my heart into this community to try and help it get better and more awesome for people coming up behind me. From organizing user groups to conferences, speaking, mentoring, podcasting and OSS, I spend *hours* a week working on this thing. I try my hardest to support everyone in our community when they need help. I don't have the biggest network, but every retweet helps someone get to where they need to be. And I think part of my success is that while I can be an asshole, I can be grumpy, I can be overly sarcastic, I also have empathy, I have understanding and I will use my voice to help others. Because of that, I have cultivated a community that is willing to help me when I need it. 
+
+First tip: **grow your community, and keep tending to it. It will die without work. And don't be a raging dickbag to others.**
 
 
 ### Step Two - Be open
@@ -41,7 +43,7 @@ The byproduct of that tweet above is the amount of people reaching out offering 
 
 What happened though, is that I came into the next week of funemployement with options. Really, it's a double edged sword. Move at your own speed and pace. I have seen developers, some really good developers, linger in unemployement for so long, that it kind of scared me and made me want to get things moving. Its a little bit of a confidence booster to see so many places work to line up interviews with you. However I burned myself out to the point where I ended up telling one company that. I was already getting offers when I had a request for a video chat so they could get an offer. I was so tired and out of it that I basically declined and told them Im so burned out that I couldn't talk. Since I had offers, I was ok doing it, but Im sure had I paced myself a bit more I could have heard more and had even more to consider. 
 
-Tip three: **if time permits, take a few days to recenter yourself.**.
+Tip three: **if time permits, take a few days to recenter yourself.**
 
 ### Step Four - It's not all about the money
 
