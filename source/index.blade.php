@@ -22,7 +22,7 @@
         </div>
 
         @if (! $loop->last)
-            <hr class="border-b my-6">
+            <hr class="my-6">
         @endif
     @endforeach
 
@@ -34,13 +34,13 @@
                 </div>
 
                 @if (! $loop->last)
-                    <hr class="block md:hidden w-full border-b mt-2 mb-6">
+                    <hr class="block md:hidden w-full mt-2 mb-6">
                 @endif
             @endforeach
         </div>
 
         @if (! $loop->last)
-            <hr class="w-full border-b mt-2 mb-6">
+            <hr class="w-full mt-2 mb-6">
         @endif
     @endforeach
 @stop
