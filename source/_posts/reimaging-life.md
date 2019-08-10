@@ -6,7 +6,7 @@ date: 2019-06-14
 description: My twitter break, coupled with the books Im reading, causes me to perform a retro on life.
 categories: [life, progress]
 cover_image: /assets/img/yosemite.jpg
-featured: true
+featured: false
 ---
 
 A few weeks, I took to twitter to put my phone number and email up and blocked the site from my browsers. I don't know how long it will last, but I know one thing: I'm happier. Who knew at 32 I would be trying to transform all aspects of my life. 
