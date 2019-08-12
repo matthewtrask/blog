@@ -6,7 +6,7 @@ date: 2019-07-09
 description: Every so often, the urge to take a break is too strong.
 categories: [self, improving]
 cover_image: /assets/img/scenic-ride.jpg
-featured: true
+featured: false
 ---
 
 I was on the phone with my good friend [Korvin Szanto](https://twitter.com/korvinszanto) yesterday when he asked how I keep motivated on days when I don't feel like riding or going to the gym. It sparked an interest to write a few thoughts down for anyone else who wonders how to keep going. 
