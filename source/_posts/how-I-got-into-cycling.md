@@ -6,7 +6,7 @@ date: 2019-08-12
 description: Per Twitter, I got a request to talk about what got me into cycling.
 categories: [cycling, life]
 cover_image: /assets/img/garmin.jpg
-featured: true
+featured: false
 ---
 
 The picture above is my view when Im riding. Yes I have teal bar tape, I love it. The Garmin has been a godsend. I get my heart rate, heart rate zone, speed, average speed, cadence and distance all right there. 
