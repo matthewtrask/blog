@@ -6,7 +6,7 @@ date: 2019-09-26
 description: Like all good failed start ups and sprints, lets post-mortem my weight loss challenge attempt
 categories: [community, personal growth]
 cover_image: /assets/img/peloton.jpg
-featured: true
+featured: false
 ---
 
 Over the summer I was handed the challenge of a life time in exchange for a lens I wanted. The goal was two fold: get down to 215 pounds and also do a metric century (62.4 miles) in under 3 and a half hours. I failed both, one by a small margin and the other by well 25 pounds as of this morning.
