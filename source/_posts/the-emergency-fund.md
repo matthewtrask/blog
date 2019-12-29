@@ -6,7 +6,7 @@ date: 2019-08-13
 description: As the economy gets a little more wild, its important to be stashing money away.
 categories: [life, personal finance]
 cover_image: /assets/img/graph.jpg
-featured: true
+featured: false
 ---
 
 A tweet was surfaced today where someone mentioned being sick and a freelancer. As someone who hates working on contracts for this reason, it was still a fresh reminder of what I am currently going through... funemployment. The topic of needing an emergency fund came up, but was immediately met with responses saying they weren't sure if it was possible to create one. I'm here to say it abso-fucking-lutely is, and I want to offer some tips. 
