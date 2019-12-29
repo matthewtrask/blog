@@ -4,9 +4,9 @@ section: content
 title: Books I read in 2019
 date: 2019-12-20
 description: A recap of the books I read and listened to in 2019.
-categories: [reading$, personal growth]
+categories: [reading, personal growth]
 cover_image: /assets/img/books.jpg
-featured: true
+featured: false
 ---
 
 As a kid I was a huge reader. I had so many books that I had multiple book cases in my room. One of them was built into the headboard of my bed, so I didn't have to get out of bed to get a book. I read things like "The Boxcar Children" to "Goosebumps" to anything I could find on the RMS Titanic. As I grew, my fascination with history grew and I read everything I could around the American Revolution up to World War 2. Sadly though, when high school made me read through certain books my interest in reading waned. This was around the time we got the internet, so I read web pages instead of books.
@@ -174,7 +174,7 @@ William was out of a job, and losing his marriage so he decided to take a trip a
 
 I think everyone knows this book.
 
-<hr>
+<hr>$$
 
 There may be more but this seems to be a very good list based on what I read and listened too. As I mentioned above, each is a link to Amazon for you to buy any of these books. I highly recommend them all. 
 

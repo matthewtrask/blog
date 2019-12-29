@@ -2,147 +2,152 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
  <url>
   <loc>https://matthewtrask.net/blog/categories/configuration</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/categories/feature</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
+  <changefreq>daily</changefreq>
+ </url>
+ <url>
+  <loc>https://matthewtrask.net/blog/2019</loc>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/books-in-2019</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/conference-speaking</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/conference-tips-and-tricks</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/cool-stuff-in-the-community</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/from-layoff-to-employed-in-a-week-and-a-half</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/how-I-got-into-cycling</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/improving</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/invest-in-yourself</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/new-year-new-me</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/phpversions</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/playing-with-fire</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/reimaging-life</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/staying-motivated</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/the-case-against-hateoas</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/the-emergency-fund</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/weight-loss-post-mortem</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/year-in-review</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/about</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/2</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/3</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/4</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/5</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/blog/feed.atom</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/contact</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://matthewtrask.net/photography</loc>
-  <lastmod>2019-12-21T14:52:08+00:00</lastmod>
+  <lastmod>2019-12-29T17:37:03+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
 </urlset>
