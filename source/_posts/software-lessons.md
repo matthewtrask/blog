@@ -6,7 +6,7 @@ date: 2019-12-29
 description: A look back at the lessons I learned in 2019
 categories: [software, skills]
 cover_image: /assets/img/laptop.jpg
-featured: true
+featured: false
 ---
 
 I looked back on things I did in the last year in my life. Things like amount of books I read, miles I cycled, how many trips to Ikea in Atlanta I took etc. I figured that it would also be good to look back on lessons I learned about software design. 
