@@ -11,6 +11,8 @@ featured: true
 
 It's been a weird week. The pictures won't ever do justice to what actually happened. It's been a week since it happened and I realized today I really havent had a chance to process it completely, or come to terms with just how lucky I am.
 
+*Before anything else, let me express my deepest gratitude to everyone who reached out in the morning to see check in. It meant a lot and helped keep me going that day.*
+
 ### The Night Of
 
 I don't know what woke me up. But around 12:30 I remember hearing sirens. Going to bed I remember reading on [NashSevereWx](https://twitter.com/nashseverewx) that it would be a rough storm but only a 2% change of a tornado. One big problem in Nashville is that we use a county based siren system ([more here about that](https://nashvillesevereweather.com/siren-rebuttal/)), so the sirens will go off even if there is no impending doom right outside of your window. It has numbed people here, and quite shocking that the death toll in the city was so low because of it. 
@@ -19,7 +21,7 @@ When I woke up, the sirens were going off. The rain hitting the windows of my ap
 
 I don't remember the exact time the storm rolled by. Truth be told, I saw nothing. I just knew a gnarly storm rolled by me and then put Kieran's apartment in its path. Kieran lost power and the apartment gate at her complex was busted. Losing power made it hard for her to get updates, but I was able to screenshot NashSevereWx updates and get them to her. The people who run that twitter account truly saved lives that night. 
 
-As I scrolled through Twitter, I started seeing hashtags and pictures pop up. Local places that were favorites among a lot of people were destroyed. Words can't do justice. The tweet below wont embed images, but click on it and you can see before and afters.
+As I scrolled through Twitter, I started seeing hashtags and pictures pop up. Local places that were favorites among a lot of people were destroyed. Words can't do justice. 
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Before and after: Burger Up, Basement East, Family Dollar, and Molly Green 💔 <a href="https://twitter.com/hashtag/nashvilletornado?src=hash&amp;ref_src=twsrc%5Etfw">#nashvilletornado</a> <a href="https://twitter.com/hashtag/NashvilleTN?src=hash&amp;ref_src=twsrc%5Etfw">#NashvilleTN</a> <a href="https://t.co/IysVbpMDoM">pic.twitter.com/IysVbpMDoM</a></p>&mdash; LadyLuluLouise (@LuluLady) <a href="https://twitter.com/LuluLady/status/1234757534319357952?ref_src=twsrc%5Etfw">March 3, 2020</a></blockquote> 
 
