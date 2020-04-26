@@ -6,7 +6,7 @@ date: 2020-04-22
 description: Multiple blogs and outlets are giving advice on how to handle this situation. Fuck that. This isn't normal.
 categories: [life]
 cover_image: /assets/img/computer.jpg
-featured: true
+featured: false
 ---
 
 Ok look. I have worked remotely since last August (2019). In that time, I saw the world go from what was considered normal to normal being oblierated and completely set back. Every blog under the sun is taking this chance to come up with their list of hot tips on how to be successful during this time. My take: fuck that. This isn't a normal time. Nothing about what we are doing is normal right now. So why should we pretend that it is? Is this a new normal? Maybe. We can't call it a new normal because what tomorrow brings is uncertainty, when in the past we could reasonably predict what tomorrow would bring.
@@ -36,6 +36,8 @@ First and foremost: be honest with yourself and your team. We are all having goo
 If you can, carve out an area in your home that is your workspace. Treat it like your office you commute to. If you need to trick yourself, take a quick walk outside and put on the music/book/podcast you commute to. Put on real clothes too. Sure its nice to wear gym shorts all day, but putting on clothes can help your brain recognize its time to work. 
 
 If you are in a senior role, reach out to those on the team who you think might be struggling. Just say hey, and have a friendly conversation. Don't bring up the world that is currently on fire, but just talk and be a friend. A lot of people went from extroverted and out with friends to being a shut in. A friendly conversation with no overarching tones of "holy shit this sucks" can really help someone. 
+
+One thing that has helped me during this is that I keep a note in Bear (a note taking app for Mac) where I put any and all compliments I get at work. When I feel myself getting down, I look at that and it reminds me that I am worth more than what my mind thinks I am and there is positive things going on.
 
 ### Final Thoughts
 
