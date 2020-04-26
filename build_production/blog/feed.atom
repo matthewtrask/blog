@@ -3,12 +3,66 @@
     <title>Matthew Trask</title>
     <link href="https://matthewtrask.net" />
     <link type="application/atom+xml" rel="self" href="https://matthewtrask.net/blog/feed.atom" />
-    <updated>2020-04-23T02:17:25+00:00</updated>
+    <updated>2020-04-26T15:08:52+00:00</updated>
     <id>https://matthewtrask.net/blog/feed.atom</id>
     <author>
         <name>Matt Trask</name>
     </author>
                 <entry>
+    <id>https://matthewtrask.net/blog/http-post-returns</id>
+    <link type="text/html" rel="alternate" href="https://matthewtrask.net/blog/http-post-returns" />
+    <title>Thoughts on what to return when you make a POST request?</title>
+    <published>2020-04-26T00:00:00+00:00</published>
+    <updated>2020-04-26T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">As one of the HTTP Verbs, a lot as been written around the POST action and what should be done. One thing that doesn&#039;t seem clear though is what should you return. The RFC from Dr. Fielding covers what they thought was ideal back in 2014 which is this:......</summary>
+    <content type="html"><![CDATA[
+        <p>As one of the HTTP Verbs, a lot as been written around the POST action and what should be done. One thing that doesn't seem clear though is what should you return. The <a href="https://tools.ietf.org/html/rfc7231#page-25">RFC</a> from Dr. Fielding covers what they thought was ideal back in 2014 which is this:</p>
+<blockquote>
+<p>If one or more resources has been created on the origin server as a
+result of successfully processing a POST request, the origin server
+SHOULD send a 201 (Created) response containing a Location header
+field that provides an identifier for the primary resource created
+(Section 7.1.2) and a representation that describes the status of the
+request while referring to the new resource(s)</p>
+</blockquote>
+<p>How would you do this in Laravel? Something like this: </p>
+<pre><code>
+&lt;?php 
+
+declare(strict_types=1);
+
+use App\User;
+use App\Services\UserService;
+use Controller;
+use Illuminate\Http\Response;
+
+class UsersController extends Controller
+{
+    private Response $response;
+
+    private UserServoce $serivce;
+
+    public function __construct(Response $response)
+    {
+        $this-&gt;response = $response;
+    }
+
+    // ...
+
+    public function create(CreateUserRequest $request) : Response
+    {
+        // pass data to a service to create a user
+        $user = $this-&gt;service-&gt;createUser($user);
+
+         -&gt;withHeaders(['Location', sprintf('/api/users/%', $user-&gt;id)])
+            -&gt;setStatusCode(201);
+    }
+}</code></pre>    ]]></content>
+</entry>
+            <entry>
     <id>https://matthewtrask.net/blog/not-normal</id>
     <link type="text/html" rel="alternate" href="https://matthewtrask.net/blog/not-normal" />
     <title>This isn&#039;t normal remote working life.</title>
@@ -36,6 +90,7 @@
 <p>First and foremost: be honest with yourself and your team. We are all having good days and bad days. If you are having a bad day, say something. We will understand and we want to help, because then when its someone else's turn for a bad day you can be there to help them. When this is over, we will remember the people who helped when it was roughest for us. </p>
 <p>If you can, carve out an area in your home that is your workspace. Treat it like your office you commute to. If you need to trick yourself, take a quick walk outside and put on the music/book/podcast you commute to. Put on real clothes too. Sure its nice to wear gym shorts all day, but putting on clothes can help your brain recognize its time to work. </p>
 <p>If you are in a senior role, reach out to those on the team who you think might be struggling. Just say hey, and have a friendly conversation. Don't bring up the world that is currently on fire, but just talk and be a friend. A lot of people went from extroverted and out with friends to being a shut in. A friendly conversation with no overarching tones of &quot;holy shit this sucks&quot; can really help someone. </p>
+<p>One thing that has helped me during this is that I keep a note in Bear (a note taking app for Mac) where I put any and all compliments I get at work. When I feel myself getting down, I look at that and it reminds me that I am worth more than what my mind thinks I am and there is positive things going on.</p>
 <h3>Final Thoughts</h3>
 <p>I know the cliche is &quot;we are in this together&quot; and obvoiusly we are. However it's fine to admit this sucks. It's fine to admit you feel an immeasurable amount of pressure kicking you in the face repeatedly. It ok to admit &quot;no, I'm not doing ok&quot; when someone asks how things are. The more vulnerable we allow ourselves to be, the more true we are to those around us. The more true we are, the more resilient we become to adversity and difficulty. </p>    ]]></content>
 </entry>
