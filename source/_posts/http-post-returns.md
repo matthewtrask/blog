@@ -6,7 +6,7 @@ date: 2020-04-26
 description: Tons of stack overflow posts give varying advice so this is what I do when I make a POST Request in an application.
 categories: [coding, http]
 cover_image: /assets/img/indian-elephants.jpg
-featured: true
+featured: false
 ---
 
 As one of the HTTP Verbs, a lot as been written around the POST action and what should be done. One thing that doesn't seem clear though is what should you return. The [RFC](https://tools.ietf.org/html/rfc7231#page-25) from Dr. Fielding covers what they thought was ideal back in 2014 which is this:

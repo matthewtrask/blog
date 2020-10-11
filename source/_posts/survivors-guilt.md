@@ -6,7 +6,7 @@ date: 2020-03-10
 description: A tornado ripped through Nashville, coming within 1.5 miles of my apartment. It's been kind of weird ever since.
 categories: [life]
 cover_image: /assets/img/nashville.jpg
-featured: true
+featured: false
 ---
 
 It's been a weird week. The pictures won't ever do justice to what actually happened. It's been a week since it happened and I realized today I really havent had a chance to process it completely, or come to terms with just how lucky I am.

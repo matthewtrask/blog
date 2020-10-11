@@ -21,9 +21,8 @@
             </a>
         </div>
 
-        @if (! $loop->last)
-            <hr class="my-6">
-        @endif
+        <!-- @if (! $loop->last)
+        @endif -->
     @endforeach
 
     @foreach ($posts->where('featured', false)->take(6)->chunk(2) as $row)
@@ -39,8 +38,8 @@
             @endforeach
         </div>
 
-        @if (! $loop->last)
+        <!-- @if (! $loop->last)
             <hr class="w-full mt-2 mb-6">
-        @endif
+        @endif -->
     @endforeach
 @stop
