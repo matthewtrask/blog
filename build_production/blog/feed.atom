@@ -3,7 +3,7 @@
     <title>Matthew Trask</title>
     <link href="https://matthewtrask.net" />
     <link type="application/atom+xml" rel="self" href="https://matthewtrask.net/blog/feed.atom" />
-    <updated>2021-02-12T03:52:48+00:00</updated>
+    <updated>2021-02-12T03:56:36+00:00</updated>
     <id>https://matthewtrask.net/blog/feed.atom</id>
     <author>
         <name>Matt Trask</name>
@@ -29,7 +29,24 @@
 <p>To run the command:</p>
 <pre><code class="language-php">php artisan openapi:create</code></pre>
 <p>and the command will walk you through every step of the way. We tried to be as thoughtful as possible. We even give you the option to install <a href="https://github.com/stoplightio/spectral">Spectral</a> which is a JS library that allows you to lint your OpenAPI document.</p>
-<p>To check out the package, the repo is <a href="https://github.com/primitivesocial/openapi-initializer">here</a>. Please open an issue if you have an idea you'd like us to consider, or if you run into an issue with the command. </p>
+<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+To check out the package, the repo is <a href="https://github.com/primitivesocial/openapi-initializer">here</a>. Please open an issue if you have an idea you'd like us to consider, or if you run into an issue with the command. </h1>
+<p>To check out the package, the repo is <a href="https://github/primitivesocial/openapi-initializer">here</a>. Please open an issue if you have an idea you'd like us to consider, or if you run into an issue with the command. </p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>60a5414cd76add2e33b68f385be38c22b230b37e</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <p>Enjoy!</p>    ]]></content>
 </entry>
             <entry>

@@ -33,6 +33,10 @@ php artisan openapi:create
 
 and the command will walk you through every step of the way. We tried to be as thoughtful as possible. We even give you the option to install [Spectral](https://github.com/stoplightio/spectral) which is a JS library that allows you to lint your OpenAPI document.
 
+<<<<<<< HEAD
 To check out the package, the repo is [here](https://github.com/primitivesocial/openapi-initializer). Please open an issue if you have an idea you'd like us to consider, or if you run into an issue with the command. 
+=======
+To check out the package, the repo is [here](https://github/primitivesocial/openapi-initializer). Please open an issue if you have an idea you'd like us to consider, or if you run into an issue with the command. 
+>>>>>>> 60a5414cd76add2e33b68f385be38c22b230b37e
 
 Enjoy!
