@@ -3,17 +3,34 @@
     <title>Matthew Trask</title>
     <link href="https://matthewtrask.net" />
     <link type="application/atom+xml" rel="self" href="https://matthewtrask.net/blog/feed.atom" />
-    <updated>2021-02-12T17:36:49+00:00</updated>
+    <updated>2021-02-12T17:38:22+00:00</updated>
     <id>https://matthewtrask.net/blog/feed.atom</id>
     <author>
         <name>Matt Trask</name>
     </author>
                 <entry>
+    <id>https://matthewtrask.net/blog/signed-urls-trusted-proxies</id>
+    <link type="text/html" rel="alternate" href="https://matthewtrask.net/blog/signed-urls-trusted-proxies" />
+    <title>Using Trusted Proxies with Signed URLs in Laravel</title>
+    <published>2021-02-13T00:00:00+00:00</published>
+    <updated>2021-02-13T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">I ran across this issue today and it&#039;s definitely one of those things that I, and maybe others, will run into again. 
+As of Laravel 5.5, there is a middleware in the HTTP stack called TrustProxies.php that allows you to set a list of trusted proxies. The......</summary>
+    <content type="html"><![CDATA[
+        <p>I ran across this issue today and it's definitely one of those things that I, and maybe others, will run into again. </p>
+<p>As of Laravel 5.5, there is a middleware in the HTTP stack called TrustProxies.php that allows you to set a list of trusted proxies. The magic of this is that the framework will automagically map the allowed proxies in your list (can either be an array or a string set on the property) to the <code>X-Forwarded-*</code> header in the request. Pretty neat stuff!</p>
+<p>One thing I just ran into is the app I am currently working on uses the Laravel URL Generator to build a signed url for users registered by an admin to be able to create a password to sign in. I ran into an issue where every attempt at opening the signed url resulted in Laravel throwing a 403. I wasn't totally sure why until I realized the request was being made through <a href="https://ngrok.com">Ngrok</a> and because the url isn't something Laravel expects, the framework returns a 403. </p>
+<p>The way around this is to use the TrustProxies class and set the <code>protected $proxies = '*';</code> so that way as you are testing your signed routes with Ngrok, the framework will not 403 and let you continue on with your work.</p>    ]]></content>
+</entry>
+            <entry>
     <id>https://matthewtrask.net/blog/openapi-initializer</id>
     <link type="text/html" rel="alternate" href="https://matthewtrask.net/blog/openapi-initializer" />
     <title>OpenAPI Initializer</title>
-    <published>2021-02-13T00:00:00+00:00</published>
-    <updated>2021-02-13T00:00:00+00:00</updated>
+    <published>2021-02-12T00:00:00+00:00</published>
+    <updated>2021-02-12T00:00:00+00:00</updated>
     <author>
         <name>Matt Trask</name>
     </author>
@@ -34,23 +51,6 @@
 <p>We offer minimal defaults for OpenAPI version (which will be bumped once 3.1.0 is available) and what version your project is starting at. The last thing you may notice is that I recommend Stoplight's tooling. While I am not sponsored by them, I can whole heartedly recommend them. </p>
 <p>To check out the package, the repo is <a href="https://github.com/primitivesocial/openapi-initializer">here</a>. Please open an issue if you have an idea you'd like us to consider, or if you run into an issue with the command. </p>
 <p>Enjoy!</p>    ]]></content>
-</entry>
-            <entry>
-    <id>https://matthewtrask.net/blog/signed-urls-trusted-proxies</id>
-    <link type="text/html" rel="alternate" href="https://matthewtrask.net/blog/signed-urls-trusted-proxies" />
-    <title>Using Trusted Proxies with Signed URLs in Laravel</title>
-    <published>2021-02-13T00:00:00+00:00</published>
-    <updated>2021-02-13T00:00:00+00:00</updated>
-    <author>
-        <name>Matt Trask</name>
-    </author>
-    <summary type="html">I ran across this issue today and it&#039;s definitely one of those things that I, and maybe others, will run into again. 
-As of Laravel 5.5, there is a middleware in the HTTP stack called TrustProxies.php that allows you to set a list of trusted proxies. The......</summary>
-    <content type="html"><![CDATA[
-        <p>I ran across this issue today and it's definitely one of those things that I, and maybe others, will run into again. </p>
-<p>As of Laravel 5.5, there is a middleware in the HTTP stack called TrustProxies.php that allows you to set a list of trusted proxies. The magic of this is that the framework will automagically map the allowed proxies in your list (can either be an array or a string set on the property) to the <code>X-Forwarded-*</code> header in the request. Pretty neat stuff!</p>
-<p>One thing I just ran into is the app I am currently working on uses the Laravel URL Generator to build a signed url for users registered by an admin to be able to create a password to sign in. I ran into an issue where every attempt at opening the signed url resulted in Laravel throwing a 403. I wasn't totally sure why until I realized the request was being made through <a href="https://ngrok.com">Ngrok</a> and because the url isn't something Laravel expects, the framework returns a 403. </p>
-<p>The way around this is to use the TrustProxies class and set the <code>protected $proxies = '*';</code> so that way as you are testing your signed routes with Ngrok, the framework will not 403 and let you continue on with your work.</p>    ]]></content>
 </entry>
             <entry>
     <id>https://matthewtrask.net/blog/mental-health-awareness</id>

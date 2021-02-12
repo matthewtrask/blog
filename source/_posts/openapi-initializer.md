@@ -2,7 +2,7 @@
 extends: _layouts.post
 section: content
 title: OpenAPI Initializer
-date: 2021-02-13
+date: 2021-02-12
 description: If you are starting a new project, or want to start using OpenAPI, this package will help you out.
 categories: [laravel, programming]
 cover_image: /assets/img/sunset.jpg
