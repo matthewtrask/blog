@@ -33,6 +33,12 @@ php artisan openapi:create
 
 and the command will walk you through every step of the way. We tried to be as thoughtful as possible. We even give you the option to install [Spectral](https://github.com/stoplightio/spectral) which is a JS library that allows you to lint your OpenAPI document.
 
+Here is all of the questions the package asks you as you scaffold up your OpenAPI document:
+
+<img src="/assets/img/openapi-initializer-output.png" alt="An image of a terminal showing the output from running the Laravel command php artisan openapi:create">
+
+We offer minimal defaults for OpenAPI version (which will be bumped once 3.1.0 is available) and what version your project is starting at. The last thing you may notice is that I recommend Stoplight's tooling. While I am not sponsored by them, I can whole heartedly recommend them. 
+
 To check out the package, the repo is [here](https://github.com/primitivesocial/openapi-initializer). Please open an issue if you have an idea you'd like us to consider, or if you run into an issue with the command. 
 
 Enjoy!
