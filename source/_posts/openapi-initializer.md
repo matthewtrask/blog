@@ -6,7 +6,7 @@ date: 2021-02-13
 description: If you are starting a new project, or want to start using OpenAPI, this package will help you out.
 categories: [laravel, programming]
 cover_image: /assets/img/sunset.jpg
-featured: true
+featured: false
 ---
 
 Back in November, as I was bootstrapping another service for a massive project at work, I had an idea to write a quick command that would quickly scaffold an OpenAPI YAML file. I started tinkering with it little by little and decided that it would serve a greater purpose as a stand alone package and help bootstrap my companies FOSS efforts. It turned into the OpenAPI Initializer, which is available now as a package for Laravel projects. 
