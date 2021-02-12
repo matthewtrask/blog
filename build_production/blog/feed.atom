@@ -3,12 +3,36 @@
     <title>Matthew Trask</title>
     <link href="https://matthewtrask.net" />
     <link type="application/atom+xml" rel="self" href="https://matthewtrask.net/blog/feed.atom" />
-    <updated>2020-10-11T02:08:07+00:00</updated>
+    <updated>2021-02-12T03:43:18+00:00</updated>
     <id>https://matthewtrask.net/blog/feed.atom</id>
     <author>
         <name>Matt Trask</name>
     </author>
                 <entry>
+    <id>https://matthewtrask.net/blog/openapi-initializer</id>
+    <link type="text/html" rel="alternate" href="https://matthewtrask.net/blog/openapi-initializer" />
+    <title>OpenAPI Initializer</title>
+    <published>2021-02-13T00:00:00+00:00</published>
+    <updated>2021-02-13T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">Back in November, as I was bootstrapping another service for a massive project at work, I had an idea to write a quick command that would quickly scaffold an OpenAPI YAML file. I started tinkering with it little by little and decided that it would serve......</summary>
+    <content type="html"><![CDATA[
+        <p>Back in November, as I was bootstrapping another service for a massive project at work, I had an idea to write a quick command that would quickly scaffold an OpenAPI YAML file. I started tinkering with it little by little and decided that it would serve a greater purpose as a stand alone package and help bootstrap my companies FOSS efforts. It turned into the OpenAPI Initializer, which is available now as a package for Laravel projects. </p>
+<h3>What is OpenAPI?</h3>
+<p>If you've hung around me long enough you will know I am a big proponent of OpenAPI. Formerly known as Swagger, it is an initiative for designing and consuming REST APIs, by both humans and machines. OpenAPI is a one stop shop for documentation, validation, and more. To see a list of libraries built around OpenAPI, check out <a href="https://openapi.tools">OpenAPI.tools</a></p>
+<h3>OpenAPI Initializer</h3>
+<p>To install this package you can either add it to the composer.json file or run the command:</p>
+<pre><code class="language-php">composer require --dev primitive/openapi-initializer</code></pre>
+<p>This package is compatible with Laravel versions 6.x, 7.x and 8.x. As soon as 9.x is generally avaialble, we will be fully compatible. </p>
+<p>To run the command:</p>
+<pre><code class="language-php">php artisan openapi:create</code></pre>
+<p>and the command will walk you through every step of the way. We tried to be as thoughtful as possible. We even give you the option to install <a href="https://github.com/stoplightio/spectral">Spectral</a> which is a JS library that allows you to lint your OpenAPI document.</p>
+<p>To check out the package, the repo is <a href="https://github/primitivesocial/openapi-initializer">here</a>. Please open an issue if you have an idea you'd like us to consider, or if you run into an issue with the command. </p>
+<p>Enjoy!</p>    ]]></content>
+</entry>
+            <entry>
     <id>https://matthewtrask.net/blog/mental-health-awareness</id>
     <link type="text/html" rel="alternate" href="https://matthewtrask.net/blog/mental-health-awareness" />
     <title>Mental Health Awareness Day</title>
@@ -680,17 +704,9 @@ you spend about 3 miles on the actual highway. Police close it off at 7am and we
     <author>
         <name>Matt Trask</name>
     </author>
-    <summary type="html">
-Notice: Trying to access array offset on value of type null in /Users/trask/Code/personal/blog/vendor/erusev/parsedown-extra/ParsedownExtra.php on line 241
-
-Notice: Trying to access array offset on value of type null in /Users/trask/Code/personal/blog/vendor/erusev/parsedown-extra/ParsedownExtra.php on line 241
-The image I chose for this post serves as a reminder for what awaits when I hit my goals. It&#039;s an image from Holi, a celebration of light in India that takes place in March. The celebration recognizes the emergence of spring and the end of winter. One of......</summary>
+    <summary type="html">The image I chose for this post serves as a reminder for what awaits when I hit my goals. It&#039;s an image from Holi, a celebration of light in India that takes place in March. The celebration recognizes the emergence of spring and the end of winter. One of......</summary>
     <content type="html"><![CDATA[
-        
-Notice: Trying to access array offset on value of type null in /Users/trask/Code/personal/blog/vendor/erusev/parsedown-extra/ParsedownExtra.php on line 241
-
-Notice: Trying to access array offset on value of type null in /Users/trask/Code/personal/blog/vendor/erusev/parsedown-extra/ParsedownExtra.php on line 241
-<p>The image I chose for this post serves as a reminder for what awaits when I hit my goals. It's an image from Holi, a celebration of light in India that takes place in March. The celebration recognizes the emergence of spring and the end of winter. One of my goals is to make it over there for the celebration. I'm not a religious person but this celebration just fascinates me. If you want to see more, there is a Netflix series called &quot;Tales by Light&quot; that follows photographers around. One episode follows a photographer as he wades through the crowds of Holi and it's amazing. </p>
+        <p>The image I chose for this post serves as a reminder for what awaits when I hit my goals. It's an image from Holi, a celebration of light in India that takes place in March. The celebration recognizes the emergence of spring and the end of winter. One of my goals is to make it over there for the celebration. I'm not a religious person but this celebration just fascinates me. If you want to see more, there is a Netflix series called &quot;Tales by Light&quot; that follows photographers around. One episode follows a photographer as he wades through the crowds of Holi and it's amazing. </p>
 <p>I bring this up because a few weeks ago I finished the book <a href="https://www.amazon.com/Playing-Financial-Independence-Retire-Early-ebook/dp/B07JVC5F7N/ref=sr_1_1?keywords=playing+with+fire&amp;qid=1553350721&amp;s=gateway&amp;sr=8-1">&quot;Playing With Fire&quot;</a> by Scott Rieckens. It follows Scott, his wife and daughter on a journey from living paycheck to paycheck in high power careers to reworking everything to live on less than half of what they usually spend a month and being financially independent. Its a quick read, the chapters are short but entrancing. I bought it right before my flight up to Minneapolis for Midwest PHP and I had it finished on the flight back to Nashville days later. If I wasn't socializing or working on my talks, I was reading this book. </p>
 <p>To give you an idea of how the story goes: Scott and his wife went from driving a new car year after year, having a yacht club membership, going to dinner with friends at expensive restaurants every week to finding a used but efficient car, giving up the membership and entertaining friends at home with wine and home cooked meals. The story follows their decision making and does a great job grappling with what a lot of people struggle with: how much is too much to slash away. With the Financial Independence/Retire Early community there are various levels of frugality and morality. Some people take it to the extreme, giving up just about everything deemed excessive while others weigh what matters most for them. What Scott figures out early on is the things that bring them the most happiness aren't material things but experiences. I did an exercise last week to determine what really brings me happiness. Things on my list were:</p>
 <ul>
