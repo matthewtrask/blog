@@ -1,0 +1,978 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Matthew Trask</title>
+    <link href="" />
+    <link type="application/atom+xml" rel="self" href="/blog/feed.atom" />
+    <updated>2020-12-31T02:50:04+00:00</updated>
+    <id>/blog/feed.atom</id>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+                <entry>
+    <id>/blog/mental-health-awareness</id>
+    <link type="text/html" rel="alternate" href="/blog/mental-health-awareness" />
+    <title>Mental Health Awareness Day</title>
+    <published>2020-10-10T00:00:00+00:00</published>
+    <updated>2020-10-10T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">2020 has quickly turned into the year of self care. It should be no surprise why. There is a pandemic, natural disasters, an incredibly divisive political race, economic woes and good lord so much more. More and more people are preaching the topic of......</summary>
+    <content type="html"><![CDATA[
+        <p>2020 has quickly turned into the year of self care. It should be no surprise why. There is a pandemic, natural disasters, an incredibly divisive political race, economic woes and good lord so much more. More and more people are preaching the topic of self care. </p>
+<p>Self Care: the act of taking care of yourself by doing things to relax yourself in stressful times. Things wrapped up in the &quot;self care&quot; blanket include: turning off social media, binging a favorite show, bath bombs, a good cocktail, a nice cup of coffee, your favorite book, some good music, walking with your dog, getting in some exercise, cooking and I can keep going. The idea is that you set aside time to recharge. </p>
+<p>Another component of self care that is more prevalent but still a hushed topic: talking to a therapist. </p>
+<p>I did. And holy shit wow. In fact I remember the first day I did. The weekend before I was a wreck. Stress was eating at me, I wasn't sleeping, I had these terrible intrusive thoughts. Kieran was over and noticed how off I was. I did a quick search and found someone who I thought I would click with. A few emails later and my first theray session was set up for the next day. </p>
+<p>Oddly enough I woke up that day feeling even worse and feeling sick. This prompted Kieran to come over, ready to take me to the hospital but I convinced her we could skip that and just go get some gatorade and cookies from Kroger. Cookies always do the trick. I powered through the next few hours of work til my first appointment. An hour later I emerged from my office and Kieran was greeted with someone who seemingly just had about 5 tons of weight lifted off their shoulders. She even commented how she noticed I was showing signs of being my goofy self. However the most important thing is that I didnt stop after this first session. In fact, when I mentioned to my therapist the next week about Kieran's comment, he had a nervous response basically saying &quot;yea thats great, but one week wont fix you&quot; which I already knew. </p>
+<p>10 weeks or so later I look back on this even with a lot of emotion. It was a huge turning point for me. I grew up suppressing my emotion and not knowing how to handle certain situations as an adult such as how to make friends, how to maintain friendships, how to have those hard conversations I needed to have and many more. </p>
+<p>Prior to this, I would just grab my bike and ride away the emotions but I learned that this just suppressed the emotion versus me dealing with the emotion and processing it. It's been huge, and funny enough my cycling has gotten better too because now I go out with a purpose to ride versus a purpose to hide. It helps I hired a cycling coach to give me a training plan (easily my second best decision I've made this year) but the point still stands. </p>
+<p>Today, October 10th, 2020 is Mental Health Awareness Day. If you are looking for some self care in your life, find a therapist. Even if you think you have nothing to talk about, I promise you things will come out that will lift the weight off your shoulders. This is one of those things that we need to be open about. Normalizing talking to a therapist will help so many people, especially men. Men are taught early how to avoid emotion and not talk about things. I was one of them. I couldnt imagine making it through this year without talking to the therapist I've been working with. Each time I finish the session refreshed and ready for the next challenge. </p>
+<p>Just like we need to take care of our physical bodies, our mental bodies need to be taken care of as well. </p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/http-post-returns</id>
+    <link type="text/html" rel="alternate" href="/blog/http-post-returns" />
+    <title>Thoughts on what to return when you make a POST request?</title>
+    <published>2020-04-26T00:00:00+00:00</published>
+    <updated>2020-04-26T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">As one of the HTTP Verbs, a lot as been written around the POST action and what should be done. One thing that doesn&#039;t seem clear though is what should you return. The RFC from Dr. Fielding covers what they thought was ideal back in 2014 which is this:......</summary>
+    <content type="html"><![CDATA[
+        <p>As one of the HTTP Verbs, a lot as been written around the POST action and what should be done. One thing that doesn't seem clear though is what should you return. The <a href="https://tools.ietf.org/html/rfc7231#page-25">RFC</a> from Dr. Fielding covers what they thought was ideal back in 2014 which is this:</p>
+<blockquote>
+<p>If one or more resources has been created on the origin server as a
+result of successfully processing a POST request, the origin server
+SHOULD send a 201 (Created) response containing a Location header
+field that provides an identifier for the primary resource created
+(Section 7.1.2) and a representation that describes the status of the
+request while referring to the new resource(s)</p>
+</blockquote>
+<p>How would you do this? Something like this (example is Laravel but can easily have the classes changes for Symfony, Laminas or Zend): </p>
+<pre><code>&lt;?php 
+
+declare(strict_types=1);
+
+use App\User;
+use App\Services\UserService;
+use Controller;
+use Illuminate\Http\Response;
+
+class UsersController extends Controller
+{
+    private Response $response;
+
+    private UserServoce $serivce;
+
+    public function __construct(Response $response)
+    {
+        $this-&gt;response = $response;
+    }
+
+    // ...
+
+    public function create(CreateUserRequest $request) : Response
+    {
+        // pass data to a service to create a user
+        $user = $this-&gt;service-&gt;createUser($user);
+
+        return $this-&gt;response
+            -&gt;withHeaders(['Location', sprintf('/api/users/%', $user-&gt;id)])
+            -&gt;setStatusCode(201);
+    }
+}</code></pre>
+<p>In the example, we get a user back from the CreateUserService class where in it we may have done things like set flags on the user for permissions and roles, sent emails alerting the user and others of their account, and maybe set a temp password for them to login. </p>
+<p>The real question is what is the benefit of doing the above versus taking the user we get back, shoving it in to the response and moving on? Well, from my understanding, this is to take advantage of what REST aims for: discoverability. Why send the entire user back if there is potential we won't need it/want it? Instead we can tell the client &quot;Hey good news! The user was created. We are going to assume you don't need to do anything with it now, so if you look at the headers, you can find the location of the newly created resource. Otherwise, keep doing a great job!&quot;. While a user record <em>may</em> not be overly heavy, if you are creating multiple users for a system, think HR inviting users to a new benefits platform for instance, we can work faster if we dont need to keep returning the user record <em>every single time</em>. The last bit is the status code, which above is set to 201. 201 means &quot;Created&quot; which is the purpose of POST. We shouldn't POST to get data, edit data, or to delete data. </p>
+<p>Conversely, there may be times that we want to return the data on top of the Location header. The RFC does say <code>should</code>, which is meant to be read as &quot;please do this, but its flexible and we won't get mad if you return the content created by the request&quot;. What would be an exmaple of a time you are wanting to return the content? Perhaps one example would be if you have multiple steps that depend on each other and you don't want to make a request every time. Think a shopping cart: you create the user if they dont exist and then we need to confirm their shipping and billing addresses. Now we create the user, and send back the address information so that way the user can quickly confirm it, which now streamlines the process slightly and eliminates a request. There absolutely are other use cases as well, so don't think the RFC is rigid, or we need to follow it 100% of the time. However it is good to try and follow the RFC/Standard as best as we can, to get the most of out REST.</p>
+<p>Hopefully this gives you some ideas for writing your APIs going forward and guide you through some fun challenges!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/not-normal</id>
+    <link type="text/html" rel="alternate" href="/blog/not-normal" />
+    <title>This isn&#039;t normal remote working life.</title>
+    <published>2020-04-22T00:00:00+00:00</published>
+    <updated>2020-04-22T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">Ok look. I have worked remotely since last August (2019). In that time, I saw the world go from what was considered normal to normal being oblierated and completely set back. Every blog under the sun is taking this chance to come up with their list of......</summary>
+    <content type="html"><![CDATA[
+        <p>Ok look. I have worked remotely since last August (2019). In that time, I saw the world go from what was considered normal to normal being oblierated and completely set back. Every blog under the sun is taking this chance to come up with their list of hot tips on how to be successful during this time. My take: fuck that. This isn't a normal time. Nothing about what we are doing is normal right now. So why should we pretend that it is? Is this a new normal? Maybe. We can't call it a new normal because what tomorrow brings is uncertainty, when in the past we could reasonably predict what tomorrow would bring.</p>
+<h3>As an employer</h3>
+<p>As an employer, manager, lead, whatever position of power you might have you can help do a few things. </p>
+<ol>
+<li>Reenforce you understand this is a weird time.</li>
+<li>Allow your people some grace and space.</li>
+<li>Offer your people a place to talk openly and vent.</li>
+</ol>
+<p>These three things can take you a good long way. If you are feeling extra generous in a time of uncertainty, offer to buy team members lunch one day. Doesn't have to be all at once, but its a nice gesture that can remove more stress than you would think it does. </p>
+<p>Its important to remember that pretty much all of the social structures we have as humans are gone. We can't go to a coffee shop with a friend, grab lunch with our partner, or meet for a happy hour drink with coworkers. Even lunch is a big deal now. We have to be better at planning our grocery trips and if we do order lunch, every dollar spent is calculated out now as a risk, and also we calculate which local business it will do the most good at. Our minds are overburdened by thoughts we once took for granted. Add on children and a spouse at home, and you have a recipe for madness. Kids being out of physical school, themselves navigating remote learning, is a challenge if there arent enough workspaces to go around. </p>
+<p>Keep in mind, that when someone makes a transition to remote work full time, there is planning involved. Things like which room becomes a dedicated office are talked about; what things will be purchased such as a desk, a chair, etc. People who turned into remote workers overnight in the past month didn't get this choice and they have to make due with what they have. </p>
+<p>All this to be said: no one is doing their best work right now. Even the people who were remote prior to this situation are struggling. I know I am. There are good days where I crank out pull requests and there are days where I can't really point to any tangible progress. </p>
+<p>The point to all of this: we all need a little more room to breathe. Let us.</p>
+<h3>As an employee</h3>
+<p>First and foremost: be honest with yourself and your team. We are all having good days and bad days. If you are having a bad day, say something. We will understand and we want to help, because then when its someone else's turn for a bad day you can be there to help them. When this is over, we will remember the people who helped when it was roughest for us. </p>
+<p>If you can, carve out an area in your home that is your workspace. Treat it like your office you commute to. If you need to trick yourself, take a quick walk outside and put on the music/book/podcast you commute to. Put on real clothes too. Sure its nice to wear gym shorts all day, but putting on clothes can help your brain recognize its time to work. </p>
+<p>If you are in a senior role, reach out to those on the team who you think might be struggling. Just say hey, and have a friendly conversation. Don't bring up the world that is currently on fire, but just talk and be a friend. A lot of people went from extroverted and out with friends to being a shut in. A friendly conversation with no overarching tones of &quot;holy shit this sucks&quot; can really help someone. </p>
+<p>One thing that has helped me during this is that I keep a note in Bear (a note taking app for Mac) where I put any and all compliments I get at work. When I feel myself getting down, I look at that and it reminds me that I am worth more than what my mind thinks I am and there is positive things going on.</p>
+<h3>Final Thoughts</h3>
+<p>I know the cliche is &quot;we are in this together&quot; and obvoiusly we are. However it's fine to admit this sucks. It's fine to admit you feel an immeasurable amount of pressure kicking you in the face repeatedly. It ok to admit &quot;no, I'm not doing ok&quot; when someone asks how things are. The more vulnerable we allow ourselves to be, the more true we are to those around us. The more true we are, the more resilient we become to adversity and difficulty. </p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/survivors-guilt</id>
+    <link type="text/html" rel="alternate" href="/blog/survivors-guilt" />
+    <title>Survivor&#039;s Guilt</title>
+    <published>2020-03-10T00:00:00+00:00</published>
+    <updated>2020-03-10T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">It&#039;s been a weird week. The pictures won&#039;t ever do justice to what actually happened. It&#039;s been a week since it happened and I realized today I really havent had a chance to process it completely, or come to terms with just how lucky I am.
+Before......</summary>
+    <content type="html"><![CDATA[
+        <p>It's been a weird week. The pictures won't ever do justice to what actually happened. It's been a week since it happened and I realized today I really havent had a chance to process it completely, or come to terms with just how lucky I am.</p>
+<p><em>Before anything else, let me express my deepest gratitude to everyone who reached out in the morning to see check in. It meant a lot and helped keep me going that day.</em></p>
+<h3>The Night Of</h3>
+<p>I don't know what woke me up. But around 12:30 I remember hearing sirens. Going to bed I remember reading on <a href="https://twitter.com/nashseverewx">NashSevereWx</a> that it would be a rough storm but only a 2% change of a tornado. One big problem in Nashville is that we use a county based siren system (<a href="https://nashvillesevereweather.com/siren-rebuttal/">more here about that</a>), so the sirens will go off even if there is no impending doom right outside of your window. It has numbed people here, and quite shocking that the death toll in the city was so low because of it. </p>
+<p>When I woke up, the sirens were going off. The rain hitting the windows of my apartment strong, I redownloaded twitter to my phone and went right to <a href="https://twitter.com/nashseverewx">NashSevereWx</a> to see what was up. It was then I recognized the magnitude of what was happening. At the same time <a href="https://twitter.com/fabkiwi09">Kieran</a> started messaging me about the storm. I did the typical guy thing and told her to get into her bathroom while I stood in my living room looking out for a storm. Men are fucking idiots y'all.</p>
+<p>I don't remember the exact time the storm rolled by. Truth be told, I saw nothing. I just knew a gnarly storm rolled by me and then put Kieran's apartment in its path. Kieran lost power and the apartment gate at her complex was busted. Losing power made it hard for her to get updates, but I was able to screenshot NashSevereWx updates and get them to her. The people who run that twitter account truly saved lives that night. </p>
+<p>As I scrolled through Twitter, I started seeing hashtags and pictures pop up. Local places that were favorites among a lot of people were destroyed. Words can't do justice. </p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Before and after: Burger Up, Basement East, Family Dollar, and Molly Green 💔 <a href="https://twitter.com/hashtag/nashvilletornado?src=hash&amp;ref_src=twsrc%5Etfw">#nashvilletornado</a> <a href="https://twitter.com/hashtag/NashvilleTN?src=hash&amp;ref_src=twsrc%5Etfw">#NashvilleTN</a> <a href="https://t.co/IysVbpMDoM">pic.twitter.com/IysVbpMDoM</a></p>— LadyLuluLouise (@LuluLady) <a href="https://twitter.com/LuluLady/status/1234757534319357952?ref_src=twsrc%5Etfw">March 3, 2020</a></blockquote>
+<p>Ultimately, my direct area was spared. I took Molly out around 2am because like I said: men are fucking morons. The storm had passed and it was eerily quiet though while we walked. Looking around, you would have never guessed an EF3 Tornade ripped through the area. </p>
+<h3>Days After</h3>
+<p>As you can imagine, I got zero sleep. NashSevereWx said another line of storms was moving in at 4am and they weren't sure what was coming with them. I finally got a few hours to sleep, and when I got up I went to the local coffee shop and tried to go vote. Waiting in line saw people talking about their experience, hugging, trying to find some semblence of humor and expressing joy they made it through the storm unscathed. Since police had all the major areas blocked off, all I could see were images. Images are great for a lot of things, but someitmes they can't convey the magnitude of the subject. This was one of those times. I left Nashville the next day for Atlanta. It wasn't until Friday night that I really got to see things up close when the roads I took to get home took me right into one of the harder hit areas. Seeing trees still in living rooms, debris scattered all around and police caution tape just hit me. </p>
+<p>I woke up the next morning resolved to do something. People on reddit organized an outing to North Nashville to cook food and hand it out. I went from waffling on what I should do to getting a cart at the store and looking like one of those crazy prepper people with the amount of water and soda I bought to hand out. Driving to North Nashville adding to the magnitude. North Nashville is generally the poorest area of Nashville. It's a target rich environment for real estate developers right now looking to prey on people. Handing out the food and drinks to people was fulfilling. It was great to see people smiling and relived, even if it was just for a few moments. However it didn't bring the closure I wanted. </p>
+<h3>Why me?</h3>
+<p>After a disaster, a common though is &quot;why me?&quot;. Why was my apartment spared while friends lost everything. A guy I ride with in the cycling group Im in had a tree come down on their living room. Another guy in the group had a stroke just two weeks ago and then this. How is any of this fair? It's not, and I don't get to pick and choose these battles. Because of that, it adds a weird feeling to things. People I know are trying to figure out the new normal for them. Navigating insurance to figure out their next steps while I can grab a bike and get a ride in. </p>
+<p>The night after it happened, Kieran and I went to dinner at a local place. I won't lie, it felt weird. It felt weird that people were picking up pieces of their lives right around the block while we were out to dinner. It felt weird that two people had just died (in the city. Overall the death toll went up to around 25 I believe) and we were having drinks. It felt weird yesterday driving past houses that are condemned and deemed unsafe with my bike strapped to the car looking to get some miles in. It feels weird to go to the store like I normally would, while othes can't. It just feels weird. </p>
+<p>Over the past week I've struggled rather silently to figure out what feels off. And it's this. It's the fact that people right down the road from me, not even 2 miles away, lost everything while I was spared. It brings a small sense of mortality to life. I've had brushes with death before, I almost died a few times when I was born. But being up here on my own and living on my own makes this situation closer than I could imagine. It's one thing if you live in another city. It is just business as usual for you, but when it hits this close, it changes things. It's ok to feel weird about things. It's ok to feel weird about having a beer at the brewery down the road while others figure out life. In due time the roles will be reversed and you will have to go through what they are. Do what you can to help out when you can. Amazon lists have been circulating around, which have made it easy for me to buy things the organizations leading the clean up need. </p>
+<h3>Nashville Strong</h3>
+<p>While feeling weird is normal, feeling an overwhelming sense of pride is normal too. I've been pretty open about my disdain for this city. While there are parts that are great, overall I fail to see what people love about Nashville. This past week though, I've had a huge sense of pride for this city. The day after the tornado, people were out there helping clean up. People with chainsaws were out cutting up downed trees. Businesses figured out what they could offer and made it happen, whether it was a drop off site for laundry or a place to charge devices. Restaurants that were detroyed in the tornados were the first ones in the damaged areas cooking for the first responders. Bars and restaurants opened their doors to the displaced staffs of closed restaurants so that they could make some money and not miss rent. This is a city that knows how to help and I am looking forward to more opportunities to help. One easy way is with <a href="https://lightning100.com">Amazon Wishlists</a> like in this post. </p>
+<p>It's ok to feel weird. It's normal. </p>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/software-lessons</id>
+    <link type="text/html" rel="alternate" href="/blog/software-lessons" />
+    <title>Software Lessons I learned in 2019</title>
+    <published>2019-12-29T00:00:00+00:00</published>
+    <updated>2019-12-29T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">I looked back on things I did in the last year in my life. Things like amount of books I read, miles I cycled, how many trips to Ikea in Atlanta I took etc. I figured that it would also be good to look back on lessons I learned about software design. 
+
+I......</summary>
+    <content type="html"><![CDATA[
+        <p>I looked back on things I did in the last year in my life. Things like amount of books I read, miles I cycled, how many trips to Ikea in Atlanta I took etc. I figured that it would also be good to look back on lessons I learned about software design. </p>
+<h3>Never Let Perfect be the enemy of Shippable</h3>
+<p>I always thought code had to be a: perfect, b: complicated and c: elegant. I don't know where these ideas came from but they stuck with me for years. Elizabeth Smith tried hard to instill in me the complete opposite: the best code is the code that works, gets the job done, and creates value. </p>
+<p>These days the deploy processes are getting easier and quicker. PRs can be created quickly and your team can get to a point where you can get a PR deployed to production in under an hour. With all that said, the focus should be getting code that creates value out in production first, and then going back to refactor it to a better solution. </p>
+<h3>YAGNI</h3>
+<p>A good friend of mine, <a href="https://twitter.com/jasonmccreary">Jason McCreary</a> preaches this and I think it needs to be one of the first things to consider when building a feature. No, Im not saying that you aren't going to need the feature, but rather you probably aren't going to need everything you are planning on doing when creating the feature. </p>
+<p>Lets look at a potential Laravel application. The ways I've been taught over the years are wide and varied. Some people who use Laravel prefer the path of least possible resistance, so their code path may look like: </p>
+<pre><code class="language-php">request -&gt; router -&gt; controller -&gt; response</code></pre>
+<p>where in the controller they do all the business logic from querying their models, request validation and anything else they may need to do all in the controller action. The way I prefer looks like:</p>
+<pre><code class="language-php">request -&gt; router -&gt; validation -&gt; controller -&gt; service -&gt; repository -&gt; service -&gt; controller -&gt; response</code></pre>
+<p>That's a lot of moving parts for what is probably an application that doesn't need half of that. However I put a lot of emphasis on SOLID and Clean Design. But! In the real world (read the job that gives me money), there is a balance of getting code shipped to create value and maintaining code that other developers can understand. Thats where I bring in YAGNI, or &quot;You Aren't Gonna Need It&quot;. I don't need a service layer or the repository layer if I want to get the job done quick. However, I can probably pick one of those two layers and break things up to make it a little more clean (in my opinion) and readable for other developers. </p>
+<p>This goes hand in hand with the first point. If you get down in a rabbit hole, stop yourself and ask &quot;Do I need this? Can the feature ship without it?&quot;. If the answer is &quot;yes&quot; and &quot;yes&quot;, call YAGNI and don't worry about being perfect. </p>
+<h3>HATOEAS is a terrible acronym</h3>
+<p>I came up with a saying, and a sticker, this year called &quot;HATEOAS and chill&quot;. I thought about writing a talk but Im not sure there is enough content. However one conclusion I came to is that <code>HATEOAS</code> is a terrible acronym for something that has been over complicated to the point of avoidance. What is HATOEAS? It stands for <code>Hypermedia As The Engine Of Application State</code>. That's a lot to say that your REST API should provide links with your resources for discoverability. Why should your API return links, or hypermedia? It comes from a core concept of REST wherein the API is stateless, so it does not store data about the &quot;session&quot; or request. So to provide information on where the client should go next, the response should have links to give hints as to where to go next. </p>
+<p>Links. Thats all it is. Lets use a users response as an example (this is just plain JSON, not JSON:API or anything like that for the sake of the example): </p>
+<pre><code>{
+  "_metadata": 
+  {
+      "page": 5,
+      "per_page": 20,
+      "page_count": 20,
+      "total_count": 521,
+      "Links": [
+        {"self": "/products?page=5&amp;per_page=20"},
+        {"first": "/products?page=0&amp;per_page=20"},
+        {"previous": "/products?page=4&amp;per_page=20"},
+        {"next": "/products?page=6&amp;per_page=20"},
+        {"last": "/products?page=26&amp;per_page=20"},
+      ]
+  },
+  "records": [
+    {
+      "id": 1,
+      "name": "Widget #1",
+      "uri": "/products/1"
+    },
+    {
+      "id": 2,
+      "name": "Widget #2",
+      "uri": "/products/2"
+    },
+    {
+      "id": 3,
+      "name": "Widget #3",
+      "uri": "/products/3"
+    }
+  ]
+}</code></pre>
+<p>In the example, we show the client some links it may find interesting such as the current uri, how to get the next set of paginated data, the previous, the first and last. These links may also be used for relational data like pointing to a user's profile in a list of users. </p>
+<p>But the point is that HATEOAS, while it sounds cool, complicates something to the point where people are unsure how to use it. So let's stop saying HATEOAS, and instead say &quot;links&quot; and uncomplicate this concept. All we are doing is returning links, which in of itself is pretty straight forward. </p>
+<h3>You can build scalable things with boring tech</h3>
+<p>The job I had at the beginning of the year was a massive application built on Symfony, Doctrine, Plain PHP Objects, and jQuery. It worked well and worked pretty fast. Was it the latest and greatest technology? Nope. Did it get the job done? Yes. Was there any kind of fear around upgrading things like the framework, PHP version, or anything else? Nope because this stuff was so boring it was routine to upgrade things. </p>
+<p>You don't need the latest and greatest things to build applications that make money. It's totally cool to use something old and reliable. Why do you think there are so many old Honda Accords on the road? It's not because they are flashy and show off status! It's because they work, any mechanic can work on it, and it will probably survive the a nuclear explosion. </p>
+<p>One thing that resonated with me this year is that software is not a popularity contest. You shouldn't pick a tech stack because it's popular and all the rage, but because it solves the problem you have and gives you confidence that it will be maintainable for years to come. If you think that the most popular framework solves that problem, then have fun. But don't sleep on the older, less cool tools. They are still out there creating value. </p>
+<h3>OpenAPI is gonna change the API Ecosystem</h3>
+<p>I was introduced to OpenAPI sometime in 2018 and gave a talk at a conference about it. It was eye opening how brilliant a specification around API tooling and documentation is. Judging by the tools on <a href="https://openapi.tools">OpenAPI.tools</a>, people agree with that statement. We merge at least a project a week with people coming up with new ways to building tooling around the specification. If you are building a REST API in 2020, look at OpenAPI before you write a single line of code. The way the spec is laid out, you will save time up front by thinking through what the endpoint, the request, the headers, and the response will look like.</p>
+<h3>Developers need financial knowledge</h3>
+<p>American high schools are shit when it comes to tangiable, actionable skills for later in life. The average person probably never uses anything they learned in Algebra 2, physics or world history. What is rarely taught are things like how to deal with emotions, how to maintain friendships and what to do with your money. Developers generally make a high salary and yet most have no idea what to do with it. Sure you need to cover bills, but what else? Many people I know aren't sure how to do a budget, what a 401k is or why you should care, and how to make sure you will have enough to retire on. </p>
+<p>I dont know a good resource for this but I wish I could figure it out, because its a topic I know I never was taught so I imagine its the same for others. </p>
+<p>What did you learn this year?</p>
+<p>Cheers!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/2019</id>
+    <link type="text/html" rel="alternate" href="/blog/2019" />
+    <title>2019 by the numbers</title>
+    <published>2019-12-29T00:00:00+00:00</published>
+    <updated>2019-12-29T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">My year, according to the numbers.
+
+According to Flickr, since I signed up for Flickr Pro in May I have have 35,535 views on photographs I have uploaded. 
+
+The amount of photos I took at the last Music City Crits, a cycle racing event where a lot of......</summary>
+    <content type="html"><![CDATA[
+        <p>My year, according to the numbers.</p>
+<h3>35,535</h3>
+<p>According to Flickr, since I signed up for Flickr Pro in May I have have 35,535 views on photographs I have uploaded. </p>
+<h3>1,800-ish</h3>
+<p>The amount of photos I took at the last Music City Crits, a cycle racing event where a lot of friends ride for a team here in Nashville. </p>
+<h3>36</h3>
+<p>Books I have read or listened to this year. </p>
+<h3>26</h3>
+<p>The amount of weight I lost in the past year. My highest was 265 and now I successfully hover around 238. </p>
+<h3>2097</h3>
+<p>The amount of miles I rode this year on a bike that was tracked via Strava. </p>
+<h3>6</h3>
+<p>The amount of states I rode a bike in. Tennessee, Kentucky, Georgia, Florida, Texas, and Oregon</p>
+<h3>2</h3>
+<p>Companies I have worked for in 2019.</p>
+<h3>12</h3>
+<p>Amount of first interviews I did the days after I was laid off.</p>
+<h3>6</h3>
+<p>Conference talks presented. </p>
+<h3>2</h3>
+<p>Talks that were keynotes.</p>
+<h3>3</h3>
+<p>Trips to Ikea I took.</p>
+<h3>200</h3>
+<p>Amount of baby Yoda memes I have transmitted around the internet.</p>
+<h3>69</h3>
+<p>Hours I spent this year listening to the band Vulfpeck. This was the most I spent on any one band.</p>
+<h3>30</h3>
+<p>Hours I spent listening to podcasts this year.</p>
+<h3>77,201</h3>
+<p>Amount of media in minutes I've consumed via Spotify.</p>
+<h3>RTJ 3 (I added the number to qualify it)</h3>
+<p>Run The Jewels is my artist of the Decade according to Spotify</p>
+<h3>1</h3>
+<p>Amount of times I've seen Star Wars: The Rise of Skywalker</p>
+<p>What a year.</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/books-in-2019</id>
+    <link type="text/html" rel="alternate" href="/blog/books-in-2019" />
+    <title>Books I read in 2019</title>
+    <published>2019-12-20T00:00:00+00:00</published>
+    <updated>2019-12-20T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">As a kid I was a huge reader. I had so many books that I had multiple book cases in my room. One of them was built into the headboard of my bed, so I didn&#039;t have to get out of bed to get a book. I read things like &amp;quot;The Boxcar Children&amp;quot; to......</summary>
+    <content type="html"><![CDATA[
+        <p>As a kid I was a huge reader. I had so many books that I had multiple book cases in my room. One of them was built into the headboard of my bed, so I didn't have to get out of bed to get a book. I read things like &quot;The Boxcar Children&quot; to &quot;Goosebumps&quot; to anything I could find on the RMS Titanic. As I grew, my fascination with history grew and I read everything I could around the American Revolution up to World War 2. Sadly though, when high school made me read through certain books my interest in reading waned. This was around the time we got the internet, so I read web pages instead of books.</p>
+<p>This year, when I was talking to my boss at my old job, he mentioned a few books he really enjoyed on Audible. I had heard of Audible but never got into it. On his recommendation, I grabbed one book and I was hooked. It was as if a spark was reignited in me. I went out to a book store soon after and bought books both old and new. I hope this type of post becomes a tradition for as long as I blog. </p>
+<p>Without further ado, here is what I read and listened to in 2019. </p>
+<p><small>All the books will a link to buy them in book/audio form, however none of the links are ref links. I do not make any money if you choose to buy one.</small></p>
+<h3>Audio Books</h3>
+<h5>Personal Improvement</h5>
+<ul>
+<li><a href="https://www.audible.com/pd/Power-Moves-Audiobook/B07H4XVBBW?pf_rd_p=6a5ce8e4-798e-4a64-8bc5-71dcf66d673f&pf_rd_r=2KEQD0RF8MZ25J986A66&ref=a_lib_c4_libItem_B07H4XVBBW">&quot;Power Moves: Lessons from Davos&quot;</a> by Adam Grant. </li>
+</ul>
+<p>In it, he interviews a lot of powerful people about leadership.</p>
+<ul>
+<li><a href="https://www.amazon.com/Lessons-Third-Grade-Dropout-Rigsby/dp/1404109331/ref=sr_1_2?crid=30YINIF8Q653P&keywords=lessons+from+a+third+grade+dropout+by+rick+rigsby&qid=1576849571&sprefix=lessons+from+a+third+%2Caps%2C149&sr=8-2">&quot;Lessons From a Thrid Grade Dropout&quot;</a> by Rick Rigsby.</li>
+</ul>
+<p>Stumbled on him via Youtube, he recounts tales and lessons his father, a third grade dropout, gave him up until his father's death.</p>
+<ul>
+<li><a href="https://www.amazon.com/Principles-Life-Work-Ray-Dalio/dp/1501124021/ref=sr_1_3?crid=23VV2SOQHVJDV&keywords=principles+for+success+ray+dalio&qid=1576849638&sprefix=principles+%2Caps%2C182&sr=8-3">&quot;Principles&quot;</a> by Ray Dalio</li>
+</ul>
+<p>Super long, but an interesting look at how Ray Dalio rose to the level he is at.</p>
+<ul>
+<li><a href="https://www.amazon.com/4-Hour-Workweek-Escape-Live-Anywhere/dp/0307465357/ref=sr_1_1?keywords=4+hour+work+week&qid=1576849681&sr=8-1">&quot;The 4 Hour Work Week&quot;</a> by Tim Ferriss</li>
+</ul>
+<p>This book was interesting. Tim dives into ideas of automation and passive income generation so that you can work less and enjoy a more fulfilling life.</p>
+<ul>
+<li><a href="https://www.amazon.com/Digital-Minimalism-Choosing-Focused-Noisy/dp/0525536515/ref=sr_1_2?keywords=cal+newport&qid=1576849720&sr=8-2">&quot;Digital Minimalism&quot;</a> by Cal Newport</li>
+</ul>
+<p>Cal Newport, notorious for a lack of social media presence, dives into the idea that it's ok to live life without a social media account and how you can fill that time instead.</p>
+<ul>
+<li><a href="https://www.amazon.com/Deep-Work-Focused-Success-Distracted/dp/1455586692/ref=sr_1_3?keywords=cal+newport&qid=1576849720&sr=8-3">&quot;Deep Work&quot;</a> by Cal Newport</li>
+</ul>
+<p>Another hit from Cal, he talks about regaining things like determination, concentration, and dedication to the work we do every day.</p>
+<ul>
+<li><a href="https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/B07RFSSYBH/ref=sr_1_1?keywords=atomic+habits&qid=1576849803&sr=8-1">&quot;Atomic Habits&quot;</a> by James Clear (still listening to this one).</li>
+</ul>
+<p>Ever wonder why a habit doesn't stick? This book covers tips and tricks about making them stick and how to change your thinking when it comes to a new habit.</p>
+<ul>
+<li><a href="https://www.amazon.com/Make-Your-Bed-Little-Life/dp/B06XKDM3QL/ref=sr_1_1?keywords=make+your+bed&qid=1576849879&s=audible&sr=1-1">&quot;Make Your Bed&quot;</a> by Admiral William McRaven (this one had a huge impact).</li>
+</ul>
+<p>Inspired by his commencement address at the University of Texas, Admiral McRaven delivers short but powerful lessons for a successful life, starting with making your bed every single day.</p>
+<h5>Others</h5>
+<ul>
+<li><a href="https://www.amazon.com/Doing-Justice-Prosecutors-Thoughts-Punishment/dp/0525521127">&quot;Doing Justice&quot;</a> by Preet Bharara</li>
+</ul>
+<p>Famously fired by Trump, Preet has had a stellar career with podcasting, and this book dives into the life of the line prosecutors, assistant attorneys generals and what it's like to the district attorny for the southern distract of NY.</p>
+<ul>
+<li><a href="https://www.amazon.com/Into-Thin-Air-Personal-Disaster/dp/0385494785/ref=sr_1_2?keywords=into+thin+air&qid=1576850036&s=books&sr=1-2">&quot;Into Thin Air&quot;</a> by Jon Krakauer (a personal favorite).</li>
+</ul>
+<p>One of my favorites, this book details the 1996 disaster on Everest when teams were stuck at the summit in the middle of a storm. </p>
+<ul>
+<li><a href="https://www.amazon.com/Utopia-Realists-Build-Ideal-World/dp/0316471895">&quot;Utopia For Realists&quot;</a> by Rutger Bregman (the dude who lit up the world at Davos).</li>
+</ul>
+<p>I loved this guy from the minute he lit the world on fire at Davos with his statement about taxing the rich. His book delves into ideas of what a utopia could look like.</p>
+<ul>
+<li><a href="https://www.amazon.com/American-Kingpin-Criminal-Mastermind-Behind/dp/1591848148">&quot;American Kingpin&quot;</a> by Nick Bilton</li>
+</ul>
+<p>Im relistening to this now. This covers the start of the Silk Road and how they eventually captured all the major players. </p>
+<ul>
+<li><a href="https://www.amazon.com/Little-Book-Lykke-Secrets-Happiest/dp/0062820338">&quot;The Little Book of Lykke&quot;</a> by Meik Wiking</li>
+</ul>
+<p>A fun little book about how the Danes create happiness from the little things in life.</p>
+<ul>
+<li><a href="https://www.amazon.com/Draft-Animals-Living-Cycling-Dream/dp/0143131249">&quot;Draft Animals&quot;</a> by Phil Gaimon</li>
+</ul>
+<p>Former pro cyclist Phil Gaimon talks life on the road, the challenges he faced as a domestique on a big European Tour Team and giving up.</p>
+<ul>
+<li><a href="https://www.amazon.com/Permanent-Record-Edward-Snowden/dp/1250237238">&quot;Permanent Record&quot;</a> by Edward Snowdem</li>
+</ul>
+<p>Im not sure this book needs much, we all know what Snowden did. However I'm disappointed that the government gets to have his earnings from this.</p>
+<ul>
+<li><a href="https://www.amazon.com/Paddle-Your-Own-Canoe-Fundamentals/dp/0451467094/ref=sr_1_1?keywords=paddle+your+own+canoe&qid=1576850322&s=books&sr=1-1">&quot;Paddle Your Own Canoe&quot;</a> by Nick Offerman</li>
+</ul>
+<p>Utterly not safe for work, Nick just lays out how to work hard and win at life. </p>
+<ul>
+<li><a href="https://www.amazon.com/Modern-Romance-Aziz-Ansari/dp/0143109251">&quot;Modern Romance&quot;</a> by Aziz Ansari</li>
+</ul>
+<p>Swiping and dating is huge for most people now. Aziz wanted to figure out what made people swipe right or left on certain people.</p>
+<ul>
+<li><a href="https://www.amazon.com/Medium-Raw-Bloody-Valentine-People/dp/0061718955/ref=sr_1_1?keywords=medium+raw&qid=1576850408&s=books&sr=1-1">&quot;Medium Raw&quot;</a> by Anthony Bourdain</li>
+</ul>
+<p>An ode to the people who run the restaurants across the world. Bourdain doesn't hold back. This was performed by him too, so its weird to hear his voice. I still miss him.</p>
+<ul>
+<li><a herf="https://www.amazon.com/Passion-Nature-Life-John-Muir/dp/0199782245/ref=sr_1_1?keywords=Passion+for+Nature&qid=1576850453&s=books&sr=1-1">Passion For Nature: The Life of John Muir</a> by Donald Worster (still listening because it is 19 hours long).</li>
+</ul>
+<p>This is an epic look at the man who fathered our National Parks system.</p>
+<h3>Paper Books</h3>
+<h5>Financial</h5>
+<ul>
+<li><a href="hhttps://www.amazon.com/Richest-Man-Babylon-Original-1926/dp/1508524351/ref=sr_1_3?crid=3USNBOAJGN9S9&keywords=richest+man+in+babylon+book&qid=1576851083&s=books&sprefix=ricehest+%2Cstripbooks%2C165&sr=1-3">&quot;The Richest Man In Babylon&quot;</a> by George Clason. </li>
+</ul>
+<p>Old English aside, this is a seminal book for anyone starting with personal finance. It's not long, but its packed with great tips that still hold up today.</p>
+<ul>
+<li><a href="https://www.amazon.com/Simple-Path-Wealth-financial-independence/dp/1533667926/ref=sr_1_2?keywords=simple+path+to+wealth&qid=1576851204&s=books&sr=1-2">&quot;The Simple Path to Wealth&quot;</a> by JL Collins</li>
+</ul>
+<p>One of my favorites, JL Collins breaks down the notion that investing is hard, and examines the most tried and true way to growing wealth: index funds. <small>(Note: Index Funds are a moral quandry to deal with, because the main on JL talks about, VTSAX, has every single stock on the NYSE in it... private prisons and all.)</small></p>
+<ul>
+<li><a href="https://www.amazon.com/Playing-Financial-Independence-Retire-Early/dp/1608685802/ref=sr_1_1?keywords=playing+with+fire&qid=1576851240&s=books&sr=1-1">&quot;Playing With Fire&quot;</a> by Scott Rieckens (also a movie!)</li>
+</ul>
+<p>A lot of FIRE books cover the how, but this is a personal story of the why. With cameos of popular FIRE bloggers, this is a nice tale and gives you a lot to think about.</p>
+<ul>
+<li><a href="https://www.amazon.com/Your-Money-Life-Transforming-Relationship/dp/0143115766/ref=sr_1_3?crid=2BRI38GGQ4H4&keywords=your+money+or+your+life&qid=1576851284&s=books&sprefix=your+money+o%2Cstripbooks%2C154&sr=1-3">Your Money or Your Life</a> by Vicki Robin and Joe Dominguez</li>
+</ul>
+<p>After reading this, I couldn't stop thinking about my life in dollars. Every single action has a dollar amount correlation, and they explore it in this book.</p>
+<h5>Inspirational</h5>
+<ul>
+<li><a href="https://www.amazon.com/Last-Lecture-Randy-Pausch/dp/1401323251">&quot;The Last Lecture&quot;</a> by Randy Pausch</li>
+</ul>
+<p>Foudn on Youtube, this book is both a lesson for his kids and anyone who reads the book. If you get any book, get this one. I shed a tear watching the Youtube vid.</p>
+<ul>
+<li><a href="https://www.amazon.com/Unfu-Yourself-Your-Head-into/dp/0062803832">&quot;Unfuck Yourself&quot;</a> by Gary John Bishop</li>
+</ul>
+<p>I spent the last year or so being so in my head I had to do something. This book gave me some tools and tips to getting out of my own head.</p>
+<ul>
+<li>
+<p><a href="https://www.amazon.com/How-Break-Up-Your-Phone/dp/039958112X">&quot;How To Break Up With Your Phone&quot;</a> by Catherine Price</p>
+</li>
+<li>
+<p><a href="https://www.amazon.com/dp/0062658808?aaxitk=ld4NtELGKAR-6ZtXGFNyzw&pd_rd_i=0062658808&pf_rd_p=591760d1-6468-480f-9b10-0ee9c85706fd&hsa_cr_id=9087817620001&sb-ci-n=productDescription&sb-ci-v=The%20Little%20Book%20of%20Hygge%3A%20Danish%20Secrets%20to%20Happy%20Living%20(The%20Happiness%20Institute%20Series)">&quot;The Little Book of Hygge&quot;</a> by Meik Wiking</p>
+</li>
+</ul>
+<p>Like &quot;The Little Book of Lykke&quot;, this covers things the Danes do, and why they are so damn happy.</p>
+<ul>
+<li><a href="https://www.amazon.com/World-According-Mister-Rogers-Important/dp/031649271X/ref=sr_1_5?keywords=mr+rogers&qid=1576937120&s=books&sr=1-5">&quot;The World According to Mister Rogers&quot;</a> by Fred Rogers</li>
+</ul>
+<p>If you want to know that someone is proud of you, open this book.</p>
+<ul>
+<li><a href="https://www.amazon.com/Daring-Greatly-Courage-Vulnerable-Transforms/dp/1592408419/ref=sr_1_3?keywords=daring+greatly&qid=1576937594&s=books&sr=1-3">&quot;Daring Greatly&quot;</a> by Brene Brown </li>
+</ul>
+<p>Brene made waves at a TED Talk, and because of that this book was another I had to get. It pairs well with &quot;Digital Minimalism&quot;</p>
+<h5>Cook Books</h5>
+<ul>
+<li><a href="https://www.amazon.com/Antoni-Kitchen-Porowski/dp/1328631346/ref=sr_1_1?keywords=cooking+with+antoni&qid=1576937167&s=books&sr=1-1">&quot;In The Kitchen With Antoni&quot;</a> by Antoni Porowski</li>
+</ul>
+<p>I love the Queer Eye series on Netflix, and I've enjoyed watching Antoni inspire people to cook more.</p>
+<h5>Leadership</h5>
+<ul>
+<li><a href="https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business/dp/1942788290/ref=sr_1_2?crid=14SCAQT3PWOBH&keywords=the+phoenix+project&qid=1576937261&s=books&sprefix=the+Phoenix+%2Cstripbooks%2C163&sr=1-2">&quot;The Phoenix Project&quot;</a> by Gene Kim, Kevin Behr, George Spafford</li>
+</ul>
+<p>This was recommended to me by a guy I met who was in town doing some AWS consulting. I couldn't put it down. It's now something we make product owners and software team leaders at work read.</p>
+<ul>
+<li><a href="https://www.amazon.com/Unicorn-Project-Developers-Disruption-Thriving/dp/1942788762">The Unicorn Project</a> by Gene Kim (Still reading this.)</li>
+</ul>
+<p>This is the second book in the series, and looks at the development side of the Phoenix project, instead of the ops side.</p>
+<h5>Society</h5>
+<ul>
+<li><a href="https://www.amazon.com/Strong-Towns-Bottom-Up-Revolution-Prosperity/dp/1119564816/ref=sr_1_1?keywords=strong+towns&qid=1576937369&s=books&sr=1-1">&quot;Strong Towns&quot;</a> by Charles Marohn Jr.</li>
+</ul>
+<p>Charles talks about how can we take what we have now with cities (sprawling layouts) and improve them incremently to make them more livable, walkable and enjoyable.</p>
+<ul>
+<li><a href="https://www.amazon.com/Blue-Highways-Journey-into-America/dp/0316353299/ref=sr_1_1?keywords=blue+highways&qid=1576937407&s=books&sr=1-1">&quot;Blue Highways&quot;</a> by William Lease Heat Moon</li>
+</ul>
+<p>William was out of a job, and losing his marriage so he decided to take a trip across the country, only using the state highway systems, the blue roads on old school atlases and maps.</p>
+<h5>Fiction</h5>
+<ul>
+<li><a href="https://www.amazon.com/Great-Gatsby-F-Scott-Fitzgerald/dp/0743273567/ref=sr_1_1?keywords=the+great+gatsby&qid=1576937481&s=books&sr=1-1">&quot;The Great Gatsby&quot;</a> by F. Scott Fitzgerald</li>
+</ul>
+<p>I think everyone knows this book.</p>
+<p><hr>$$</p>
+<p>There may be more but this seems to be a very good list based on what I read and listened too. As I mentioned above, each is a link to Amazon for you to buy any of these books. I highly recommend them all. </p>
+<p>If you are trying to avoid amazon or want to buy used, <a href="https://www.thriftbooks.com">this</a> looks like a wonderful serrvice. I plan on using them a lot in 2020. </p>
+<p>What did you read this year?</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/weight-loss-post-mortem</id>
+    <link type="text/html" rel="alternate" href="/blog/weight-loss-post-mortem" />
+    <title>Weight Loss Post Mortem</title>
+    <published>2019-09-26T00:00:00+00:00</published>
+    <updated>2019-09-26T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">Over the summer I was handed the challenge of a life time in exchange for a lens I wanted. The goal was two fold: get down to 215 pounds and also do a metric century (62.4 miles) in under 3 and a half hours. I failed both, one by a small margin and the......</summary>
+    <content type="html"><![CDATA[
+        <p>Over the summer I was handed the challenge of a life time in exchange for a lens I wanted. The goal was two fold: get down to 215 pounds and also do a metric century (62.4 miles) in under 3 and a half hours. I failed both, one by a small margin and the other by well 25 pounds as of this morning.</p>
+<h3>How it got started</h3>
+<p>For the last year, I have been one of the more prominent speakers for OSMI, the mental health collective aiming to open things up in tech. You might have seen me around. I generally am found wearing flip flops and an OSMI hoodie that is at this point well past its prime. I don't hide my struggles with anxiety, nor do I want anyone else to. With that, I have invariably inspired others to talk openly, get help, both or some other action. One of those people was my very good friend <a href="https://twitter.com/joshholmes">Josh Holmes</a>. Without going into much, one of my mental health talks resonated with him. It was enough for him to get the help he needed to get back into the groove. I think we have all been there. Without help, the world can feel suffocating. Simple tasks weigh on you as if you have to decide a momumental decision that could be irreversible. All that to say, if any of this resonates with you, find someone in your area. That's not the point of this talk though. The point is this: Josh saw me on Twitter one night talking about how I had some goals. These goals were loosely defined but there. He took it as a chance to motivate me. If you don't know, Josh is an amazing photographer. He has an Instagram full of amazing pictures. He has been isntrumental in helping me learn more about photography and inspiring me to dive more into it. At <a href="&#039;https://2020.sunshinephp.com/register&#039;">Sunshine PHP</a> last year, he let me try out one of the penultimate lenses for a photographer: the Canon 70-200 mm L III f/2.8. Most you probably don't know, but that lens is about $2,000. I was smitten. When we got to Longhorn PHP, he gave me that lens for the weekend and I went wild with it. I ended up helping capture a lot of the conference and gave them rights to my photos to use but I had a blast wandering around, taking pictures and enjoying something other than programming. Josh figured this was perfect motivation for me. The conditions were as followed: </p>
+<ul>
+<li>Ride a Metric Century (100 km/ 62 miles) in 3 hours and 30 minutes. Thats around an 18 mile per hour pace. </li>
+<li>Hit 215 pounds by Cascadia PHP. </li>
+</ul>
+<p>I can report the following: </p>
+<ul>
+<li>I rode the century in 3:38:08 according to my garmin computer. <a href="https://www.strava.com/activities/2668305047">Proof</a>. I failed this just slightly, but I know why. </li>
+<li>As of this morning (9/26/20190) I can report I am hovering between 237 and 240. It fucking sucks. I've hit a plateau. I've been around this weight for <em>weeks</em>. </li>
+</ul>
+<p>Before I go any further, I can't thank everyone enough for the words of encouragement, the support, the donations and more. While I currently do not have a Canon 70-200 sitting in my apartment, I absolutely felt the love. While I am in a funk right now, its helping me push through it. So lets break down what happened with both. I think we should do the cycling one first, thats more fun.</p>
+<h3>Hitching rides to the finish</h3>
+<p>Oddly enough, this goal was the one that scared me. Not because I couldn't ride the distance. No, I've ridden this ride before. Jacques Woodcock and I did it years ago. To be more precise, Jacques convinced me to do it, drive up from Atlanta, spend a night in Clarksville, and then get dropped in the first 10 miles by him. Im not bitter at all. (Not really, it was awesome to watch him crush it). What made me nervous was the pace. I talked to a lot of the people I ride with regularly. All said the same thing: lose weight and it's doable. I started adding miles to my week. Upwards of 80 to 100 miles riding on average. I saw my mph average go up but never anything significant. I could hold my own with the group for a while but would get dropped routinely. So when it came time for &quot;race&quot; week, I was incredibly nervous. I stopped riding a few days prior to give my legs a break. I broke the cardinal rule and had work done on my bike the night before the ride. It was so bad the mechanic was nervous the entire morning. To the ride though.</p>
+<p>This time, my good friend <a href="https://twitter.com/irreverentmike">Mike Bifulco</a> drove over from Charlotte to ride with me. I can report back that karma is funny in that I ended up dropping him, but not in the first ten miles. We had dinner, and then a drink at the hotel bar before calling it a day. I went to my room, and did something that got a hell of a reaction: I shaved my legs. In cycling its popular to shave your legs if you are a guy not so much for speed, but because if you crash (more likely than I'd admit), shaved legs make it easier to remove gravel and debris from the open wounds. I went to bed and barely slept. I was up at 6am ready to go. Grabbed some breakfast and found Mike in the staging area. In my kit I had a set of Clif Chew Blocs and 4 Gu packets. These were crucial. Mike and I got set up, and rode up to the start line around 7:15 just to chill. Funny enough a huge group of riders got some nerves worked up and asked to start early. We saw that happen and just went with it. Immediately we hitched ourselves to two guys that were clearly stronger and holding a good pace. The weird thing is that I felt great. My legs were flowing so good on the pedals. Mike didn't think he could hang but he did. Finally they turned to so that one guy could find his wife on the 30 mile course. Hitching a ride with them saved us so much energy and let us coast the first 10 or so miles. </p>
+<p>We kept doing that as we could, attaching ourselves to other riders, getting free rides and taking pulls as we could. I looked down and saw we were on pace for 20mph or so. I was estatic. Mike was doing his best to stay with me but would drop behind. Instead of just crushing it, I would slow to wait. I thought it would be a dick move to just drop him. Riding is way more fun when you have someone to share the pain with. The big moment though, I don't even know if Josh knows this is that when I hit the second rest stop, I was at mile 30 and time wise we were at 1:42:00. Since this ride was in the back country of Kentucky I had barely enough signal to put out a quick update tweet. (I just realized I left my garmin running and we took a 10 minute break at the first rest stop. What the fuck. Had I stopped my garmin, I would have finished under. Oh well). We kept going, but the break hurt me. My legs were heavy after the break. I was pushing but they felt like lead. It wasn't until my phone and watch got enough signal I got a single notification from Josh in a DM telling me I was crushing it and to keep it up. That was it. At that point, I stood up, shifted down and hammered my way back up to the pace I needed. It felt like I was shocked with some electricity. It was amazing. </p>
+<p>Mike finally told me to go, and at the second to last stop, I put my head down and just focused on the miles counting down and the time counting up. I found a group of incredibly strong riders and held on for dear life. Now, I probably commited a huge sin here, but I never made a true attempt to take a pull at the front of the group. There was three of us, I was in the back just hoping to hold on. They never tried to shake me, they just maintained a consistent pace. Finally, when I went to pull for them, the physics of it all had me passing them both at 25 mph. I couldn't just slow down, and they could have kept up so I kept going. I hit the final section, a soft uphill for about a mile that only rose up 100 feet total. It was enough that you could tell you were going up hill, but it never looked like it. This section was the worst. It was exposed to cars, to the sun and the incline was enough to make you have to dig deep. I lost time here struggling. When I crossed the line, I was proud. When I did this ride 4 years ago, I did it in 4 hours and 25 minutes. I shaved almost an hour off my time. While I didn't hit our mark of 3:30:00, what I did was enough for me this year. Next year I plan on attacking harder and getting that sub 3:30:00 time. </p>
+<p>If you are a cyclist looking to do a ride like this, let me know and Im happy to share tips and tricks I learned. </p>
+<h3>The scale sucks</h3>
+<p>The other part of the goal, albeit the hard part, is trying to get down to a weight I have not seen in years. Decades to be honest. </p>
+<p>What a lot of people don't know is that I've always struggled with my weight. One reason is I eat terribly. I love going out, I love food that is bad for you. We all do, I just lack moderation. The other thing is that I take steroids to stay alive. I've been on them since birth, and they aren't stopping til I die. These aren't the get jacked kind of steroids, but they do add weight. Its not the sole reason why I've always been overweight, but it certainly doesn't help. The other thing that doesn't help is job loss. Which happened to me in the middle of this all. </p>
+<p>To back up, I was working with a few great guys, all who were more health aware than I am. Because of that, they helped influence me to get better. Starting with MyFitnessPal, we tracked what we ate. I saw the weight shed rather quickly. It felt great, I felt great. We would order lunch via Seamless every day, but we would do so in a way that we tried our hardest to be conscience about what we would order. Sushi quickly became really popular. When we lost our jobs, the support system kind of fell apart. My first priority turned into getting a job so I would have money to do things... like eat out or buy a bike. The worst part is that because all of the interviews I did during this time were either on Zoom, Hangouts, or a phone I did them all at my apartment. I didn't want to be that person at the coffee shop who talked loudly and ate up the internet. Since I was spending hours on the computer doing interviews, eating out became my escape. And as you know, old habits die hard. Hot chicken, pizza, burgers. None of that is good for you, but damn it does taste good. This stalled all of my progress. Being laid off also has a way to put you in a weird mood overall. I could have gone to work out, but interviewing is hard. I was tired. I was riding but not as much as I should have been. But when it was time to go eat, I shot out the door. </p>
+<p>Now, I can safely say I have a job, and I've started meal prepping again to prevent so much going out. However, working from home is isolating and lonely. Im more aware of that this time around (the last time I was remote, it was bad for my mental health), and I use coffee shops and stuff to have human interaction. While that's not great, I only drink black coffee so that shit is only 5 calories. </p>
+<h3>What will change</h3>
+<p>This challenge really made me reexamine some things. But you know was fucking amazing? Sitting in an airplane seat and not feeling like Im spilling over it. Not feeling like death walking around. I may have failed these challenges by the numbers but overall I win because Im in better shape, a better person, and ready for more. I've been working hard on setting 2020 goals and I want to be ambitious. There is a rumor Josh is going to try and get the weight loss deadline extended, but I'd like to see the other side of 200 in 2020. No more of this overweight stuff. It's time to be in a shape that's not round. I'm starting to race in the Crit series here in Nashville. Its basically laps around a course for 30 to 45 minutes but I can win money, fame, and glory. Really just money or a 6 pack of beer. I plan on doing the century ride again, this time finishing under 3:30:00. Ideally I'd be closer to 3:15:00. It's doable with training. Meal prepping is now a big thing. Its nice to have a few options ready to go. Variety keeps me interested in what is already cooked versus going out. Once it is untenable to ride outside in Nashville, I will be hitting a gym. Most likely the rock climbing gym to learn how to do that and work on new areas of fitness. I may pick up running. I hate running. But Jacques, who runs all the time, was able to pace me on a bike in Portland even though he doesn't ride much anymore. Clearly there is something to this running thing.</p>
+<p>As my really great friend Kat Zien said in a text when I sent her a photo of me holding a 600 mm camera lens &quot;Dude, you look great! I can see a lot of weight lost and a lot happier face!&quot;. The fact that now other people see my progress tells me its working. This is just a minor speedbump. The next time you see me, I will be in better shape. </p>
+<p>For everyone who has reached out to support me, push me, encourage me I can't thank you all enough. It means the world. You are all the best, and I am happy to count every one of you as a friend. </p>
+<p>Cheers!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/the-emergency-fund</id>
+    <link type="text/html" rel="alternate" href="/blog/the-emergency-fund" />
+    <title>The emergency fund.</title>
+    <published>2019-08-13T00:00:00+00:00</published>
+    <updated>2019-08-13T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">A tweet was surfaced today where someone mentioned being sick and a freelancer. As someone who hates working on contracts for this reason, it was still a fresh reminder of what I am currently going through... funemployment. The topic of needing an......</summary>
+    <content type="html"><![CDATA[
+        <p>A tweet was surfaced today where someone mentioned being sick and a freelancer. As someone who hates working on contracts for this reason, it was still a fresh reminder of what I am currently going through... funemployment. The topic of needing an emergency fund came up, but was immediately met with responses saying they weren't sure if it was possible to create one. I'm here to say it abso-fucking-lutely is, and I want to offer some tips. </p>
+<h3>What is an emergency fund?</h3>
+<p>At it's core, the emergency fund is there for emergencies. For this, <em>you</em> have to define what is an emergency. My definition is any expense I can't reasonable cover out of pocket. Things like car repairs usually fall into this lot. Medical bills for sure, even though I do have health insurance, we all know in America that the system is designed to work against us. Other emergencies might include a massive vet bill for 15/10 best friend Molly. This is all dependent upon yourself and your life. To the person who spurred on this post, taking a sick day as a freelancer could be considered an emergency. You have to decide for yourself. </p>
+<p>The next question is how much? This is again, up to you. I know people who go with a 3 month emergency fund, some go for the 6 month emergency fund and others shoot for a year, 2 years or more. Its all about what makes you feel comfortable. I personally am aiming for a year's long emergency fund. This means that at my current expenditure level, I can live life for a year without a job or handle a massive purchase such as a new car or something similar without blinking or getting a credit card involved. With my past, avoiding credit cards is crucial to my current life strategy. </p>
+<p>To break it down to illustrate the point, my rent is currently $1,400 a month. $1450 if we want to include the water and fees. Now, at 12 months means I need to have $17,400 on hand just to cover rent for a year. Obviously, I can stash this away and break it down to a 6 month fund and be perfectly fine. Or I can keep stashing and saving and keep growing it. With my electric bill being between $40 to $90 a month (it's hot af in the summer so that AC is working hard), lets just budget for $90 a month for a year. Thats $1,080. Now I need $18,480 to cover these both. I require medicine to stay alive, but I buy that every three months. at $50 for both, thats an addition $200 I need to put away. My usual grocery bill is around $100 a month (thanks Aldi for being so awesome and cheap). That comes to $1200, so now I need $19,580 to cover rent, electricity, food and medicine. These are the core basics. I didn't add my cell phone, but that is about $100 for right now, so do the math there. I didn't add internet either. Now that we have this number, roughly $19,000, how in the world can we possibly save for it?!</p>
+<h3>How to create a meaningful emergency fund.</h3>
+<p>This question is a two part answer. First, lets look at how to start moving money around.</p>
+<p>To this point though, I've talked about the why but not the how. This is the hard part of the conversation to have. Because it forces you to be introspective, look at your spending and come to terms with some spending you may not want to talk about. I can attest this is never fun and I have to justify my eating out. Eating out is really my biggest expense. It's huge though. Eating out is social, it's freeing and it costs more than you think. Unfortunately, eating out is never just the cost of the meal you just paid for. Its the gas you spent to get there and back, the wear and tear on your car, the time you spent getting there. These all add eventually and will all turn into debts you will have to pay. Gas is not cheap, car repairs even more so. There is also the mark up on food at restaurants. </p>
+<p>Now you are probably reading this and thinking &quot;good lord dude, I just wanna have some fun!&quot;, and I'm right there with you! But when push comes to shove, it is a lot more fun to go out to eat when you know if shit hits the fan tomorrow, you won't be in a bad place. It's a lot more fun to be laid off and know you have the money to get by without having to rush to a job, versus having to crush your soul being whiteboarded/code challenged and end up discouraged and downtrodden. </p>
+<p>So take a look at where your money is going. Are you really using all 3 of those streaming services? I cancelled HBONow and Hulu for the time being. I don't need them plus Netflix. Sure they have different content, but I'm a creature of habit. I like the same 6 shows which are all on Netflix. Good enough. Do you need a meal delivery service? Or could you take a few minutes on Saturday to do some meal planning and buy in bulk? The point here is once you start identifying where your money is going (it is going <em>somewhere</em>, I promise), make tweaks. Little ones at first. You will see you wont miss what you cut out. And then automate the shit out of this. What I did to build up the first $1,000 in my emergency fund was just $10 a dollar was automatically transferred from my checking account to my savings account. I did it in a slow drip fashion because it was easier not to care. When you remove $70 at once it can be a small shock. Moving $10, the average cost of lunch, brings much less of a shock. Give it a few weeks and you will be surprised how much you have saved. If you get $500 in your emergency fund account, go out and treat yourself! We want to have a fun life of course. </p>
+<p>One tool to really help here is YNAB, or You Need a Budget. This is a zero dollar budgeting system that has a ton of raving users. The idea is you give every single dollar you have a job, and build up your accounts through smartly looking at where your money is needed most. </p>
+<p>Another tool is Mint.com, which is an aggregation site, that brings all of my accounts to one page so I can monitor my bank, my credit cards, my investments all in one place. </p>
+<h3>Ok, Im saving. Now what?</h3>
+<p>This is where people go a few different ways. If you look at one financial guru who I won't name but is synonymous with personal finance, he says grow a fund up to $1000, and then pay down your debt. I agree with this approach. Others say build up a few months of emergency fund and then attack your debt. That is a perfectly valid approach to savings as well. The thought there is that anything could happen at any time that could cost more than $1000. Completely believable! I know I am one car hitting me on my bike away from being up to my eyeballs in medical debt. Please don't hit cyclists. </p>
+<p>Here is my advice, save up the $1000, and then immediately pay down your debt. Your debt is an emergency. Every dollar you can use, put it towards that debt. Once it is gone, or more manageable, fund anotehr $1000 in your emergency fund. Create a cycle. Once the debt is gone, take those payments and put them right into the emergency fund til you hit the level you want it to be at. </p>
+<p>As a whole, we probably won't be laid off too many times unless we have terrible luck. We won't have to buy a new car every where unless you have the world's worst mechanic. Emergencies are few and far between. However, there is very little notice prior to one, thats why we want to be prepared. But what should we do with the money? To be honest, keeping most of it in a savings account is worthless. Why? Because the money will just sit there, and not build on interest. Savings account are great for quick access, but terrible long term storage. If this money is going to sit, we want it to at least be doing <em>something</em>. My thoughts, and what I've done with moderate success is that $1000 is in my savings account, which has easy access to my checking. Should I need some money fast, I can do a transfer and have the money in mere minutes. That is a good cushion. The rest of my money sits in an investment account that is 60% bonds and 40% stocks. Why? Well, I want this money to generate some more money. This will aid the growth of our emergency fund. The allocation of 60% bonds and 40% stocks is considered conservative, which is ideal here. We don't want to bet this money on the market, we just want it to grow a little. Bonds are great for long term, slow growth. Throw in some stocks just for variety, but the bonds will sheild us from loses in the market. This money can be liquidated in a few days if need be. This means I will probabyl use a credit card to cover the actual spending, but I will get the money around the same time the payment is posted on the account and I can pay it right off. </p>
+<p>I automate all of this. I have it set up on various days and amounts. I don't look at it much, I just let it grow and grow. Will I ever stop contributing to an emergency fund? Probably not, but once I hit my goals I will taper it off, and grow other accounts and buy all the VTSAX I can. </p>
+<h3>Find the money.</h3>
+<p>The whole point of this post is that while money is finite, and you may not make the same as me, you can always find money hiding in plain site you don't think about. Take a Saturday morning with a cup of coffee and just look at your accounts for the past month and scrutinize it like you would code in a coworkers pull request. Do you need to keep eveyr subscription you have? Can you cut back eating out a little, maybe don't go to happy hour every day for a few months and instead save. Don't be apart of the 60% of Americans who would struggle to find $1000 in a time of emergency. Be prepared. Your future self will thank you. </p>
+<p>Questions? Comments? Tweet me and lemme know!</p>
+<p>Cheers!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/how-I-got-into-cycling</id>
+    <link type="text/html" rel="alternate" href="/blog/how-I-got-into-cycling" />
+    <title>How I got into cycling.</title>
+    <published>2019-08-12T00:00:00+00:00</published>
+    <updated>2019-08-12T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">The picture above is my view when Im riding. Yes I have teal bar tape, I love it. The Garmin has been a godsend. I get my heart rate, heart rate zone, speed, average speed, cadence and distance all right there. 
+That&#039;s amazing, congratulations! I picked......</summary>
+    <content type="html"><![CDATA[
+        <p>The picture above is my view when Im riding. Yes I have teal bar tape, I love it. The Garmin has been a godsend. I get my heart rate, heart rate zone, speed, average speed, cadence and distance all right there. </p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">That's amazing, congratulations! I picked up cycling this year. It's an awesome sport. Just did way less miles.<br>Would be interesting to read more about your experience. Were you cycling before or started this year? What keeps you motivated? Has it changed something in your life?</p>— Andi Rückauer (@arueckauer) <a href="https://twitter.com/arueckauer/status/1160408216536276992?ref_src=twsrc%5Etfw">August 11, 2019</a></blockquote>
+<p>Andi sent me this reply after I posted that I was close to crossing the 1,400 miles (2253.082 kilometers) mark. That is 1,400 miles in one year. I didn't really get started til about April with the weather and the fact Nashville gets hosed by the EST/CST date line. Because we are so close to the EST but in CST, we lose daylight quickly in the winter. Which means its harder to ride til about March after work. Since Im on this blog spree, I loved his questions and felt it was a good topic. I talk about cycling <em>alot</em> as a lot of people know. I love it so much. It has given me a way to explore, meet cool people, challenge myself, and make some extra money!</p>
+<h3>What keeps me motivated.</h3>
+<p>The motivation can be tough at times. My legs will be sore, my back from being in an aggressive riding position, my feet from my shoes, but I still get out there as much as I can. What motivates me is that with things like Strava, and the group I ride with, I see tangiable improvement each time. I don't go out every ride ready to crush PR's or drop anyone in my path, but just based on fitness levels I can tell even easy rides get easier. Or as they say in the group: &quot;it doesn't get easier, you just get faster&quot;. The group rides give me a sense of belonging. Im not the fittest one, the fastest one, or the cutest one (debatable really), but I give it my all, and when we regroup in the middle or at the end of the ride, we congratulate each other for the effort. They see me get crushed on a hill, and they still recognize I gave it my all. It means a lot someone would care to give me that recognition. We share a beer at the end of the night, and talk about things cycling related, or not. I may get my ass kicked on a ride one week, and the next week be at the front of the paceline helping others draft behind me. Its amazing what time will do. </p>
+<p>But besides the group, its a sense of exploration. Nashville is rich in greenways that make you feel like you are 50 miles outside of a city, when really I'm only 5 miles away. It's great to be in nature, watching deer play, seeing a turtle still trying to finish the race. Seeing kids learning how to balance while you ride by and they look at you as a source of &quot;I can do that!&quot; is worth it. And yes, it is fun to drop someone on the greenway. I do it a lot. Its a small sense of pride when I can tuck in, drop a gear and hammer it out. </p>
+<p>The other thing that motivates me is that I'm helping others learn how to ride in the roads next to cars. When I do bike tours, we ride on normal roads, and these are people who wouldn't normally ride in a road if they could help it. To give them that sense of accomplishment is worth it. </p>
+<h3>How I got started.</h3>
+<p>I got started with cycling in this form about 4 years ago when I worked for the wonderful <a href="https://twitter.com/jacqueswoodcock">Jacques Woodcock</a>. I saw a tweet of his about him riding in the Tour de Nash here in Nashville and started to ask questions. I've always been attracted to the idea of biking everywhere. I'd love to live in a city where I can do that. It's hard to do it in Nashville because of the heat and lack of bike infrastructure such as bike rooms and showers in offices. No one wants to hang out with the sweaty dude in the office. Its a fact of life. </p>
+<p>After some talking with Jacques, I bought my first bike. It was a hybrid bike, nothing special but it was mine. I felt so cool in the streets of Atlanta where really I had no idea what I was doing. I wasn't in a group, I was just on my own. Jacques convinced me to come up to Nashville with him to do a metric century. A metric century consisted of a 64 mile/100 kilometer ride, this one up in Clarksville TN but most of it in the backwoods of Kentucky. I trained hard for it, trying to ride as much as I could. Being a remote job, Jacques told me to use my lunch time as a time to go ride, so I would set out every day around 12pm and just ride til about 1pm and get back to work. It was magical. </p>
+<p>When that job ended, I moved up to Nashville. My first week there Jacques punished me with some brutal riding. A tour of Nashville, a brutal 1800 ft of climbing and exploring this new city of mine. From there, I just fell face first into this new hobby. I started reading up on how to get faster, how to get stronger. I watched maintainence videos to learn the basics. From there I found my first group, the slow ride on Wednesdays. They were a group aimed at getting more people riding, more people comfortable with road riding and group riding. It was a great introduction but as I got better I wanted more. I found a ride at the sister shop of the one that did the slow ride and thats where I am now. This group <em>rides</em>. 20mph average, climbing around 1400 ft on average, and a solid mix of riders. Crit riders, distance riders, sprinters and people who do this for fun. I can't recommend a group ride enough. The friendships are enough to make it amazing. </p>
+<h3>Has it changed my life?</h3>
+<p>God, yes. Unfortunately for my girlfriend, I won't stop talking about rides I've done. She is a trooper and puts up with it. However, I don't know what life would be like if I didn't have my bike. I use it to clear my head after a long day, I use it to get outside and exercise, and I use it to explore. I have a challenge now to ride a bike in all 50 states. I've got 6 down, with plenty more to do. I've gotten my dad into cycling. Funny enough it started with him just doing the 8 mile GA 400 Century while I did the 50 mile edition. It ended with him wanting more. He even messaged me the other day asking to move from standard pedals to the clip ones. It may have saved my parent's marriage too, because it got my dad to become active and focus on his mental health. </p>
+<p>It's no understatement that cycling is huge to me. I advocate for more people to ride bikes. The Happiness Institute in Denamark has found people are happier on bikes. I can personally attest to that. Im happiest on a bike. Sure Im happy around friends, but have you cycled with friends?! One of my favorite memories is the ride I did in Miami with 9/10 friends <a href="https://twitter.com/michaelmoussa">Michael Moussa</a> and <a href="https://twitter.com/kasiazein">Kat Zien</a> a day before Sunshine PHP where we took a 40 mile ride through Miami. It hurt, it was rough at times but damn it was so much fun. </p>
+<p>So what is stopping you? Grab a bike! You will be happier, and when we meet, we can ride instead of just sitting at a bar!</p>
+<p>Cheers!</p>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/from-layoff-to-employed-in-a-week-and-a-half</id>
+    <link type="text/html" rel="alternate" href="/blog/from-layoff-to-employed-in-a-week-and-a-half" />
+    <title>How I went from being laid off to employed in a week in a half.</title>
+    <published>2019-08-10T00:00:00+00:00</published>
+    <updated>2019-08-10T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">It&#039;s never a good feeling to see people from other offices show up unannouced. It definitely isn&#039;t good if they show up a little doom and gloom with a stack of papers. If you haven&#039;t been through this, use this post as a guideline to take the steps you......</summary>
+    <content type="html"><![CDATA[
+        <p>It's never a good feeling to see people from other offices show up unannouced. It definitely isn't good if they show up a little doom and gloom with a stack of papers. If you haven't been through this, use this post as a guideline to take the steps you need before this happens. If you have, or you are in an unfulfilling job, by all means please use my experiences here to help you get to a job that is fulfilling and meaningful. Life is too short to do work that is mindless and not inspiring to you. As I talked previously, I spent the first half of this year doing a lot of rediscovery about myself, what makes me happy. What I realized was while there were a lot of good challenges at my old job, I never felt fulfilled by it. I yearned for something more. I wanted to make a difference. However, when you have a consistent paycheck coming in, it is hard to break the cycle. When your bills are paid, you are saving and investing (Buy all the <a href="https://investor.vanguard.com/mutual-funds/profile/vtsax">VTSAX</a> you can. Ask me more about this!) and you are able to do things like travel, eat out, and not worry about losing anything, you can easily get stuck. This happened at my old job. When they came to tell us the office was closing, I was a mix of emotions. I was sad I was losing my job, sad I was losing my main income stream, but also indifferent. I knew I would land on my feet, that wasn't a problem. The problem was where would I, how long would it take, and what can I do in the intermediary stages. </p>
+<p>I did what any good, mildly depressed person would do: I went home, bought Avengers Endgame, put it on, cuddled with my dog and just chilled. I told myself 24 hours to feel like a failure was good enough. I dont even know if I took the full 24 hours because later that night I was out in the group riding as hard as I could. In fact I feel bad because no one I was riding with knew what was happening, but the group I led ended up getting dragged across the route because I had energy to burn and I made the road and hills in Nashville my bitch. </p>
+<p>Now here I am, 11 days later, offer signed and a job starting in a few weeks. How did I do it? More importantly, how can you do it too? Quick thanks to my really good friend <a href="https://twitter.com/michaelmoussa">Michael Moussa</a> for inspiring this post.</p>
+<h3>Step One - The Community</h3>
+<p>Right after the announcement, but prior to leaving the office for the last time, I sent a quick tweet out. </p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Well, all good things come to an end. <br><br>Im now looking for my next challenge. Got something fun? Send it my way. Nashville or remote. Could relocate for the right challenge! <br><br>RT Please? :)</p>— matt trask (@matthewtrask) <a href="https://twitter.com/matthewtrask/status/1156221503576444928?ref_src=twsrc%5Etfw">July 30, 2019</a></blockquote>
+<p>The tweet above went gangbusters! I never expected it. However, I can tell you this: ever since I got involved with programming, and the PHP community, I have put my heart into this community to try and help it get better and more awesome for people coming up behind me. From organizing user groups to conferences, speaking, mentoring, podcasting and OSS, I spend <em>hours</em> a week working on this thing. I try my hardest to support everyone in our community when they need help. I don't have the biggest network, but every retweet helps someone get to where they need to be. And I think part of my success is that while I can be an asshole, I can be grumpy, I can be overly sarcastic, I also have empathy, I have understanding and I will use my voice to help others. Because of that, I have cultivated a community that is willing to help me when I need it. </p>
+<p>First tip: <strong>grow your community, and keep tending to it. It will die without work. And don't be a raging dickbag to others.</strong></p>
+<h3>Step Two - Be open</h3>
+<p>What is funny about that is that I just started dating someone, so I was hoping not to relocate but here is my second tip: <strong>Don't be picky, cast a wide net</strong>. </p>
+<p>The thing about layoffs is you will usually get a severance. That is great, until you realize the money will dry up eventually. You may get a few weeks at most, never more than 2 months in an office layoff. This could be different with optional layoffs before they become a cost saving measure. That combined with whatever money you have affords you <em>some pickiness</em> but that pickiness could cost you up front. I wanted the widest possible net to catch jobs, so I opened myself to <em>everything</em>. Laravel, Symfony, no framework, Typescript, Rails, I took it all. Do I want to do Rails work? No, but its good interview practice. People would ask me if I preferred an office or being remote. Personally, I love an office. I love being around coworkers, grabbing lunch and getting out of my apartment. Im a homebody, and so its typical of me to stay in once Im in. Going to an office gets me out. But when asked I have no preference. I can work remote, I can work in an office. Im not picky. I live in a great area where I have a few coffee shops and a cool brewery that I can work from if Im working from home. I have a spare room in my apartment that is an office/bike room. </p>
+<p>The same can be said about frameworks. I got asked about my preference for Laravel or Symfony. I don't care. I've used both, I like both. I can write code with both. My personal preference is Laravel only because at this point I have a few BASH scripts that spin up projects with packages I like easily. When it comes to a job I can't be bothered to care. I keep up with all the major frameworks, I watch their twitter accounts to see what is coming out. You can have a personal favorite, and still get a job by having strong opinions that are loosely held. Who knows, maybe as a Laravel developer you will look at Symfony and have new ideas. </p>
+<p>The point being: the more picky you are in all of this, the more limiting you are. It's up to you to define how picky you want to be, but that pickiness comes with limits. Mainly, how long can you last on your money after the last paycheck comes in.</p>
+<h3>Step Three - Take your time at first (I didn't)</h3>
+<p>The byproduct of that tweet above is the amount of people reaching out offering me some time to talk about their teams, and why I should consider it. It worked out really well because I had a lot of people vouch for me which helped me out. In retrospect though, I should have taken the rest of the week to relax. I have money stored away, I was going be ok for a few days. Instead, I decided to hit it hard on Wednesday with 6 interviews I think. I did another 6 or so on Thursday too. By the end of Thursday I was <em>tired</em>. Talking to people physically hurt me. I went to a conference the next day, which was more effort but a different kind. I made it clear to companies that yea Im interviewing now, but Im not in a rush to find something. Im making sure I get the best amount of coverage and getting the best possible options for my next step. Im fortunate the place I landed doesnt have me starting til the end of the month so I have two weeks to work out, cycle, and do OSS.</p>
+<p>What happened though, is that I came into the next week of funemployement with options. Really, it's a double edged sword. Move at your own speed and pace. I have seen developers, some really good developers, linger in unemployement for so long, that it kind of scared me and made me want to get things moving. Its a little bit of a confidence booster to see so many places work to line up interviews with you. However I burned myself out to the point where I ended up telling one company that. I was already getting offers when I had a request for a video chat so they could get an offer. I was so tired and out of it that I basically declined and told them Im so burned out that I couldn't talk. Since I had offers, I was ok doing it, but Im sure had I paced myself a bit more I could have heard more and had even more to consider. </p>
+<p>Tip three: <strong>if time permits, take a few days to recenter yourself.</strong></p>
+<h3>Step Four - It's not all about the money</h3>
+<p>The last piece of advice I want to give is that while money is great and lets me live a lavish lifestyle of the rich and hipsterish, it's not everything. The spread of salaries I had in my offers was about $35k, not including benefits, options, and more. When I told one person I took the lowest paying one they were kind of taken back. They brought up how fast the highest salary gets to my main goal: early retirement. And they are absolutely right. However, as I see it with a lot of FIRE devotees: getting to FIRE quickly without a meaningful life built up, or arriving stressed and burned out is not worht it <em>at all</em>. I am aiming to retire in my 40's. I love what I do, but I would prefer to do exactly what I want to do: OSS and not have to worry about deadlines, stand ups or anything else. During the time I do have to work though I want to make sure I am at a company that values me, and wants me to take care of myself mentally and physically. Being prone to burn out, this was huge to hear from a company that they track PTO in order to make sure people take time off. They have a gym reimbursement program as well. Trading a large salary for a gym membership may seem silly, but what is the point of retiring early and being in terrible shape, miserable and depressed because I was overworking myself and not taking care of what needs to be tended too. This isn't to say I would be overworked in the other jobs, but taking care of myself is a big thing and this was a huge selling point to me. This is a decision only you can make. Take the highest salary if you want, take the lowest, but do what is best for you. To me though, money isn't everything and I prefer to see how a job will let me be my best self. That can't be measured in dollars in any way at all. </p>
+<p>Tip four: <strong>money doesnt mean everything, sometimes the culture is worth its weight in gold.</strong></p>
+<h3>Step Five - Stay Humble</h3>
+<p>One thing I did after every interview I acquired via my tweet was thank them profusely for taking the time to talk to me. They were under no obligation to talk to me, so I wanted to make sure they time was well spent and they felt appreciated. I tried to thank every single person who quote tweeted my original tweet with kind words to make sure they knew they were appreciated in this hard time. When I turned down offers, I tried my hardest to start with just how grateful I was they would even consider offering me a job. It takes just a few seconds, but it goes a long, long way. So long that a few of the jobs I turned down told me if things don't work out I have a spot on their team. They don't have to do that, they will find other great developers, but because I did my best to stay humble and be appreciative, I have created lasting impressions and relationships now. </p>
+<p>Tip five: <strong>stay humble, and thank everyone</strong>.</p>
+<h3>Finale</h3>
+<p>I think these five tips will help anyone. Whether you are just starting out ohave r been a developer for a while, taking care of your community connections, taking time for yourself and weighing your options will get you the best result. </p>
+<p>I can't tell you how much I struggled and agonized over the decision of what team to join. It's a position that is incredibly hard. It took a lot of thought, a lot of personal intraspection and a lot of pros/cons lists. I had my dream job offered to me, more money than I've ever made, and opportunities to create amazing things. In the end Im confident I made the right decision for myself and I look forward to what it brings. </p>
+<p>Have questions? Feel free to message me here or on twitter!</p>
+<p>Cheers!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/staying-motivated</id>
+    <link type="text/html" rel="alternate" href="/blog/staying-motivated" />
+    <title>Staying Motivated</title>
+    <published>2019-07-09T00:00:00+00:00</published>
+    <updated>2019-07-09T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">I was on the phone with my good friend Korvin Szanto yesterday when he asked how I keep motivated on days when I don&#039;t feel like riding or going to the gym. It sparked an interest to write a few thoughts down for anyone else who wonders how to keep......</summary>
+    <content type="html"><![CDATA[
+        <p>I was on the phone with my good friend <a href="https://twitter.com/korvinszanto">Korvin Szanto</a> yesterday when he asked how I keep motivated on days when I don't feel like riding or going to the gym. It sparked an interest to write a few thoughts down for anyone else who wonders how to keep going. </p>
+<h3>The fight to keep going</h3>
+<p>This year started off differently for me, and so far it has continued to be different. I woke up 2019 determined to make some changes. The past few years have been a mix of apathy, lethergy, anger, and no motivation to change myself. For whatever reason, I didn't want 2019 to be the same thing. I started reading all kinds of books, figured out how to make running suck less to get to cycling season, and started lifting. Now, I've started tracking what I eat, making better choices for food, and trying to make sure I stay away from soda and things like that. Even beer has been cut down drastically. </p>
+<p>The thing is though is that this isn't easy. It's hard to keep going every single day. Even rest days require more thought and planning. So how do you keep it up day and day out?</p>
+<h3>You only get one body. Treat it like a temple.</h3>
+<p>Im not to this stage yet, but this is a paraphrased quote from Terry Crews. If you don't know him, he spends hours in the gym every single day. He is also really funny. In one interview he was asked why he spends so much time in the gym. The headline above summarises it pretty well. We don't know what happens when we die, but we do know our bodies don't go with us. But in order to get further in life, you need to take care of your body while you have it. And what motivates me to keep working on it? Well a few things. </p>
+<ul>
+<li>Airplane seats are uncomfortable if you are fat. </li>
+<li>Going outside in the summer and immediately sweating</li>
+<li>Running out of breath just taking the stairs</li>
+<li>Clothes looking bad. </li>
+</ul>
+<p>As someone who has done a lot of traveling this year for conferences, I can tell you first hand being squished in an airplane seat is enough on its own. Last night (July 8th, 2019), I went out to an art crawl downtown. It was so much fun. But when I was done, I looked at my shirt and it was covered in sweat. No one wants to see that. It's not a good look. When it comes time to a work out (I prefer cycling), I know that its just an hour of work but it will give me days of fulfillment. There are days I don't want to go, but I put on my shoes and gym shorts, walk over there and even if I just do 20 minutes on the elliptical, that counts to me as effort towards the goal. Same thing with a walk with my dog. A 30 minute walk is good enough to count, and thankfully podcasts and Audible help me make it even better. </p>
+<h3>Little improvements over big improvements</h3>
+<p>One book I read detailed the rise of the Team Sky (now Team Ineos) cycling team. The manager, Sir Dave Brailsford, realized something simple: a 1% improvement daily beats a massive improvement once a week. With that, he went to the riders of the team, and started making micro adjustments to how they rode, how their bikes were set up, what they wore. And it paid off. The team became a dominant force in European cycling winning the Tour De France multiple times, along with other major rides. When I heard this, this is what I knew I needed to do. I didn't hit 265 pounds over night, and I wasn't going to hit 200 pounds over night either. 1% improvements were the goal. When I check my weight, seeing the scale move down just .1 pound is enough for a victory. Being able to ride a well ridden route .10 mph faster is a win. Micro improvements seem to be the winner in how I stay motivated. I know over time, these 1% improvements will total up to 10% improvement in speed or a 15% improvement in weight lifted or 20% reduction in sweat. </p>
+<p>If you think you can start going to the gym today and by the end of the week deadlift 200 pounds, you are wrong and will lose motivation when you don't hit that goal. Instead, going to the gym now, laying the foundation and improving just ever so much will help you reach that goal of 200 pound deadlifts. How do I get there? I start by doing a set to failure with deadlifting, finding out my limit. Then once I do, every lift after that is just a small amount more. Will I deadlift 200 in a week? No. But I will in a month. In fact I will probably blow through it. </p>
+<h3>The sense of worth gains</h3>
+<p>The last thing that keeps me motivated to do all of this is how much my self esteem has risen and how much everything else has decreased. Instead of wallowing in stress, I grab my bike and let a hill take it out of me. When I put on a shirt, instead of it being tight, its now loose. Thats a huge win. And because of that, I feel better. Im not there yet, but I will get there. And hopefully some of this will help you stay motivated as well.</p>
+<p>Cheers!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/improving</id>
+    <link type="text/html" rel="alternate" href="/blog/improving" />
+    <title>On Improving</title>
+    <published>2019-06-30T00:00:00+00:00</published>
+    <updated>2019-06-30T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">A funny thing happened today. I was riding in an organized cycling ride called the Georgia 400 Century, named from a popular highway that takes people from the suburbs of Atlanta to downtown. The catch for this ride is that
+you spend about 3 miles on the......</summary>
+    <content type="html"><![CDATA[
+        <p>A funny thing happened today. I was riding in an organized cycling ride called the Georgia 400 Century, named from a popular highway that takes people from the suburbs of Atlanta to downtown. The catch for this ride is that
+you spend about 3 miles on the actual highway. Police close it off at 7am and we get 30 minutes to get on and back off. It's so much fun, and I look forward to this ride now every year since I did it three years ago. The idea behind this post is what my mother said to me. </p>
+<h3>You must be tired</h3>
+<p>Every year I've done this ride, my parents like to meet me at the rest stops and see how it goes. This year, my father rode with me (he did the 9 mile course), and we rode together up til the on ramp to the highway when I broke ahead and caught up to a group averaging my pace. My mom was waiting at the top of the dreaded Mother in Law hill (there is 3 massive hills called the Three Sisters, and once last one called the Mother in Law. We end on that, so its a great punch in the face) when I saw her about 42 minutes in. She waited for my dad, collected him and they came home so he could shower. After that they tried to connect with me at a rest stop. Except I kept blowing through them. Even with stopping, refilling bottles, eating gu (not as strange as it sounds), and resting for a minute, I was on the last pit stop when they got to the third one. When I finished, my mom initially thought I was just tired and confused until she say the times I posted on Strava and realized I've gotten incredibly more powerful and faster in the past year. This is how I did it, and how it can be related not just to cycling but pretty much anything.</p>
+<h3>It's good to fail</h3>
+<p>In cycling, failure is mostly centered around getting dropped from the group. What that means is instead of slowing down, they are leaving you behind. If you are going on this ride, its expected that you know that, know the route, and will eventually finish. Originally when I started riding with groups, I did a no drop ride. It was fun, but also not terribly challenging, so when a new group at a sister shop popped up I made the move. I went from riding with commuters and people who ride causually to racers and people averaging north of 100 miles a week. Suffice to say, it was a challenge. After being dropped, I started working out and working hard on non-group days to catch up. It eventually worked that I would be able to hang longer. I did cheat a little and bought a Garmin that gives me data about my speed, cadence, time etc so that way I could climb hills easier (it's still not easy). But in less than a year, I went from being dropped and kind of dreading the ride to showing up ready to go. Getting dropped isn't terrible, its a good reminder that I have work to do. </p>
+<h3>Find people smarter and better than you</h3>
+<p>In order to get to the level I needed to be, I found people who are faster, stronger, and better than me. I push myself to keep up, they don't drop themselves down. This can be applied to pretty much anything. When I was learning how to program, I followed all kinds of people on twitter I knew to be more experienced and smarter than I. It was a great way to ramp up and learn. Was it easy to keep up? Not at all, but when I look back, I'm thankful for how it worked out. I'm doing the same with photography. I look at people who have been doing it for years, understanding their lens choices and their choice of composition. Am I going to go out and do the same thing right now? No, not yet. However, watching them helps me remain mindful to what I am doing before I press the action button on my camera.</p>
+<p>You can't get better without failing. You will always find a way to fail. Whether you are dropped from a ride, fired from a job, not selling photos, giving a bad conference talk or anything else, the thought of failure looms large and is ready to make itself known. Instead of fearing it, accept it, love it, and use it to move yourself forward. Eventually you will see improvement and even wow the people watching you.</p>
+<p>Cheers!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/invest-in-yourself</id>
+    <link type="text/html" rel="alternate" href="/blog/invest-in-yourself" />
+    <title>Invest in yourself.</title>
+    <published>2019-04-12T00:00:00+00:00</published>
+    <updated>2019-04-12T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">For the past 6 years or so I&#039;ve been doing everything I can to learn software development. It started when I realized it was a career option and it hasn&#039;t stopped. Along the way I sold my Xbox, stopped playing guitar, and put all of my efforts into what......</summary>
+    <content type="html"><![CDATA[
+        <p>For the past 6 years or so I've been doing everything I can to learn software development. It started when I realized it was a career option and it hasn't stopped. Along the way I sold my Xbox, stopped playing guitar, and put all of my efforts into what I am doing today. On the one hand, it seems to have worked out well as I am now a senior software engineer. On the other though, I turned 30 a few years ago and realized my hobbies were all programming related. As I turn 32 in a few weeks (let's not talk about it), I started making some changes to make sure my life was as rich as possible. I don't mean rich in the financial sense (although that is part of it) but I mean in the sense of having amazing experiences. </p>
+<h3>You can't take it with you when you die.</h3>
+<p>I have been fairly open about my financial struggles and efforts over the years. While this post isn't about that, one thing I have started doing is trying to be more generous with the money I have. As the saying goes &quot;you can't take it with you when you die&quot; and so I would rather help people now. I've given myself a goal that at least twice a month I need to find some sort of cause to donate to. Whether it's a friend from high school raising money for their honors college program or a coworker's kid raising money for their wrestling team, they are all worthy causes in those people's eyes. I challenge you to do the same. Money can't buy happiness, but it can help create lasting memories. </p>
+<h3>Lifelong learning.</h3>
+<p>The internet is full of amazing ways to learn something new. I should know: the interet is how I learned to program. I don't know where I would be without it. While it's great to have some fun to troll, there is a vast amount of ways to learn something new. One thing I started was to watch a TED Talk a day. Or at least I try. TED Talks, and I try to find the official ones before the TEDx ones, are a great source for learning. The people presenting are passionate about the topic they are talking about, and usually its about something I have no idea about. Based on when you are reading this (if anyone reads this), the current fascination is that we finally have a picture of a black hole. <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwjj_vXvzsrhAhUphOAKHXkoD3MQyCkwAHoECAoQBA&amp;url=https%3A%2F%2Fwww.ted.com%2Ftalks%2Fkatie_bouman_what_does_a_black_hole_look_like%3Flanguage%3Den&amp;usg=AOvVaw3zU3re3jvsmEdCZ8ZaZRUy">Katie Bouman</a>, a lead scientist and developer on the project, gave a TED talk about what the process was to get this image. Her excitement was contagious and you can tell from the video that she is bursting with energy wanting to show everyone how cool this is. I've watched this video twice and I am still learning things from her talk. I challenge you to watch a TED talk, or something similar, once a week or so and think on it. </p>
+<h3>Hobbies</h3>
+<p>The last thing I have made a push on is getting better hobbies. Not to long ago I would sit on the weekends coding my life away. That's not a good way to live! Thanks to friends like Jacques Woodcock, Kat Zien, Michael Moussa, Cody Covey, Rob Allen and Kevin Boyd, I have a great group of people for two of my favorite hobbies: cycling and photography. Between riding 45 miles in Miami to getting photography help, these people have all helped me develop these hobbies to something that brings me joy. Now on the weekends I give bike tours, venture downtown (what a nightmare) with my camera, ride out to a remote area and see new areas. The camera gives me a new way to see the world. Whether its a tight image of a flower, or a sweeping landscape of a city skyline, you find new ways to view old things. With biking, you get to explore a city from a different angle. You are more alert to people walking and cars driving, but also to intersections, bridges and other areas of interest. You can easily park your bike on top of a bridge for a quick picture and you can then keep going with the wind in your face! What hobbies do you have that get you away from the computer?</p>
+<h3>Reading</h3>
+<p>The last thing I have done, thnaks to my boss, is found my love of reading. A huge help has bene Audible, which I tend to listen to on the drive to and from work and while out walking my dog. While I still love a physical book, the audio books help so much. From personal finance to fiction to personal growth, the amount you can get into is just amazing. This year I have finished more books than in the past 5 years. I have finished two personal finance books, a book about leadership, a book about the 96 Everest disaster, and am now reading a book about principles from Ray Dalio. If it's a physical book I try to set aside 30 minutes a day, usually at the end, to read. I have a nice comfy chair to curl up in and just let myself get lost. It helps me think, be creative, and sleep. </p>
+<p>All of these are things Im doing to invest more in myself and enrich my life. I challenge you to do the same. Whether its woodworking, reading, or exploring you can create an enriched life by creating experiences that can't be forgotten and will stay with you forever. </p>
+<p>Cheers!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/playing-with-fire</id>
+    <link type="text/html" rel="alternate" href="/blog/playing-with-fire" />
+    <title>Playing With Fire</title>
+    <published>2019-03-23T00:00:00+00:00</published>
+    <updated>2019-03-23T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">The image I chose for this post serves as a reminder for what awaits when I hit my goals. It&#039;s an image from Holi, a celebration of light in India that takes place in March. The celebration recognizes the emergence of spring and the end of winter. One of......</summary>
+    <content type="html"><![CDATA[
+        <p>The image I chose for this post serves as a reminder for what awaits when I hit my goals. It's an image from Holi, a celebration of light in India that takes place in March. The celebration recognizes the emergence of spring and the end of winter. One of my goals is to make it over there for the celebration. I'm not a religious person but this celebration just fascinates me. If you want to see more, there is a Netflix series called &quot;Tales by Light&quot; that follows photographers around. One episode follows a photographer as he wades through the crowds of Holi and it's amazing. </p>
+<p>I bring this up because a few weeks ago I finished the book <a href="https://www.amazon.com/Playing-Financial-Independence-Retire-Early-ebook/dp/B07JVC5F7N/ref=sr_1_1?keywords=playing+with+fire&amp;qid=1553350721&amp;s=gateway&amp;sr=8-1">&quot;Playing With Fire&quot;</a> by Scott Rieckens. It follows Scott, his wife and daughter on a journey from living paycheck to paycheck in high power careers to reworking everything to live on less than half of what they usually spend a month and being financially independent. Its a quick read, the chapters are short but entrancing. I bought it right before my flight up to Minneapolis for Midwest PHP and I had it finished on the flight back to Nashville days later. If I wasn't socializing or working on my talks, I was reading this book. </p>
+<p>To give you an idea of how the story goes: Scott and his wife went from driving a new car year after year, having a yacht club membership, going to dinner with friends at expensive restaurants every week to finding a used but efficient car, giving up the membership and entertaining friends at home with wine and home cooked meals. The story follows their decision making and does a great job grappling with what a lot of people struggle with: how much is too much to slash away. With the Financial Independence/Retire Early community there are various levels of frugality and morality. Some people take it to the extreme, giving up just about everything deemed excessive while others weigh what matters most for them. What Scott figures out early on is the things that bring them the most happiness aren't material things but experiences. I did an exercise last week to determine what really brings me happiness. Things on my list were:</p>
+<ul>
+<li>Cycling</li>
+<li>Photography</li>
+<li>Working Out </li>
+<li>Music </li>
+<li>Exploring new areas</li>
+</ul>
+<p>Now, there are start up costs involved, but after that Im good to go. For photography you don't need the most amazing camera and lens, you just need an eye for composition. For cycling, a carbon frame will be super light weight and awesome, but unless you are about to ride in the Tour De France and climb the Pyrenees, you don't really need it. You can get by with a used hybrid and just ride. </p>
+<p>What I liked most about the book though is Scott didn't hide his struggles with their journey. There were times the family came close to calling it and as the cliche goes, found a spark that renewed their drive. Might it be getting connected with people who have already made the journey like Brandon from <a href="https://www.madfientist.com/">MadFientist</a>, Pete from <a href="https://mrmoneymustache.com">Mr. Money Mustache</a>, or <a href="https://jlcollinsnh.com/about/">JL Collins</a> who wrote one of my favorite books &quot;The Simple Path to Wealth&quot;. The book is honest and refreshing from the typical FIRE blogs where people slash and burn everythig for a singular goal. They talk about giving and taking in the journey. Early on, Scott's wife Taylor was hesitant but opened up and started to get on board with one caveat: she would not give up nice chocolate and wine. Super relatable to everyone. As I push on with my journey to getting to financial indepedence, I look around and realize that good coffee and good whiskey are two things I want to enjoy. I'm fine giving up other things, but coffee and whiskey are two things that I want to enjoy the finer parts of. </p>
+<p>I highly recommend this book, its a great look at a tough journey written with a lot of humility and honesty. Pick it up today and you will have it finished by Monday. If you do, let me know your thoughts!</p>
+<p>Cheers!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/phpversions</id>
+    <link type="text/html" rel="alternate" href="/blog/phpversions" />
+    <title>The New PhpVersions</title>
+    <published>2019-02-19T00:00:00+00:00</published>
+    <updated>2019-02-19T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">About 2 ish years or so ago, I got access to the PhpVersions.info project started by my good friend
+Phil Sturgeon. There was always an open issue for a rewrite of the project. The reason being that the project was started in Jekyll to take advantage of......</summary>
+    <content type="html"><![CDATA[
+        <p>About 2 ish years or so ago, I got access to the <a href="http://phpversions.info">PhpVersions.info</a> project started by my good friend
+<a href="https://twitter.com/philsturgeon">Phil Sturgeon</a>. There was always an open issue for a rewrite of the project. The reason being that the project was started in Jekyll to take advantage of Github's free hosting. That worked <em>great</em> for a few years, but it became obvious we should use PHP since the whole project was about getting people on to the latest and greatest PHP version. </p>
+<p>I started to examine options out there, and there are some great options out there. Ultimately, I chose Laravel with Vue.Js, mainly because at the time that was the stack I was working full time in and knew I could get going with it fairly quickly. Say what you will about Laravel, and there is plenty to be said, one thing Laravel does great is &quot;Rapid Application Development&quot;, in which you can get up and running in no time. It's pretty fantastic. Now, if you can at least plan for a little bit in the future,you can also future proof your application from growing stale with a framework. With that, I set out to write the project. </p>
+<p>It wasn't til I was sitting at WordCamp Kent when I seriously put in the time to do it. I was speaking at the conference and the talks weren't really relevant to me so I just hung out working on it. I got the bulk down and then it was time to come back to reality. The project was worked on in between organizing a conference, speaking and other things. Finally, <a href="https://twitter.com/colinodell">Colin O'Dell</a> stepped up to helo manage the v1 instance pull requests so I could dedicate my time to the new stuff. </p>
+<h3>Tech Stack</h3>
+<p>As I mentioned above, the back end portion of the project is currently powered by Laravel. Will that remain the same as time passes I do not know. I'd like to think I wrote it in a way where we can start to remove the underlaying Laravel code after a while and move to packages. On the other hand, Laravel clearly is not going anywhere. I am not terribly concerned one way or another. The database is just MySQL. Woo. One of these days I need to get back to Postgres. </p>
+<p>The front end is powered by Vue.js, a reactive front end framework started back in 2014. Its comparable to React, but has some really nice differences. I did a talk about Vue.js at Sunshine which was fun. The CSS framework is Tailwind CSS, which I have absolutely enjoyed using, the font is Questrial and the icon font is Zondicons.</p>
+<p>It all runs on a Digital Ocean droplet with PHP 7.3 installed, and I absolutely plan on moving to 7.4 as soon as it is avaiable. </p>
+<p>If you have questions, ideas or want to contribute check out the <a href="https://github.com/phpversions/phpversions.info">repository</a>.</p>
+<p>Cheers!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/the-case-against-hateoas</id>
+    <link type="text/html" rel="alternate" href="/blog/the-case-against-hateoas" />
+    <title>The Case Against HATEOAS</title>
+    <published>2019-02-14T00:00:00+00:00</published>
+    <updated>2019-02-14T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">One thing I love about API Design is talking about HATEOAS. HATEOAS is magical, and generally considered the hardest part of API Design. I wonder why that could be though? Could it be that dynamically creating a link to a resource is that hard? No, I......</summary>
+    <content type="html"><![CDATA[
+        <p>One thing I love about API Design is talking about HATEOAS. HATEOAS is magical, and generally considered the hardest part of API Design. I wonder why that could be though? Could it be that dynamically creating a link to a resource is that hard? No, I don't think so. Could it be that Hypermedia isn't taught? Perhaps. More importantly: HATEOAS is a daunting term. Breaking it down HATEOAS becomes &quot;Hypermedia As The Engine Of Application State&quot;. Let's let that sink in just a bit. </p>
+<p>I am going to suggest something here: let's stop using HATEOAS and instead just use <code>links</code> or <code>hypermedia</code>. Breaking this whole thing
+down to the simpliest term will help developers down the road.</p>
+<p>I remember a year ago I went to the Nashville Software School to talk about what it's like to be a developer in the wild.
+I did a free form AMA and one question was, and I paraphrase, &quot;how do you remember all the acronyms that are associated to development?&quot;. I paused for a bit
+and gave some answer along the lines of &quot;you just kind of remember them as you go&quot;. As I look back, that answer is garbage. It is in a similar vein
+of playing guitar where you eventually remember the different chord positions. What is different though is that you wont always use the
+acronyms in daily use. HATEOAS is absolutely one of them. The worst part is that HATEOAS is not at all part of everyone's job like DI, CI, HTTP and others.</p>
+<p>At it's core, what exactly is HATEOAS? Well, to understand HATEOAS, you need to understand REST. REST, or Representational State Transfer is the idea of stateless
+data transfer either between a machine and human or machine to machine. By design, your REST API should remain stateless, and not remember what the previous request was.
+This poses a problem though: if our API doesn't remember the last request made, how can we tell a user what other endpoints they may be interested in? This is where hypermedia, or links, come into play.
+A great example of this is the Foxy.io API, borrowed from <a href="https://api.foxycart.com/docs">here</a>:</p>
+<pre><code class="language-json">{
+    "_links": {
+        ...
+        "fx:customers": {
+            "href": "https://api.foxycart.com/stores/41000/customers",
+            "title": "Customers for This Store"
+        },
+        "fx:transactions": {
+            "href": "https://api.foxycart.com/stores/41000/transactions",
+            "title": "Transactions for This Store"
+        },
+        "fx:subscriptions": {
+            "href": "https://api.foxycart.com/stores/41000/subscriptions",
+            "title": "Subscriptions for This Store"
+        },
+        ...
+    },
+    ...
+}</code></pre>
+<p>What we get here is part of the response payload, where the Foxy.io developers point out that while you are looking at the current data, here are some links of interest that you may want to utilize. Looking at what is available, the main response is for some sort of store endpoint, and now we can see that we may be interested in the store's customers, transactions or subscriptions as well. This is HATEOAS. If we
+request the <code>/store</code> endpoint again, the same links will be present, but the service we requested data from will not remember what we did. This is ideal. </p>
+<h3>The Case Against HATEOAS</h3>
+<p>Now, after reading all of that, you are probably thinking &quot;ya that makes sense&quot;, which is great. However now Im going to make it a point to stop using HATEOAS. Why? Because people dont know it off hand like
+CI, DI, HTTP, and other things. Instead, lets just call it <code>links</code> or <code>hypermedia</code>, and remove a barrier to learning something that we consider crucial to API Design. </p>
+<p>If we can make it easier for one person, we make APIs better for a lot of people.</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/new-year-new-me</id>
+    <link type="text/html" rel="alternate" href="/blog/new-year-new-me" />
+    <title>New Year, New Me</title>
+    <published>2019-01-01T00:00:00+00:00</published>
+    <updated>2019-01-01T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">What can you challenge yourself with to be the best you? Here are mine.
+
+In my &amp;quot;year in review&amp;quot; post I mentioned I got into photography. For 2019 one thing I want to do is take a picture a day. There are a few things I hope to achieve with......</summary>
+    <content type="html"><![CDATA[
+        <p>What can you challenge yourself with to be the best you? Here are mine.</p>
+<h3>A photograph a day.</h3>
+<p>In my &quot;year in review&quot; post I mentioned I got into photography. For 2019 one thing I want to do is take a picture a day. There are a few things I hope to achieve with this:</p>
+<ol>
+<li>I hope to get better at composition and framing. </li>
+<li>I hope it challenges me to explore more. </li>
+<li>Give me a portfolio of stuff to hopefully sell/create monetary options.</li>
+</ol>
+<p>To follow along, check out my <a href="https://www.flickr.com/photos/164111164@N05/">flickr</a>. I hope to move all the content to my own site soon. Just gotta buid it.</p>
+<h3>Read 52 Books</h3>
+<p>I used to be a huge reader. I would crush a series of books in no time as a kid. I have sadly fallen off in recent years, so I hope to pick that back up. The first three books of the new year are: </p>
+<ol>
+<li>Jurassic Park (holy shit so good)</li>
+<li>Into The Wild</li>
+<li>Simple Path to Wealth</li>
+</ol>
+<p>There is no real method to the madness here. I picked up Jurassic Park cause it caught my eye. As for Into The Wild, I loved Jon Krakauer's recount of the 1996 Everest Diaster in Into Thin Air, so I hope
+this will be a good read. Simple Path To Wealth is a book I've heard references on countless FI/RE podcasts and interviews. I love JL Collin's style of discussion. Even keeled, soft spoken but authoritative
+in the realm of wealth and investment, I think this will be a game changer. </p>
+<p>To follow along, check out my <a href="https://www.goodreads.com/user/show/4986797-matt-trask">goodreads</a></p>
+<h3>Two new blogs</h3>
+<p>As I referenced above, I want to move my photographs to my own content management system for a few reasons. Mainly I want to control how it is shown,
+and should something happen to flickr, I don't want to scramble to get my images. </p>
+<p>The other blog will be a personal finance blog aimed at developers. I've tweeted about it a few times and the response is always &quot;yes please&quot;. As I read a lot of 2018 review blog posts, one thing mentioned
+was getting the finances in order but very few people know where to start. I hope the aim of my blog will be a mix of good foundational starting points as well as more advanced
+topics like FI/RE, investing, real estate and more. </p>
+<p>Look for these, I will be tweeting and posting about them as they get close to be done.</p>
+<h3>Walk more</h3>
+<p>I live in a great area of Nashville. There is a coffee shop .5 miles away, a brewery .3 miles away and an excellent sandwich shop .5 miles away in the opposite direction. There is no reason
+for me to drive other than I want to waste resources. So a challenge of mine is to walk more, be more in the community I am apart of and enjoy it. A side effect is hopefully some weight loss. </p>
+<h3>Weight loss</h3>
+<p>I've struggled for years to lose weight, or rather be motivated to lose weight. I am not getting younger, but I have plenty of time to enjoy life and feel better. I am to do this through better eating,
+less garbage like soda, more walking, more cycling, and maybe running. Maybe.</p>
+<h3>Remove the last of my debts</h3>
+<p>I have two loans right now. A student loan at $6,000-ish dollars and a personal loan for $8,000-ish dollars. These suck! It's a weight just hanging over you. I want them gone, so they will be.
+I've spent the morning running numbers and preparing myself for a financially healthy 2019. These should pave the way for my net worth to grow, and free up money to pump into stocks like VTSAX. </p>
+<p>I aim to talk more in depth about all this on the financial blog I mentioned earlier. </p>
+<h3>Loose ends</h3>
+<p>I think this covers it. I am working on being happier, more confident and more at peace with life. 2018 was a struggle at times for various reasons. I gained weight, destroyed some relationships (dating and not dating),
+and basically was just down on myself the whole time. I am a good developer (sometimes), and I have things to offer but I can't offer them if I am not at my best. </p>
+<p>So 2019, come at me. It'll be fun.</p>
+<p>See ya!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/year-in-review</id>
+    <link type="text/html" rel="alternate" href="/blog/year-in-review" />
+    <title>Year in Review</title>
+    <published>2018-12-31T00:00:00+00:00</published>
+    <updated>2018-12-31T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">It&#039;s always good to do a year in review, and this year was a big year for me, so this will be a big post.
+
+The biggest change for me came in January when I was offered a position at OpenSky, now MoreCommerce to work under Wage. It was a big change, going......</summary>
+    <content type="html"><![CDATA[
+        <p>It's always good to do a year in review, and this year was a big year for me, so this will be a big post.</p>
+<h2>Work</h2>
+<p>The biggest change for me came in January when I was offered a position at OpenSky, now MoreCommerce to work under <a href="https://twitter.com/jwage">Wage</a>. It was a big change, going from a small team all cramped in a room to a distributed team across the world. I won't say its been easy either. It is a huge application across a lot of repositories. But, because the team practices good programming concepts, its not hard to figure out where you are in the app. It's because of those practices the app which I think is well over 7 years old is still in great shape. </p>
+<p>I've had the opportunity to really work on some cool stuff, but it has been a huge challenge. It's made me think about how I code and work altogether. While its been a lot of ups, there was also a good bit of time where my anxiety was at an all time high. Not just cause of work, but it had an effect on it. It showed me I work with people who care and want to see everyone in good health and spirits. Im happy I made the switch, even if there were times I was borderline thinking I wasnt at my best there. </p>
+<h2>Community</h2>
+<p>On the community side, it was a roller coaster of fun and frolics. I started the year as an organizer of Nashville PHP and am ending it as an organizer of NashAPIs. In the middle I stepped down from Nashville PHP to run Southeast PHP. There is a subsequent blog post about Southeast PHP around here somewhere, but suffice to say it was a success. Four years ago, I never imagined I would run a conference but drunk me does silly things like commit to running a conferece. Drunk me is an asshole.</p>
+<p>On top of organizing a conference, I had the pleasure to attend Sunshine PHP and had the honor to speak at the inaugural Cascadia PHP about the OpenAPI Spec. While I was there, I got to meet coworkers who work in our Portland office.</p>
+<p>Locally, I helped get NashAPIs off the ground. It's still a work in progress, but it's coming along.</p>
+<h2>Open Source</h2>
+<p>My biggest achievement here is not letting PHPVersions.info fall to the wayside. I've tried my best to stay up with the pull requests, but the biggest help has definitely come from <a href="https://twitter.com/colinodell">Colin O'Dell</a>. He is on top of the things I forget about. This also is a good way to segue into one of my goals:</p>
+<ul>
+<li>Getting PHPVersions off Jekyll/Github and on to well PHP. </li>
+</ul>
+<p>The project is all about highlighting PHP hosts offering the latest PHP Versions, so we should absolutely be up with that for our own code base. I can tell you right now, the project 75% done, with it mostly being small things I need to fix. I just need like a 4 day stretch of time where I can work on it and get it done. It would be awesome to finish it before Sunshine PHP so I can highlight it in my Vue.JS talk since Im using Vue.JS on the front end with Laravel on the backend. If you are familiar with the project and have ideas of what could be done to make it better, open an issue and tag me!</p>
+<p>The other cool thing that happened with this project was I was interviewed. I didn't start the project, but Im happy to see it grow and people are taking notice. You can read the interview <a href="https://www.hostingadvice.com/blog/php-versions-tracks-language-updates-and-hosting-support/?fbclid=IwAR1qR8hymae6ndsGnlYCaJ6FGc5uI6vWMcdaandt6rqwCh6LdlQVOUaR1l0">here</a>.</p>
+<p>Outside of this, I continue to look for opportunities to contribute more either through code or mentoring.</p>
+<h2>Cycling</h2>
+<p>My cycling goals dragged this year. According to my Strava profile, I rode 874 miles this year, down from last year. Not sure why exactly, just lost time with organizing things. Next year it's definitely something I want to pick up. I did do two major rides: </p>
+<ul>
+<li>Tour De Nash</li>
+<li>GA 400 Century</li>
+</ul>
+<p>I did the 25 mile version of both, because I under trained. However, both were so much fun. I love the Tour de Nash cause it has enough competition to push you, but it's so friendly and welcoming. Whether you want to hammer out the lead or just casually ride through the various neighborhoods of Nashville, this ride has it all. </p>
+<p>The GA 400 Century is a whole nother beast. This was the second year I did it, and what is special about it is that you get to ride on part of a freeway. Yes it's blocked off, and we only have 30 minutes to get on and off again. Its all of about a mile and a half on the freeway, and then it just kicks your ass with hills that seem to never end. Last year I did the 48 mile route and this year due to under training I dropped to the 25 mile route. Im sad I couldnt pull off the 48 again, but I still had so much fun. </p>
+<p>I also had the pleasure to start giving bike tours. This is something I just lucked into but man its so much fun. I get to ride around Nashville talking about history, two things I love. Not Nashville, riding a bike and history. Nashville is... ok.
+I get to make a bit of money on the side, and meet cool people so Im looking forward to the weather warmning up and getting back out there. </p>
+<p>I have plans so far for three big rides: </p>
+<ul>
+<li>Tour De Nash - 48 Miles</li>
+<li>GA 400 Century - 62 Miles</li>
+<li>Sunrise Century - 62 Miles</li>
+</ul>
+<p>Doable, if I commit. </p>
+<h2>Photography</h2>
+<p>Another hobby I picked up is photography. I was fortunate enough to get a nice starter camera from a coworker and now it comes everywhere with me. In fact as I write this, Im picking up two more lenses. It's a fun hobby that lets me look at the world differently, and lets me explore. I just need to get a small point and shoot camera for when Im out riding, cause you never know what you will see on the long rides.</p>
+<p>To see some of the photos I have taken, go <a href="https://www.flickr.com/photos/164111164@N05/">here</a>. If you see me around a conference, I will probably have my camera with me. </p>
+<h2>2019</h2>
+<p>Im planning on making 2019 my year. I was in a weird spot with 2018. I fought boughts of anxiety, depression and had a huge crisis of confidence for the latter part of the year. So bad my boss called me out on it all. And that helped. But now I need to make 2019 better. I want to take more risks, fail more, learn more, and be more. So my goals are:</p>
+<ul>
+<li>Lose weight</li>
+<li>Take a picture a day</li>
+<li>Read 52 books</li>
+<li>Contribute more code</li>
+<li>Explore</li>
+</ul>
+<p>The losing weight thing is already in effect (holiadys not withstanding). As I tweeted out a few days ago, I was able to get into a smaller pair of jeans. They are super tight, but its a nice victory none the less, and gives me the motivation to keep going. </p>
+<p>As for the picture a day, I want to push myself to explore, look for new ways to see things, and create. Im hoping to stand up a blog soon to create a stream for the photos. Nothing fancy, just something to show a picture a day and maybe a caption. I think if I can get to the halfway mark, I will treat myself to a new camera as a way to reward dedication and effort. </p>
+<p>I used to be a big reader. I would crush books as a kid. The whole Boxcar Children series in a month, Goosebumps in as much time. Harry Potter was a big one too. Being an adult has left me with less time to read so I want to change that. I went out and bought two books already to get me started. </p>
+<p>The last two are just self explainitory. But I look forward to making them happen too. </p>
+<p>Hopefully you had a great 2018 and you are ready to take on 2019!</p>
+<p>Cheers!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/conference-speaking</id>
+    <link type="text/html" rel="alternate" href="/blog/conference-speaking" />
+    <title>Conference Speaking</title>
+    <published>2018-12-20T00:00:00+00:00</published>
+    <updated>2018-12-20T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">It wasn&#039;t in my plans to be a keynoter this year, or ever, but here we are. Im happy to say I will be one of the keynote speakers of
+MidwestPHP, my talk being about mental health and how I&#039;ve learned to adapt and overcome challenges. Hopefully
+people......</summary>
+    <content type="html"><![CDATA[
+        <p>It wasn't in my plans to be a keynoter this year, or ever, but here we are. Im happy to say I will be one of the keynote speakers of
+<a href="https://midwestphp.org">MidwestPHP</a>, my talk being about mental health and how I've learned to adapt and overcome challenges. Hopefully
+people will leave this talk with some ideas they can adapt to their lives as well. Based on a thread from Phil Sturgeon, depression can strike
+anyone at anytime no matter who you are. Very timely. </p>
+<p>Also, Im happy to say I will be giving a session at Midwest PHP going over the OpenAPI and how you can build your APIs with it. Its a fun talk and I love
+giving it. Before that though, I will be in Miami to speak about Vue.js at <a href="https://sunshinephp.com">Sunshine</a>. Why I submitted on JS I dont know, but
+Im having fun with it. Im recycling the API I built for CascadiaPHP to build a front end with Vue, which gives me more material for Midwest as well.</p>
+<p>Im sure I will end up at other conferences but so far these are sure fire things. Other things I hope to accomplish soon: </p>
+<ul>
+<li>Launch the new PHPVersions. It will be built on PHP instead of Jekyll. Im hoping to take better advantage of automation and APIs to make this project
+more robust. I also plan on publishing an OpenAPI spec to go along with it so others can consume the data. </li>
+<li>Launch a personal finance blog. It's no secret I've been trying to learn everything I can about about personal finance and investing, both things
+I wasn't taught much about in school or my early life. I hope this project helps others, especially developers making an insane amount of money make
+smart choices. </li>
+<li>Launch a photography blog. My last little project will be a photography blog. I got a camera this year and it's been a lot of fun going downtown to take pictures.
+It would be great to see if I can turn it into a side business but right now its just fun. </li>
+</ul>
+<p>Hope to see you around at a conference next year!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/conference-tips-and-tricks</id>
+    <link type="text/html" rel="alternate" href="/blog/conference-tips-and-tricks" />
+    <title>Conference Tips and Tricks</title>
+    <published>2018-12-20T00:00:00+00:00</published>
+    <updated>2018-12-20T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">So you get to go to a conference? That&#039;s awesome! Conferences have had a huge impact on my career. From attending to speaking (and keynoting) to organizing, I&#039;ve done it all. Along the way, I&#039;ve changed how I attend conferences and hope to give you some......</summary>
+    <content type="html"><![CDATA[
+        <p>So you get to go to a conference? That's awesome! Conferences have had a huge impact on my career. From attending to speaking (and keynoting) to organizing, I've done it all. Along the way, I've changed how I attend conferences and hope to give you some tips to take with you. </p>
+<h3>Bring a water bottle.</h3>
+<p>This was a game changer at <a href="https://twitter.com/midwestphp">Midwest PHP</a>. I don't know what prompted me to bring it, but I can say that I won't forget it in the future. Conferences have <em>alot</em> going on. And it's easy to forget the simple things like drinking water and staying hydrated. If you don't have something to reminder you, a bottle per se; it's not hard to go a great while without some water. More importantly, conferences tend to offer sodas/coffee/teas/booze so if you want to go the distance, having a near constant source of water helps. I love my liter Nalgene bottle, but get one that works for you.</p>
+<h3>Don't be afraid to talk to speakers.</h3>
+<p>I did a podcast a few weeks ago and the host admitted to me that he saw me at <a href="https://twitter.com/sunshinephp">Sunshine PHP</a> but was too nervous to talk to me. First off, Im like 5'4 and not gonna hurt anyone so don't be too nervous. Second, Im quite cuddly. Im a big softie, until a car tries to run me off the road. One thing speakers tend to do is bunch up with other speakers. It's a natural thing. Most of us are friends and this is a way for us to hang out, catch up, and chill. Don't think for a second it's some sort of secret club. We are just people too! Just say hey, if Im busy working on something I will tell you, but generally nothing is too pressing for me to do that. </p>
+<p>A pro tip for me: bring whiskey or a bike and we are instant besties.</p>
+<h3>Take a day and explore the city you are in.</h3>
+<p>One of the reasons I love speaking is it's a fun way to travel. I've gotten to see some awesome cities: Minneapolis, Portland, DC, Miami, and soon Austin. There is so much to see and do in these cities that I try my hardest now to either plan a day trip or take an extra day to see things. My current thing is renting a bike and riding around the city. I get to get some new Strava PRs hopefully, see the city from a fun way, and interact with the residents! If you can't stay an extra day, dip out on one of the after parties and go exploring! The conference will be there when you get back, and you get to have a cool experience. </p>
+<p>If you are in DC for a conference, try to take 2 days and just explore some of the 19 Smithsonian Museums. They are all free, and cover a wide range of topics from American History to Aviation History to African American History and so much more. I could easily spend 3 days in the Air and Space Museum alone.</p>
+<h3>Come to the conference with an uncon talk.</h3>
+<p>A lot of conferences have an uncon, a space where anyone can speak. People use it as a way to demo a talk and see what the reaction is, or use it to practice their speaking skills. It's a great way to get into speaking without the pressure of really speaking. A lot of conferences will add it to the ratings site, which gets you two things: a track record for other conferences to see and also some feedback (hopefully).</p>
+<h3></h3>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/cool-stuff-in-the-community</id>
+    <link type="text/html" rel="alternate" href="/blog/cool-stuff-in-the-community" />
+    <title>Who is doing cool stuff in the community?</title>
+    <published>2018-03-02T00:00:00+00:00</published>
+    <updated>2018-03-02T00:00:00+00:00</updated>
+    <author>
+        <name>Matt Trask</name>
+    </author>
+    <summary type="html">Our community is full of amazing people creating and doing amazing things. I want to start a series where we highlight these people. 
+
+If you haven&#039;t seen it yet, Beachcasts is a new streaming series from Adam Culp. If you don&#039;t know, Adam doesn&#039;t stop.......</summary>
+    <content type="html"><![CDATA[
+        <p>Our community is full of amazing people creating and doing amazing things. I want to start a series where we highlight these people. </p>
+<h3>Beachcasts</h3>
+<p>If you haven't seen it yet, <a href="https://www.youtube.com/channel/UCsOSGYawy8MG9Mh8NKgRHZQ">Beachcasts</a> is a new streaming series from <a href="https://twitter.com/adamculp">Adam Culp</a>. If you don't know, Adam doesn't stop. He runs SoFloPHP, the user group for people in South Florida, and also runs one of my favorite conferences: <a href="https://sunshinephp.com">Sunshine PHP</a>. With Beachcasts, Adam takes us through creating something I love, REST APIs, using a few tools that aren't generally at the forefront of the conversation. </p>
+<p>Using Zend Expressive and Doctrine ORM, he walks through the steps needed to create a REST API. The best part is he doesn't shy away from a topic that most developers don't skip: <a href="https://apievangelist.com/2014/01/07/what-is-a-hypermedia-api/">Hypermedia</a>. The videos tend to be around 20 minutes, perfect for a lunch break, or something to watch before bed  and with Adam's style, its a very approachable way to watch another developer do work. </p>
+<h3>Astrocasts</h3>
+<p>Another streaming series which has been around for a while now is <a href="https://astrocasts.com">Astrocasts</a>. Friend of the blog <a href="https://twitter.com/beausimensen">Beau Simensen</a> started this series a few months ago and its been absolutely fun watching him work through building chat bots and apps with Symfony. As someone who uses Laravel in my spare time, watching other developers work with different frameworks gives me both insight into their flow and also an appreciation for others hard work. </p>
+<p>Beau broadcasts a couple of times a week, and loves to engage with people watching via comments. It's an absolutely fun time, I enjoy putting it on while I finish up work, or watch the late night edition (the joys of being an hour behind him). Check it out, because its free knowledge for you to consume!</p>
+<h3>Nikita Popov</h3>
+<p>Most of us think <a href="https://twitter.com/nikita_ppv">Nikita</a> is probably a robot hidden away in the depths of a warehouse. He is an absolute machine who cranks out RFC's for our language and deserves a lot of recognition for his hard work. To help him, <a href="https://jetbrains.com">JetBrains</a> hired him for the purpose of allowing him to work on the core of PHP full time. Absolutely brilliant stuff on their part and makes me happy to be a paying subscriber to their products. </p>
+<p>Of all the things he has done, one of the best things was picking up the work of previous developers and getting <a href="https://wiki.php.net/rfc/typed_properties_v2">typed properties</a> into the core language. With a vote of 70-1, it is one of the things bringing excitement to the release of 7.4 later this year. </p>
+<h3>Matthieu Napoli</h3>
+<p><a href="https://twitter.com/matthieunapoli">Matthieu Napoli</a> is working on something that is quite intriguing. With the idea of serverless gaining momentum, PHP is not getting as much support as other languages. Matthieu saw this as an opportunity and creted <a href="https://bref.sh">Bref</a>. I haven't completely jumped on the hypetrain of serverless yet, but following Matthieu's work has been really fun. He clearly has found a way to fill a void in our ecosystem and is doing great work. When I do come around to serverless, this will be my first stop. Bref is a fantastic resource from the looks of it, and I can't wait to see what happens with it!</p>
+<h3>Closing</h3>
+<p>I hope to continue this type of post every so often. Our community is filled with an amazing amount of talented developers, each deserving of recognition. If you know someone you think deserves it, shoot me a message on twitter and when I write up my next post I will absolutely include them! </p>
+<p>Cheers!</p>    ]]></content>
+</entry>
+    </feed>

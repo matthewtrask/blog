@@ -6,7 +6,7 @@ date: 2020-10-10
 description: October 10th is Mental Health Awareness
 categories: [self care, life]
 cover_image: /assets/img/you-are-not-alone.jpg
-featured: true
+featured: false
 ---
 
 2020 has quickly turned into the year of self care. It should be no surprise why. There is a pandemic, natural disasters, an incredibly divisive political race, economic woes and good lord so much more. More and more people are preaching the topic of self care. 
