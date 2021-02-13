@@ -6,7 +6,7 @@ date: 2021-02-13
 description: Small issue I ran into that wasn't documented great with signed urls and using somthnig like Ngrok for testing.
 categories: [laravel, programming]
 cover_image: /assets/img/code.jpg
-featured: true
+featured: false
 ---
 
 I ran across this issue today and it's definitely one of those things that I, and maybe others, will run into again. 
