@@ -2,7 +2,7 @@
 extends: _layouts.post
 section: content
 title: Using Trusted Proxies with Signed URLs in Laravel
-date: 2021-02-13
+date: 2021-02-12
 description: Small issue I ran into that wasn't documented great with signed urls and using somthnig like Ngrok for testing.
 categories: [laravel, programming]
 cover_image: /assets/img/code.jpg
