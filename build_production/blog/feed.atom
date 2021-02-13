@@ -3,7 +3,7 @@
     <title>Matthew Trask</title>
     <link href="https://matthewtrask.net" />
     <link type="application/atom+xml" rel="self" href="https://matthewtrask.net/blog/feed.atom" />
-    <updated>2021-02-13T19:10:02+00:00</updated>
+    <updated>2021-02-13T19:14:26+00:00</updated>
     <id>https://matthewtrask.net/blog/feed.atom</id>
     <author>
         <name>Matt Trask</name>
@@ -21,7 +21,7 @@
     <content type="html"><![CDATA[
         <p>Near the end of last year, a package was released from <a href="https://twitter.com/hotmeteor">Adam Campbell</a> that integrated with the Laravel test runner and allowing for a developer to take the OpenAPI spec file (or contract) and run tests against it. Let's first take a look at the API I built. </p>
 <h3>National Parks API</h3>
-<p>One thing I have found a love for is the American National Parks system. Various areas in the country preserved for their beauty, the landscapes range from lakes to valleys; mountains and forests; volcanos and deserts. It is my goal to visit every single national park in the United States. When I thought about writing this blog post, I figured building a quick API for the National Parks would be fun, and it was. While it's not deployed yet, the code is viewable <a href="https://github.com/matthewtrask/national-parks-api">here</a>. Right now there are two operations supported: a <code>GET /api/national-parks</code> and <code>GET /api/national-parks/{uuid}</code>. As of now, it is just the classified National Parks, but considering the United States has national military parks, historic places and more, the API will more than likely expand to support those as well as <code>POST, PUT, and DELETE</code> operations. </p>
+<p>One thing I have found a love for is the American National Parks system. Various areas in the country preserved for their beauty, the landscapes range from lakes to valleys; mountains and forests; volcanos and deserts. It is my goal to visit every single national park in the United States. When I thought about writing this blog post, I figured building a quick API for the National Parks would be fun, and it was. While it's not deployed yet, the code is viewable <a href="https://github.com/matthewtrask/national-parks-api">here</a>. Right now there are two operations supported: <code>GET /api/national-parks</code> and <code>GET /api/national-parks/{uuid}</code>. As of now, it is just the designated National Parks, but considering the United States has national forests, national military parks, historic places and more, the API will more than likely expand to support those as well as <code>POST, PUT, and DELETE</code> operations.</p>
 <p>A sample response (limited to 5 objects for brevity):</p>
 <pre><code class="language-json">  "data": [
     {
